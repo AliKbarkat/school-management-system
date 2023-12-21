@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('css')
-
+@toaster_css
 @section('title')
   {{__('mainpage.class_room')}}
 @stop

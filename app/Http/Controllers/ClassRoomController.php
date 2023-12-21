@@ -55,6 +55,7 @@ class ClassRoomController extends Controller
         if (!$class)
             return redirect()->back();
         $class->update($request->all());
+        
         toastr()->success('Data has been saved successfully!');
 
         return redirect()->route('class.index');
