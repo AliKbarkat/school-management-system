@@ -1,0 +1,20 @@
+<?php
+return [
+    'title_page' => 'School management/Grades',
+    'List_grade' => 'list Grade',
+    'List_class' => 'List Class Room',
+    'name_grade' => 'Name Grade',
+    'edit' => 'Edit Grad',
+    'delete' => 'delete',
+    'notes' => 'Notes',
+    'procsess' => 'procsess',
+    'submit' => 'submit',
+    'close' => 'close',
+    'Add_grade' => 'Add Grade',
+    'Add_Class' => 'Add Class',
+    'update_grade' => 'edit grade',
+    'name_class_ar' => 'Name class for arabic',
+    'name_class_en' => 'Name class for english',
+    'name_grade_en' => 'Name Grade',
+    'name_grade_ar' => 'Name Grade for arabic',
+];

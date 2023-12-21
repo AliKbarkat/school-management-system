@@ -1,0 +1,25 @@
+<?php
+return [
+    'School_management' => 'ادارة المدارس',
+    'Fadwa Toqan' => 'فدوى طوقان',
+    'language' => 'اختر اللغة',
+    'dashboard' => 'لوحة التحكم',
+    'grades' => 'المراحل الدراسية',
+    'grades_list' => 'قائمة المراحل الدراسية',
+    'class_room' => 'الصفوف',
+    'sections' => ' الاقسام',
+    'students' => 'الطلاب',
+    'Teachers' => 'المعلمين',
+    'Absence' => 'الحضور والغياب',
+    'Parents' => 'اولياء الامور',
+    'Exams' => 'الامتحانات',
+    'Online classes' => 'حصص اونلاين',
+    'setings' => 'الاعدادات',
+    'Users' => 'المستخدمين',
+    'Logout' => 'تسجيل الخروج',
+    'Activity' => 'الانشطة',
+    'Messages' => 'الرسائل',
+    'Profile' => 'الملف الشخصي',
+    'Projects' => 'المشاريع',
+    'Settings' => 'الاعدادات'
+];
