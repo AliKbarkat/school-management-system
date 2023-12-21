@@ -35,6 +35,7 @@ class ClassRoomController extends Controller
             'name_class_en' => $request['name_class_en'],
             'grade_id' => $request['grade_id'],
         ]);
+        toastr()->success('Data has been saved successfully!');
         return redirect()->route('class.index');
     }
     function edit($class_id)
@@ -54,12 +55,15 @@ class ClassRoomController extends Controller
         if (!$class)
             return redirect()->back();
         $class->update($request->all());
+        toastr()->success('Data has been saved successfully!');
+
         return redirect()->route('class.index');
     }
     public function destroy($class_id)
     {
         $class = ClassRoom::find($class_id);
         $class->delete();
+        toastr()->success('Data has been delete successfully!');
         return redirect()->route('class.index');
     }
 
