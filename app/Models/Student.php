@@ -1,6 +1,6 @@
 <?php
 
-namespace App\models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
@@ -9,7 +9,7 @@ class Student extends Model
 {
     use HasTranslations;
     public $translatable = ['name'];
-    protected $guarded=[];
+    public $guarded=[];
 //the relationship student with gender
     public function gender()
     {
@@ -35,12 +35,5 @@ public function classroom()
 
         return $this->belongsTo(Section::class, 'section_id');
 
-    }
-    public function myParant()
-    {
-
-        return $this->belongsTo(Section::class, 'parant_id');
-
-    }
-
+}
 }

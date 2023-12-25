@@ -42,7 +42,7 @@
                     @csrf
                     {{-- one row --}}
                     <div class="form-row">
-                        <input type="hidden" value="{{$student->id}}">
+                        <input type="hidden" name="id" value="{{$student->id}}">
                         <div class="col">
                             <label for="title">{{trans('my_parant.name_student_ar')}}</label>
                             <input type="text" name="name_ar" value="{{$student->getTranslation('name','ar')}}" class="form-control" >
@@ -81,7 +81,7 @@
                         <div class="form-group col">
                             <label for="inputCity">{{trans('student.gender_id')}}</label>
                             <select class="custom-select my-1 mr-sm-2" name="gender_id" >
-                                <option selected>{{$student->gender->Name}}</option>
+                                <option selected>{{$student->gender->id}}</option>
                                 @foreach($genders as $gander)
                                     <option value="{{$gander->id}}">{{$gander->Name}}</option>
                                 @endforeach 
@@ -129,7 +129,7 @@
                         <div class="form-group col">
                             <label for="inputCity">{{trans('student.grades')}}</label>
                             <select class="custom-select my-1 mr-sm-2" name="grade_id">
-                                <option selected>{{$student->grade->name_ar}}</option>
+                                <option selected>{{$student->grade->id}}</option>
                                  @foreach($grades as $grade)
                                     <option value="{{$grade->id}}">{{$grade->name_ar}}</option>
                                 @endforeach 
@@ -141,7 +141,7 @@
                         <div class="form-group col">
                             <label for="inputState">{{trans('students.class_room')}}</label>
                             <select class="custom-select my-1 mr-sm-2" name="classroom_id">
-                                <option selected>{{$student->classroom->name_class_ar}}</option>
+                                <option selected>{{$student->classroom->id}}</option>
                                  @foreach($my_class as $class)
                                     <option value="{{$class->id}}">{{$class->name_class_ar}}</option>
                                 @endforeach

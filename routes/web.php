@@ -62,9 +62,9 @@ Route::group(
             Route::get('/', 'StudentController@index')->name('students.index');
             Route::get('create', 'StudentController@create')->name('students.create');
             Route::post('create', 'StudentController@store')->name('students.store');
-            Route::get('edit/{Student_id}', 'StudentController@edit')->name('students.edit');
-            Route::post('update/{Student_id}', 'StudentController@update')->name('students.update');
-            Route::get('destroy/{Student_id}', 'StudentController@destroy')->name('students.destroy');
+            Route::get('edit/{student_id}', 'StudentController@edit')->name('students.edit');
+            Route::post('update/{student_id}', 'StudentController@update')->name('students.update');
+            Route::get('destroy/{student_id}', 'StudentController@destroy')->name('students.destroy');
         });
 
         Route::group(['prefix' => 'promotion'], function () {
