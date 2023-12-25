@@ -33,4 +33,10 @@ class MyParant extends Model
         'Religion_Mother_id',
         'Address_Mother'
     ];
+    public function student()
+    {
+
+        return $this->hasMany(Student::class,'id');
+
+    }
 }

@@ -36,5 +36,11 @@ public function classroom()
         return $this->belongsTo(Section::class, 'section_id');
 
     }
+    public function myParant()
+    {
+
+        return $this->belongsTo(Section::class, 'parant_id');
+
+    }
 
 }

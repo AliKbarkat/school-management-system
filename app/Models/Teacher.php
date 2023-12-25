@@ -10,10 +10,15 @@ class Teacher extends Model
     public $translatable = ['Name'];
 public $fillable=['Email','Password','Name','Specialization_id','Gender_id','joining_Date','Address'];
 
-public function speciallztions(){
+public function speciallztions()
+
+ {
     return $this->belongsTo(Specialization::class,'Specialization_id');
-}
-public function genders(){
+ }
+
+public function genders()
+
+{
     return $this->belongsTo(Gender::class,'Gender_id');
 }
 

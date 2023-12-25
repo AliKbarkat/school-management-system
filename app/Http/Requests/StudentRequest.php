@@ -16,12 +16,12 @@ class StudentRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required|unique:students,email,'.$this->id,
+            'email' => 'required|email|unique:students,email,'.$this->id,
             'name_ar'=> 'required',
             'name_en'=> 'required',
             'password'=> 'required',
             'gender_id'=> 'required',
-            'nationalitie_id'=> 'required',
+            'nationalite_id'=> 'required',
             'bload_id'=> 'required',
             'date_Birth'=> 'required',
             'grade_id'=> 'required',
@@ -40,7 +40,7 @@ class StudentRequest extends FormRequest
             'name_en.required'=> 'this is required',
             'password.required'=> 'this is required',
             'gender_id.required'=> 'this is required',
-            'nationalitie_id.required'=> 'this is required',
+            'nationalite_id.required'=> 'this is required',
             'bload_id.required'=> 'this is required',
             'date_Birth.required'=> 'this is required',
             'grade_id.required'=> 'this is required',

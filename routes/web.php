@@ -71,9 +71,9 @@ Route::group(
             Route::get('/', 'PromotionController@index')->name('Promotion.index');
             Route::get('create', 'PromotionController@create')->name('Promotion.create');
             Route::post('create', 'PromotionController@store')->name('Promotion.store');
-            Route::get('edit/{Student_id}', 'PromotionController@edit')->name('Promotion.edit');
-            Route::post('update/{Student_id}', 'PromotionController@update')->name('Promotion.update');
-            Route::get('destroy/{Student_id}', 'PromotionController@destroy')->name('Promotion.destroy');
+            Route::get('edit/{}', 'PromotionController@edit')->name('Promotion.edit');
+            Route::post('update/{}', 'PromotionController@update')->name('Promotion.update');
+            Route::get('destroy/{}', 'PromotionController@destroy')->name('Promotion.destroy');
         });
         Route::get('/empty', 'HomeController@empty')->name('empty.index');
         

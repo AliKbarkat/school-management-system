@@ -128,7 +128,7 @@ class AddParant extends Component
         $this->parent_id = $my_parant->id;
         $this->Email = $my_parant->Email;
         $this->Password = $my_parant->Password;
-        $this->Name_Father = $my_parant->Name_Mother;
+        $this->Name_Father = $my_parant->Name_Father;
         $this->Name_Father_en = $my_parant->Name_Father_en;
         $this->Job_Father = $my_parant->Job_Father;
         $this->Job_Father_en = $my_parant->Job_Father_en;

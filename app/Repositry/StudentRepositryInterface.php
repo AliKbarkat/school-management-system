@@ -11,7 +11,7 @@ interface StudentRepositryInterface
 
     public function editStudent($id);
 
-    public function studentsUpdate($request);
+    public function studentUpdate($request);
 
     public function deleteStudent($id);
 }

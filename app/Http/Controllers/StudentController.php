@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StudentRequest;
-use App\Repositry\StudentRepositry;
-use Illuminate\Support\Facades\Request;
+use App\Repositry\StudentRepositryInterface;
+
 
 
 class StudentController extends Controller
 {
     public $student;
-    function __construct(StudentRepositry $student)
+    function __construct(StudentRepositryInterface $student)
     {
         $this->student = $student;
     }
@@ -24,7 +24,7 @@ class StudentController extends Controller
     return $this->student->craetestudent();
     }
 
-    public function store(Request $request)
+    public function store(StudentRequest $request)
     {
      return $this->student->studentStore($request);
     
@@ -37,7 +37,7 @@ class StudentController extends Controller
 
     public function update(StudentRequest $request)
     {
-    return $this->student->studentsUpdate($request);
+    return $this->student->studentUpdate($request);
     }
 
     public function destroy(StudentRequest $request)
