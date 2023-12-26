@@ -49,7 +49,7 @@ class GradController extends Controller
     {
         $class_id = ClassRoom::where('grade_id', $request->id)->pluck('grade_id');
         if ($class_id->count() == 0) {
-        Grade::find($request->id)->delete();
+        Grade::findorfail($request->id)->delete();
             return redirect()->route('grad.index');
         } else {
             return redirect()->back()->withErrors($request);

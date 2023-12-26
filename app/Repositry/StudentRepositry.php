@@ -116,13 +116,11 @@ catch(\Exception $e){
 
   }
 
-  public function deleteStudent($request)
+  public function destroyStudent($request)
   {
-    //  $student=Student::findOrFail($request->id);
-    //  $student->delete();
-    //  toastr()->success('Data has been saved successfully!');
-
-    //  return redirect()->route('students.index');
+    Student::destroy($request);
+     toastr()->success('Data has been saved successfully!');
+     return redirect()->route('students.index');
     }
 
 
