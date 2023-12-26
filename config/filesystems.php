@@ -51,10 +51,16 @@ return [
             'driver' => 'local',
             'root' => storage_path('app/parant_attchements'),
         ],
-
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+        ],
+        //add new disk for student_attchment
+        'upload_attchments' => [
+            'driver' => 'local',
+            'root' => storage_path('/'),
             'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
         ],

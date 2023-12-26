@@ -7,6 +7,7 @@ use App\models\Bload;
 use App\Models\ClassRoom;
 use App\models\Gender;
 use App\Models\Grade;
+use App\models\Image;
 use App\models\MyParant;
 use App\models\Nationalitie;
 use App\Models\Religion;
@@ -55,8 +56,22 @@ try{
       $students->section_id= $request->section_id;
       $students->parant_id= $request->parant_id;
       $students->academic_year= $request->academic_year;  
-
       $students->save();
+
+      if($request->hasfile('photos'))
+      {
+        foreach($request ->file('photos')as $file)
+        {
+          $name= $file->getClientOriginalName();
+          $file->storeAs('attachments/students'. $students->name, $name,'upload_attchments');
+        
+          $images=new Image();
+          $images->filename=$name ;
+          $images->imageable_type='App\Models\Student';
+          $images->imageable_id=$students->id;
+          $images->save();
+        }
+      }
 
       toastr()->success('Data has been saved successfully!');
       return redirect()->route('students.index');
