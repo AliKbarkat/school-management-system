@@ -174,7 +174,7 @@
                             @enderror
                         </div>
                         <div class="form-group col">
-                            <label for="">{{trans('my_parant.academic_year')}}</label>
+                            <label>{{trans('my_parant.academic_year')}}</label>
                             <select class="custom-select my-1 mr-sm-2" name="academic_year">
                                 <option selected>{{trans('my_parant.Choose')}}...</option>
                                     <option value="2020">2020</option>
@@ -182,6 +182,15 @@
                             @error('academic_year')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
+                            
+                        </div>
+                        <div class="form-group col">
+                            <label>{{trans('my_parant.image_tybe')}}</label>
+                           <input type="image" accept="image/*" name="photos[]" multiple>
+                            @error('image_tybe')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                            
                         </div>
                     </div>
                   
