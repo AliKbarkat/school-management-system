@@ -186,7 +186,7 @@
                         </div>
                         <div class="form-group col">
                             <label>{{trans('my_parant.image_tybe')}}</label>
-                           <input type="image" accept="image/*" name="photos[]" multiple>
+                           <input type="file" accept="image/*" name="photos[]" multiple>
                             @error('image_tybe')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
