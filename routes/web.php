@@ -60,6 +60,7 @@ Route::group(
 
         Route::group(['prefix' => 'Students'], function () {
             Route::get('/', 'StudentController@index')->name('students.index');
+            Route::get('show/{student_id}', 'StudentController@show')->name('students.show');
             Route::get('create', 'StudentController@create')->name('students.create');
             Route::post('create', 'StudentController@store')->name('students.store');
             Route::get('edit/{student_id}', 'StudentController@edit')->name('students.edit');

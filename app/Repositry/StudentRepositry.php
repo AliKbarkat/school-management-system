@@ -12,8 +12,7 @@ use App\models\MyParant;
 use App\models\Nationalitie;
 use App\Models\Religion;
 use App\Models\Section;
-
-use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -41,7 +40,7 @@ class StudentRepositry implements StudentRepositryInterface
       public function studentStore($request)
       {   
         
-    
+   DB::beginTransaction(); 
 try{
       $students=new Student();
       $students->name = ['ar' => $request->name_ar ,'en' => $request->name_en ];
@@ -60,27 +59,27 @@ try{
 
       if($request->hasfile('photos'))
       {
-        foreach($request ->file('photos')as $file)
+        foreach($request ->file('photos') as $file)
         {
           $name= $file->getClientOriginalName();
-          $file->storeAs('attachments/students'. $students->name, $name,'upload_attchments');
-        
+          $file->storeAs('attachments/students/'. $students->name, $file->getClientOriginalName(),'upload_attchments');
           $images=new Image();
-          $images->filename=$name ;
-          $images->imageable_type='App\Models\Student';
+          $images->file_name=$name ;
           $images->imageable_id=$students->id;
+          $images->imageable_tybe='App\Models\Student';
           $images->save();
         }
       }
 
       toastr()->success('Data has been saved successfully!');
       return redirect()->route('students.index');
-      
+
+      DB::commit();
      }
      
 catch(\Exception $e){
-
-  return redirect()->back()->withErrors(["error" => $e->getMessage()]);
+DB::rollBack();
+  return redirect()->back()->withErrors(["error" => $e->getMessage()])->withInput();
 }
       }
       public function editStudent($id)
@@ -138,5 +137,9 @@ catch(\Exception $e){
      return redirect()->route('students.index');
     }
 
+public function showStudent($id){
+  $student= Student::findOrfail($id);
 
+  return view('Students.show_student',compact('student'));
+}
 }

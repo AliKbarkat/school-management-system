@@ -38,7 +38,7 @@
         <div class="card card-statistics h-100">
             <div class="card-body">
 
-                <form action="{{route('students.store')}}" method="POST">
+                <form action="{{route('students.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     {{-- one row --}}
                     <div class="form-row">

@@ -64,7 +64,7 @@ students
                         <a class="btn btn-danger btn-sm"href="{{route('students.destroy',$student->id)}}" >
                             <i class="fa fa-trash"></i>
                         </a>
-                         <a class="btn btn-warning btn-sm"href="" >
+                         <a class="btn btn-warning btn-sm"href="{{route('students.show',$student->id)}}" >
                             <i class="fa fa-eye"></i>
                         </a>
                        
