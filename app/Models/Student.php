@@ -62,7 +62,7 @@ class Student extends Model
         return $this->belongsTo(MyParant::class, 'parant_id');
 
     }
-    
+    //add releationship nationalite to student.php
     public function nationalite()
 
     {
