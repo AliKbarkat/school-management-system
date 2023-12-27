@@ -55,4 +55,19 @@ class Student extends Model
 
     }
 
+    public function myParent()
+
+    {
+
+        return $this->belongsTo(MyParant::class, 'parant_id');
+
+    }
+    
+    public function nationalite()
+
+    {
+        return $this->belongsTo(Nationalitie::class, 'nationalite_id');
+
+    }
+
 }
