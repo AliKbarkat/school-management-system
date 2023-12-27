@@ -66,6 +66,7 @@ Route::group(
             Route::get('edit/{student_id}', 'StudentController@edit')->name('students.edit');
             Route::post('update/{student_id}', 'StudentController@update')->name('students.update');
             Route::get('destroy/{student_id}', 'StudentController@destroy')->name('students.destroy');
+            Route::post('/upolad_attchment','StudentController@uploadFile')->name('students.uploadFile');
         });
 
         Route::group(['prefix' => 'promotion'], function () {
