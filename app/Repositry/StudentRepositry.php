@@ -137,9 +137,16 @@ DB::rollBack();
      return redirect()->route('students.index');
     }
 
-public function showStudent($id){
+public function showStudent($id)
+{
   $student= Student::findOrfail($id);
 
   return view('Students.show_student',compact('student'));
 }
+
+public function uploadFile()
+{
+
+}
+
 }
