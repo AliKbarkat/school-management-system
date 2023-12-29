@@ -6,15 +6,10 @@ namespace App\Repositry;
 interface GraduatedInterface
 
 {
-
-  public function getGraduted();
+  public function index();
   public function createGraduted();
-  public function storeGraduted($request);
-
-  public function editGraduted($id);
-
-  public function GradutedUpdate($request);
-
-  public function deleteGraduted($id);
+  public function softDelete($request);
+  public function returndData($request);
+  public function destroy($request);
 
 }
