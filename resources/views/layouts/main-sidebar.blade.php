@@ -45,12 +45,7 @@
                         </ul>
                         
                     </li>
-                    <!-- menu item students
-                    <ul id="" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="{{route('Graduated.index')}}"> تخرج الطلاب</a> </li>
-                            <li> <a  href="{{route('Graduated.create')}}">اضافة تخرج </a> </li>
-
-                        </ul>
+                   
                     -->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#students">
