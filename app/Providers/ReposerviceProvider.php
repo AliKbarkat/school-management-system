@@ -2,8 +2,6 @@
 
 namespace App\Providers;
 
-use App\Repositry\StudentRepositry;
-
 use Illuminate\Support\ServiceProvider;
 
 class RepoServiceProvider extends ServiceProvider
@@ -26,6 +24,12 @@ class RepoServiceProvider extends ServiceProvider
 
         'App\Repositry\PromotionInterface',
         'App\Repositry\PromotionRepositry'
+    );
+
+    $this->app->bind(
+
+        'App\Repositry\GraduatedInterface',
+        'App\Repositry\GraduatedRepositry'
     );
     }
     public function boot()
