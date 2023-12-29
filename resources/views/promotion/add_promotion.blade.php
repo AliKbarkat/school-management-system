@@ -133,7 +133,7 @@
 
     @toastr_js
     @toastr_render
-
+  @endsection
 
     <script>
         $(document).ready(function () {
@@ -213,4 +213,4 @@
         });
         </script>
         
-@endsection
+
