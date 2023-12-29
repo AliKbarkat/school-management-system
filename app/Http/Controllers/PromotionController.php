@@ -9,8 +9,7 @@ use PhpParser\Node\Stmt\Return_;
 class PromotionController extends Controller
 {
     protected $promotion;
- function __construct(PromotionInterface $promotion)
-
+    function __construct(PromotionInterface $promotion)
  {
 
    $this->promotion=$promotion;
@@ -34,16 +33,11 @@ public function store(Request $request)
     return $this->promotion->storePromotion($request);
 }
 
-public function edit()
-{
-} 
-public function update()
-{
-}
 public function destroy(Request $request)
 {
 
     return $this->promotion->deletePromotion($request);
 
 }
+
 }
