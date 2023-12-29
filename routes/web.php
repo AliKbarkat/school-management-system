@@ -90,6 +90,15 @@ Route::group(
             Route::get('destroy', 'GraduatedController@destroy')->name('Graduated.destroy');
 
         });
+        Route::group(['prefix' => 'Fees'], function () {
+            Route::get('/', 'FeesController@index')->name('Fees.index');
+            Route::get('create', 'FeesController@create')->name('Fees.create');
+            Route::post('create', 'FeesController@store')->name('Fees.store');
+            Route::get('edit', 'FeesController@edit')->name('Fees.edit');
+            Route::post('update', 'FeesController@update')->name('Fees.update');
+            Route::get('destroy', 'FeesController@destroy')->name('Fees.destroy');
+
+        });
         Route::get('/empty', 'HomeController@empty')->name('empty.index');
         
     }
