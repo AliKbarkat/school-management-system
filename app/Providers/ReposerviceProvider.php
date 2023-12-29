@@ -29,7 +29,7 @@ class RepoServiceProvider extends ServiceProvider
     $this->app->bind(
 
         'App\Repositry\GraduatedInterface',
-        'App\Repositry\GraduatedRepositry'
+        'App\Repositry\GruadtedRepositry'
     );
     }
     public function boot()
