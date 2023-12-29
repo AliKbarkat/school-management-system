@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StudentRequest;
 use App\Repositry\StudentRepositryInterface;
-
-
-
+use Illuminate\Http\Request;
 class StudentController extends Controller
 {
     public $student;
@@ -50,4 +48,19 @@ class StudentController extends Controller
     public function show($id){
       return $this->student->showStudent($id);
     }
+    public function uploadFile(Request $request){
+
+     return $this->student->uploadFile($request);
+
+    }
+    public function downloadAttachment($file_name,$student_name){
+      
+      return $this->student->downloadAttach($file_name,$student_name);
+     
+    }
+    public function deleteAttach()
+ 
+ {
+
+ }
 }
