@@ -66,16 +66,29 @@ Route::group(
             Route::get('edit/{student_id}', 'StudentController@edit')->name('students.edit');
             Route::post('update/{student_id}', 'StudentController@update')->name('students.update');
             Route::get('destroy/{student_id}', 'StudentController@destroy')->name('students.destroy');
-            Route::post('/upolad_attchment','StudentController@uploadFile')->name('students.uploadFile');
+            Route::post('Download_attachment/{student_name}/{file_name}','StudentController@downloadAttachment')->name('students.Download_attachment');
+            Route::post('upolad_attchment','StudentController@uploadFile')->name('students.uploadFile');
+            Route::post('Delete_attachment','StudentController@deleteAttachment')->name('students.delete_attachment');
+ 
         });
 
         Route::group(['prefix' => 'promotion'], function () {
             Route::get('/', 'PromotionController@index')->name('Promotion.index');
             Route::get('create', 'PromotionController@create')->name('Promotion.create');
             Route::post('create', 'PromotionController@store')->name('Promotion.store');
-            Route::get('edit/{}', 'PromotionController@edit')->name('Promotion.edit');
-            Route::post('update/{}', 'PromotionController@update')->name('Promotion.update');
-            Route::get('destroy/{}', 'PromotionController@destroy')->name('Promotion.destroy');
+            Route::get('edit', 'PromotionController@edit')->name('Promotion.edit');
+            Route::post('update', 'PromotionController@update')->name('Promotion.update');
+            Route::get('destroy', 'PromotionController@destroy')->name('Promotion.destroy');
+
+        });
+        Route::group(['prefix' => 'Gruadted'], function () {
+            Route::get('/', 'GraduatedController@index')->name('Graduated.index');
+            Route::get('create', 'GraduatedController@create')->name('Graduated.create');
+            Route::post('create', 'GraduatedController@store')->name('Graduated.store');
+            Route::get('edit', 'GraduatedController@edit')->name('Graduated.edit');
+            Route::post('update', 'GraduatedController@update')->name('Graduated.update');
+            Route::get('destroy', 'GraduatedController@destroy')->name('Graduated.destroy');
+
         });
         Route::get('/empty', 'HomeController@empty')->name('empty.index');
         
