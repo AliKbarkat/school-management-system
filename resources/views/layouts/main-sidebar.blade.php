@@ -45,7 +45,13 @@
                         </ul>
                         
                     </li>
-                    <!-- menu item students-->
+                    <!-- menu item students
+                    <ul id="" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="{{route('Graduated.index')}}"> تخرج الطلاب</a> </li>
+                            <li> <a  href="{{route('Graduated.create')}}">اضافة تخرج </a> </li>
+
+                        </ul>
+                    -->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#students">
                             <div class="pull-left"> <i class="fa fa-user"></i> {{__('mainpage.students')}}<span
@@ -60,7 +66,11 @@
 
                                 <li><a href="{{route('Promotion.index')}}"><i class=""></i><span class="left-nav-text"></span>
                                    ترقيةالطلاب</a></li>
+                                   <li> <a href="{{route('Graduated.index')}}"><i class=""><span class="left-nav-text"></span>تخرج الطلاب</a> </li>
+                                   <li> <a  href="{{route('Graduated.create')}}"><span class="left-nav-text"></span>اضافة تخرج </a> </li>
+                                  
                         </ul>
+                      
                         
                     </li>
                     <!-- menu item chat-->
@@ -75,6 +85,20 @@
                         <ul id="teacher" class="collapse" data-parent="#sidebarnav">
                             <li><a href="{{route('teacher.index')}}"><i class=""></i><span class="left-nav-text"></span>
                                 {{__('mainpage.Teachers')}}</a></li>
+                        </ul>
+                        
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#account">
+                            <div class="pull-left"> <i class="ti-comments"></i> الحسابات<span
+                                
+                                    class="right-nav-text"></span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="account" class="collapse" data-parent="#sidebarnav">
+                            <li><a href=""><i class=""></i><span class="left-nav-text"></span>
+                                اضافة رسوم</a></li>
                         </ul>
                         
                     </li>
