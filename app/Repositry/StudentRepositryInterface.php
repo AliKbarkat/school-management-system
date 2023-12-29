@@ -15,4 +15,8 @@ interface StudentRepositryInterface
 
     public function destroyStudent($request);
     public function showStudent($id);
+
+    public function uploadFile($request);
+    public function downloadAttach($file_name,$student_name);
+    public function deleteAttach($request);
 }
