@@ -13,7 +13,7 @@ interface FeesInterface
 
   public function storeFees($request);
 
-  public function showFees($id);
+
 
   public function editFees($id);
 
