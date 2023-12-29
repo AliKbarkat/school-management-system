@@ -15,6 +15,7 @@
 @section('content')
     <!-- row -->
     <div class="row">
+
         <div class="col-md-12 mb-30">
             <div class="card card-statistics h-100">
                 <div class="card-body">
@@ -45,18 +46,18 @@
                                             <th scope="row">{{trans('Students_trans.gender')}}</th>
                                             <td>{{$student->gender->Name}}</td>
                                             <th scope="row">{{trans('Students_trans.Nationality')}}</th>
-                                            <td>{{$student->nationalite->name}}</td>
+                                            <td>{{$student->nationalite->Name}}</td>
                                         </tr>
 
                                         <tr>
                                             <th scope="row">{{trans('Students_trans.Grade')}}</th>
-                                            <td>{{ $student->grade->Name }}</td>
+                                            <td>{{ $student->grade->name_ar }}</td>
                                             <th scope="row">{{trans('Students_trans.classrooms')}}</th>
-                                            <td>{{$student->classroom->Name_Class}}</td>
+                                            <td>{{$student->classroom->name_class_ar}}</td>
                                             <th scope="row">{{trans('Students_trans.section')}}</th>
-                                            <td>{{$student->section->Name_Section}}</td>
+                                            <td>{{$student->section->name_ar}}</td>
                                             <th scope="row">{{trans('Students_trans.Date_of_Birth')}}</th>
-                                            <td>{{ $student->Date_Birth}}</td>
+                                            <td>{{ $student->date_Birth}}</td>
                                         </tr>
 
                                         <tr>
@@ -77,16 +78,17 @@
                                      aria-labelledby="profile-02-tab">
                                     <div class="card card-statistics">
                                         <div class="card-body">
-                                          <form method="post" action="" enctype="multipart/form-data"> 
-                                                {{ csrf_field() }}
+                                          <form method="post" action="{{route('students.uploadFile')}}" enctype="multipart/form-data"> 
+                                         @csrf
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label
                                                             for="academic_year">{{trans('Students_trans.Attachments')}}
                                                             : <span class="text-danger">*</span></label>
+
                                                         <input type="file" accept="image/*" name="photos[]" multiple required>
-                                                        <input type="hidden" name="student_name" value="{{$student->name}}">
-                                                        <input type="hidden" name="student_id" value="{{$student->id}}">
+                                                        {{-- <input type="hidden" name="name" value="{{$student->name}}"> --}}
+                                                        {{-- <input type="hidden" name="imageable_id" value="{{$student->id}}"> --}}
                                                     </div>
                                                 </div>
                                                 <br><br>
@@ -111,21 +113,22 @@
                                                 <tr style='text-align:center;vertical-align:middle'>
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$attachment->file_name}}</td>
-                                                    <td>{{$attachment->created_at->diffForHumans()}}</td>
+                                                     <td>{{$attachment->created_at}}</td>
+                                                     
                                                     <td colspan="2">
                                                          <a class="btn btn-outline-info btn-sm"
-                                                           href="{{url('Download_attachment')}}/{{ $attachment->imageable->name}}/{{$attachment->filename}}"
-                                                           role="button"><i class="fas fa-download"></i>&nbsp; {{trans('Students_trans.Download')}}</a>
+                                                           {{-- href="{{url('Download_attachment')}}/{{$attachment->student_name}}/{{$attachment->file_name}}" --}}
+                                                           role="button"><i class="fa fa-download"></i>&nbsp; </a>
 
-                                                        <button type="button" class="btn btn-outline-danger btn-sm"
-                                                                data-toggle="modal"
+                                                        <button type="button" class="btn btn-outline-danger btn-sm fa fa-trash"
+                                                                data-toggle="modal" 
                                                                 data-target="#Delete_img{{ $attachment->id }}"
-                                                                title="{{ trans('Grades_trans.Delete') }}">{{trans('Students_trans.delete')}}
+                                                                title="{{ trans('Grades_trans.Delete') }}">
                                                         </button> 
 
                                                     </td>
                                                 </tr>
-                                                @include('pages.Students.Delete_img')
+                                                @include('pages.Students.delete_img')
                                             @endforeach
                                             </tbody>
                                         </table>
@@ -139,8 +142,4 @@
             </div>
 
             <!-- row closed -->
-@endsection
-@section('js')
-@toastr_js
-@toastr_render
 @endsection
