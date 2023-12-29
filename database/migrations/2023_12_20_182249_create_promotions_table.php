@@ -15,6 +15,22 @@ class CreatePromotionsTable extends Migration
     {
         Schema::create('promotions', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('student_id');
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
+            $table->unsignedBigInteger('from_grade');
+            $table->foreign('from_grade')->references('id')->on('grades')->onDelete('cascade');
+            $table->unsignedBigInteger('from_classroom');
+            $table->foreign('from_classroom')->references('id')->on('class_rooms')->onDelete('cascade');
+            $table->unsignedBigInteger('from_section');
+            $table->foreign('from_section')->references('id')->on('sections')->onDelete('cascade');
+            $table->unsignedBigInteger('to_grade');
+            $table->foreign('to_grade')->references('id')->on('grades')->onDelete('cascade');
+            $table->unsignedBigInteger('to_classroom');
+            $table->unsignedBigInteger('to_section');
+            $table->foreign('to_classroom')->references('id')->on('class_rooms')->onDelete('cascade');
+            $table->foreign('to_section')->references('id')->on('sections')->onDelete('cascade');
+            $table->string('academic_year');
+            $table->string('academic_year_new');
             $table->timestamps();
         });
     }
