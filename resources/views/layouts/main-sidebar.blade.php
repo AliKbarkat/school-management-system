@@ -92,8 +92,10 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="account" class="collapse" data-parent="#sidebarnav">
-                            <li><a href=""><i class=""></i><span class="left-nav-text"></span>
+                            <li><a href="{{route('Fees.create')}}"><i class=""></i><span class="left-nav-text"></span>
                                 اضافة رسوم</a></li>
+                                <li><a href="{{route('Fees.index')}}"><i class=""></i><span class="left-nav-text"></span>
+                                     قائمة الرسوم</a></li>
                         </ul>
                         
                     </li>
