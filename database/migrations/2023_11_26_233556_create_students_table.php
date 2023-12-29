@@ -34,7 +34,7 @@ class CreateStudentsTable extends Migration
             $table->bigInteger('parant_id')->unsigned();
             $table->foreign('parant_id')->references('id')->on('my_parants')->onDelete('cascade');
             $table->string('academic_year');
-
+            $table->softDeletes();
             $table->timestamps();
         });
     }
