@@ -31,6 +31,11 @@ class RepoServiceProvider extends ServiceProvider
         'App\Repositry\GraduatedInterface',
         'App\Repositry\GruadtedRepositry'
     );
+    $this->app->bind(
+
+        'App\Repositry\FeesInterface',
+        'App\Repositry\FeesRepositry'
+    );
     }
     public function boot()
     {
