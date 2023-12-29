@@ -57,6 +57,9 @@
                         <ul id="students" class="collapse" data-parent="#sidebarnav">
                             <li><a href="{{route('students.index')}}"><i class=""></i><span class="left-nav-text"></span>
                                 {{__('mainpage.students')}}</a></li>
+
+                                <li><a href="{{route('Promotion.index')}}"><i class=""></i><span class="left-nav-text"></span>
+                                   ترقيةالطلاب</a></li>
                         </ul>
                         
                     </li>
