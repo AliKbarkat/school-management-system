@@ -27,7 +27,7 @@ public function index()
 
 public function create() 
 {
-   return view();
+    return $this->promotion->createPromotion();
 }
 public function store(Request $request)
 {
@@ -40,7 +40,10 @@ public function edit()
 public function update()
 {
 }
-public function destroy()
+public function destroy(Request $request)
 {
+
+    return $this->promotion->deletePromotion($request);
+
 }
 }
