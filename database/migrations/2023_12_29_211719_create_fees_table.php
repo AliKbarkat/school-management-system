@@ -15,6 +15,16 @@ class CreateFeesTable extends Migration
     {
         Schema::create('fees', function (Blueprint $table) {
             $table->id();
+            $table->string('title',100);
+            $table->decimal('ammount',8,2);
+            $table->text('descreption');
+            $table->unsignedBigInteger('grade_id');
+            $table->foreign('grade_id')->references('id')->on('grades')->onDelete('cascade');
+            $table->unsignedBigInteger('classroom_id');
+            $table->foreign('classroom_id')->references('id')->on('class_rooms')->onDelete('cascade');
+            $table->unsignedBigInteger('section_id');
+            $table->foreign('section_id')->references('id')->on('sections')->onDelete('cascade');
+            $table->integer('year');
             $table->timestamps();
         });
     }
