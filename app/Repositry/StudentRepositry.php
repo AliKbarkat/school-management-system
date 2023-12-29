@@ -14,8 +14,7 @@ use App\Models\Religion;
 use App\Models\Section;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-
-
+use Illuminate\Support\Facades\Storage;
 
 class StudentRepositry implements StudentRepositryInterface
 {
@@ -70,16 +69,16 @@ try{
           $images->save();
         }
       }
-
+      DB::commit();
       toastr()->success('Data has been saved successfully!');
       return redirect()->route('students.index');
 
-      DB::commit();
+     
      }
      
 catch(\Exception $e){
 DB::rollBack();
-  return redirect()->back()->withErrors(["error" => $e->getMessage()])->withInput();
+  return redirect()->back()->withErrors(["error" => $e->getMessage()]);
 }
       }
       public function editStudent($id)
@@ -139,14 +138,48 @@ DB::rollBack();
 
 public function showStudent($id)
 {
+
   $student= Student::findOrfail($id);
-
-  return view('Students.show_student',compact('student'));
+   return view('Students.show_student',compact('student'));
 }
 
-public function uploadFile()
-{
 
+public function uploadFile($request)
+  {
+    try{
+
+    if($request->hasfile('photos')){
+      foreach($request->hasFile('photos') as $file)
+    {
+    $name= $file->getClientOriginalName();
+    $file->storeAs('attachments/students/'. $request->name, $file->getClientOriginalName(),'upload_attchments');
+    $images=new Image();
+    $images->file_name=$name ;
+    $images->imageable_id= $request->id;
+    $images->imageable_tybe='App\Models\Student';
+    $images->save();
+    toastr()->success('Data has been saved successfully!');
+    return redirect()->route('students.show',$request->student_id);
+   }
+    }
+  }catch(\Exception $e){
+    DB::rollBack();
+      return redirect()->back()->withErrors(["error" => $e->getMessage()]);
+    }
+
+ }
+ public function downloadAttach($file_name,$student_name)
+ {
+
+  return response()->download(public_path('attachments/students/'.$student_name .'/' .$file_name));
+
+ }
+ public function deleteAttach($request)
+ 
+ {
+Storage::disk('upload_attchments')->delete('attachments/students/'. $request->name.'/' .$request->file_name);
+ image::where('id',$request->id)->where('file_name',$request->file_name)->delete();
+ toaster()->error('yes');
+ return redirect()->back();
 }
-
 }
