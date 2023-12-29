@@ -3,10 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Translatable\HasTranslations;
 
 class Student extends Model
 {
+    use SoftDeletes;
     use HasTranslations;
     public $translatable = ['name'];
     public $guarded=[];
@@ -51,7 +53,7 @@ class Student extends Model
 
     {
 
-        return $this->morphMany(Image::class,'imageable');
+        return $this->morphMany('App\Models\Image','imageable');
 
     }
 
