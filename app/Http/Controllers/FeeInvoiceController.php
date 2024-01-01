@@ -14,7 +14,7 @@ class FeeInvoiceController extends Controller
    
  }
 
-public function index(){
-    return $this->fee_invoice;
+public function show($id){
+    return $this->fee_invoice->show($id);
 }
 }
