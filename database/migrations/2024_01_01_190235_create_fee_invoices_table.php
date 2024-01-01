@@ -17,7 +17,7 @@ class CreateFeeInvoicesTable extends Migration
             $table->id();
             $table->date('invoice_date');
             $table->foreignId('grade_id')->references('id')->on('grades')->onDelete('cascade');
-            $table->foreignId('clasroon_id')->references('id')->on('class_rooms')->onDelete('cascade');
+            $table->foreignId('clasroom_id')->references('id')->on('class_rooms')->onDelete('cascade');
             $table->foreignId('student_id')->references('id')->on('students')->onDelete('cascade');
             $table->foreignId('fee_id')->references('id')->on('fees')->onDelete('cascade');
             
