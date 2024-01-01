@@ -57,18 +57,20 @@ students
                     <td>{{$student->Section->name_ar}}</td>
                     
                     <td>
-                        <a class="btn btn-info btn-sm" href="{{route('students.edit',$student->id)}}">
-                            <i class="fa fa-edit"></i>
-                        </a>
-                        
-                        <a class="btn btn-danger btn-sm"href="{{route('students.destroy',$student->id)}}" >
-                            <i class="fa fa-trash"></i>
-                        </a>
-                         <a class="btn btn-warning btn-sm"href="{{route('students.show',$student->id)}}" >
-                            <i class="fa fa-eye"></i>
-                        </a>
-                       
-                    </td>
+                        <div class="dropdown show">
+                            <a class="btn btn-success btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{trans('Students_trans.Processes')}}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="{{route('students.show',$student->id)}}"><i style="color: #ffc107" class="far fa-eye "></i>&nbsp;{{trans('Students_trans.showdatestdents')}}</a>
+                                <a class="dropdown-item" href="{{route('students.edit',$student->id)}}"><i style="color:green" class="fa fa-edit"></i>&nbsp;{{trans('Students_trans.editdatestdents')}}  </a>
+                                <a class="dropdown-item" href="{{route('Fees_Invoices.show',$student->id)}}"><i style="color: #0000cc" class="fa fa-edit"></i>&nbsp;{{trans('Students_trans.AddInvoices_fees')}}</a>
+                                {{-- <a class="dropdown-item" href="{{route('receipt_students.show',$student->id)}}"><i style="color: #9dc8e2" class="fas fa-money-bill-alt"></i>{{trans('Students_trans.receipt_students')}}</a> --}}
+                                {{-- <a class="dropdown-item" href="{{route('ProcessingFee.show',$student->id)}}"><i style="color: #9dc8e2" class="fas fa-money-bill-alt"></i>{{trans('Students_trans.ProcessingFee')}}</a> --}}
+                                {{-- <a class="dropdown-item" href="{{route('Payment_students.show',$student->id)}}"><i style="color:goldenrod" class="fas fa-donate"></i>{{trans('Students_trans.Payment_students')}}</a> --}}
+                                <a class="dropdown-item" data-target="#Delete_Student{{ $student->id }}" data-toggle="modal" href="##Delete_Student{{ $student->id }}"><i style="color: red" class="fa fa-trash"></i> {{trans('Students_trans.Delete_Student')}} </a>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#Soft_delete{{$student->id}}"><i style="color:green" class="fa fa-edit"></i>&nbsp; {{trans('Students_trans.StudentGraduation')}}  </a>
+                            </div>
                 </tr>
                  @endforeach 
                 </tbody>
