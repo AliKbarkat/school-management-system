@@ -24,7 +24,10 @@ return $this->fees->indexFees();
   }
 
   public function edit($id){
-    return $this->fees->editFees($id);
+  
+   return $this->fees->editFees($id);
+ 
+ 
   }
 
   public function update(Request $request){
