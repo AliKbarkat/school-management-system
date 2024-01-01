@@ -64,7 +64,7 @@ students
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" href="{{route('students.show',$student->id)}}"><i style="color: #ffc107" class="far fa-eye "></i>&nbsp;{{trans('Students_trans.showdatestdents')}}</a>
                                 <a class="dropdown-item" href="{{route('students.edit',$student->id)}}"><i style="color:green" class="fa fa-edit"></i>&nbsp;{{trans('Students_trans.editdatestdents')}}  </a>
-                                <a class="dropdown-item" href="{{route('Fees_Invoices.show',$student->id)}}"><i style="color: #0000cc" class="fa fa-edit"></i>&nbsp;{{trans('Students_trans.AddInvoices_fees')}}</a>
+                                <a class="dropdown-item" href="{{route('Fee_Invoice.show',$student->id)}}"><i style="color: #0000cc" class="fa fa-edit"></i>&nbsp;{{trans('Students_trans.AddInvoices_fees')}}</a>
                                 {{-- <a class="dropdown-item" href="{{route('receipt_students.show',$student->id)}}"><i style="color: #9dc8e2" class="fas fa-money-bill-alt"></i>{{trans('Students_trans.receipt_students')}}</a> --}}
                                 {{-- <a class="dropdown-item" href="{{route('ProcessingFee.show',$student->id)}}"><i style="color: #9dc8e2" class="fas fa-money-bill-alt"></i>{{trans('Students_trans.ProcessingFee')}}</a> --}}
                                 {{-- <a class="dropdown-item" href="{{route('Payment_students.show',$student->id)}}"><i style="color:goldenrod" class="fas fa-donate"></i>{{trans('Students_trans.Payment_students')}}</a> --}}
