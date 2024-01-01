@@ -20,8 +20,10 @@ class CreateFeesTable extends Migration
             $table->text('descreption');
             $table->foreignId('grade_id')->references('id')->on('grades')->onDelete('cascade');
             $table->foreignId('classroom_id')->references('id')->on('class_rooms')->onDelete('cascade');
-            $table->foreign('section_id')->references('id')->on('sections')->onDelete('cascade');
+            $table->foreignId('section_id')->references('id')->on('sections')->onDelete('cascade');
             $table->integer('year');
+            $table->integer('tybe');
+
             $table->timestamps();
         });
     }
