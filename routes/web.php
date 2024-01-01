@@ -94,7 +94,7 @@ Route::group(
             Route::get('/', 'FeesController@index')->name('Fees.index');
             Route::get('create', 'FeesController@create')->name('Fees.create');
             Route::post('create', 'FeesController@store')->name('Fees.store');
-            Route::get('edit', 'FeesController@edit')->name('Fees.edit');
+            Route::get('edit/{fee_id}', 'FeesController@edit')->name('Fees.edit');
             Route::post('update', 'FeesController@update')->name('Fees.update');
             Route::get('destroy', 'FeesController@destroy')->name('Fees.destroy');
 
