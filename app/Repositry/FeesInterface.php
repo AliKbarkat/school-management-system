@@ -19,6 +19,6 @@ interface FeesInterface
 
   public function updateFees($request);
 
-  public function deleteFees($id);
+  public function deleteFees($request);
 
 }
