@@ -40,9 +40,9 @@
                     <small class="form-text text-danger" >{{$message}}</small> 
                     @enderror
                    
-                </div>
+                 </div>
 
-                <div class="form-group col">
+                 <div class="form-group col">
                     <label for="">{{__('fees.title_fees_en')}}</label><br>
                     <input class="form-control form-control-md" type="text" name="title_en" 
                     placeholder="{{__('fees.title_fees_en')}}" aria-label=".form-control-lg example">
@@ -50,8 +50,8 @@
                     <small class="form-text text-danger" >{{$message}}</small> 
                     @enderror
                    
-                </div>
-                <div class="form-group col">
+                 </div>
+                 <div class="form-group col">
                     <label for="">{{__('fees.ammount')}}</label><br>
                     <input class="form-control form-control-md" type="text" name="ammount" 
                     placeholder="{{__('fees.ammount')}}" aria-label=".form-control-lg example">
@@ -59,6 +59,18 @@
                     <small class="form-text text-danger" >{{$message}}</small> 
                     @enderror
                    
+                </div>
+                <div class="form-group col">
+                    <label for="">{{trans('fees.grades')}}</label>
+                    <select class="custom-select my-1 mr-sm-2" name="tybe">
+                        <option selected>{{trans('student.Choose')}}...</option>
+                       
+                            <option value="1">رسوم باص</option>
+                            <option value="2">رسوم مدرسة</option>
+                    </select>
+                    @error('grade_id')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                </div>
                
