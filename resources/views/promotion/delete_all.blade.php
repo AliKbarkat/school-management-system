@@ -14,7 +14,7 @@
 
 
                     <h5 style="font-family: 'Cairo', sans-serif;">هل انت متأكد من حذف الجميع</h5>
-<input type="text" name="page_id" value="1">
+                        <input type="text" name="page_id" value="1">
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans('Students_trans.Close')}}</button>
                         <button  class="btn btn-danger">{{trans('Students_trans.submit')}}</button>
