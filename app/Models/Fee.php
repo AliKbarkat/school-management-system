@@ -18,5 +18,8 @@ class Fee extends Model
         return $this->belongsTo(ClassRoom::class,'classroom_id');
 
     }
+    public function fee_invoices(){
+        return $this->hasMany(Fee_invoice::class);
+    }
 
 }
