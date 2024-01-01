@@ -56,7 +56,7 @@
                         <td>{{$fee->year}}</td>
                         <td><a class="btn btn-info btn-sm" href="{{route('Fees.edit',$fee->id)}}">
                           <i class="fa fa-edit"></i></a>
-                         <a class="btn btn-danger btn-sm" href=""  >
+                         <a class="btn btn-danger btn-sm" href="{{route('Fees.destroy',$fee->id)}}"  >
                           <i class="fa fa-trash"></i></a></td>
   
                        
