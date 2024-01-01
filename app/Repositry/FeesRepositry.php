@@ -39,6 +39,8 @@ class FeesRepositry  implements FeesInterface
         $fees->classroom_id=$request->classroom_id;
         $fees->section_id=$request->section_id;
         $fees->year=$request->year;
+        $fees->tybe=$request->tybe;
+
         $fees->save();
         
         toastr()->success('Data has been saved successfully!');
@@ -75,6 +77,8 @@ class FeesRepositry  implements FeesInterface
             $fees->classroom_id=$request->classroom_id;
             $fees->section_id=$request->section_id;
             $fees->year=$request->year;
+            $fees->tybe=$request->tybe;
+            
             $fees->save();
             toastr()->success('Data has been saved successfully!');
 
