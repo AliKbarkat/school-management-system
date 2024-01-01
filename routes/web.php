@@ -102,6 +102,8 @@ Route::group(
 
         Route::group(['prefix' => 'Fee_Invoice'], function () {
             Route::get('/', 'FeeInvoiceController@index')->name('Fee_Invoice.index');
+            Route::get('show/{student_id}', 'FeeInvoiceController@show')->name('Fee_Invoice.show');
+
             Route::get('create', 'FeeInvoiceController@create')->name('Fee_Invoice.create');
             Route::post('create', 'FeeInvoiceController@store')->name('Fee_Invoice.store');
             Route::get('edit/{Fee_Invoice_id}', 'FeeInvoiceController@edit')->name('Fee_Invoice.edit');
