@@ -46,7 +46,7 @@
                         
                     </li>
                    
-                    -->
+
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#students">
                             <div class="pull-left"> <i class="fa fa-user"></i> {{__('mainpage.students')}}<span
