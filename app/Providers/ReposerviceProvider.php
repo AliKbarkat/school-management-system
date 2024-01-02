@@ -52,6 +52,11 @@ class RepoServiceProvider extends ServiceProvider
         'App\Repositry\ProcessingFeeInterface',
         'App\Repositry\ProcessingFeeRepositry'
     );
+    $this->app->bind(
+
+        'App\Repositry\PaymentInterface',
+        'App\Repositry\PaymentRepositry'
+    );
     }
     public function boot()
     {
