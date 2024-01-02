@@ -15,6 +15,10 @@ class CreateReceiptStudentsTable extends Migration
     {
         Schema::create('receipt_students', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('student_id')->references('id')->on('students')->onDelete('cascade');
+            $table->decimal('debit',8,2)->nullable();
+            $table->string('description');
+
             $table->timestamps();
         });
     }
