@@ -1,6 +1,8 @@
 <?php
 namespace App\Repositry;
 
+use App\Models\Student;
+
 class ProcessingFeeRepsitry implements ProcessingFeeInterface{
 
     public function index(){
@@ -8,7 +10,8 @@ class ProcessingFeeRepsitry implements ProcessingFeeInterface{
     }
 
     public function show($id){
-        
+        $student=Student::findOrfail($id);
+        return view('',compact('$student'));
     }
     public function store($request){
         
