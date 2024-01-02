@@ -135,11 +135,21 @@ Route::group(
         Route::group(['prefix' => 'Payment'], function () {
             Route::get('/', 'PaymentController@index')->name('Payment.index');
             Route::get('show/{Payment}', 'PaymentController@show')->name('Payment.show');
-              Route::get('create', 'PaymentController@create')->name('Payment.create');
+            Route::get('create', 'PaymentController@create')->name('Payment.create');
             Route::post('create', 'PaymentController@store')->name('Payment.store');
             Route::get('edit/{Payment}', 'PaymentController@edit')->name('Payment.edit');
             Route::post('update/{Payment}', 'PaymentController@update')->name('Payment.update');
             Route::get('destroy/{Payment}', 'PaymentController@destroy')->name('Payment.destroy');
+
+        });
+        Route::group(['prefix' => 'Attendance'], function () {
+            Route::get('/', 'AttendanceController@index')->name('Attendance.index');
+            Route::get('show/{Payment}', 'AttendanceController@show')->name('Attendance.show');
+            Route::get('create', 'AttendanceController@create')->name('Attendance.create');
+            Route::post('create', 'AttendanceController@store')->name('Attendance.store');
+            Route::get('edit/{Payment}', 'AttendanceController@edit')->name('Attendance.edit');
+            Route::post('update/{Payment}', 'AttendanceController@update')->name('Attendance.update');
+            Route::get('destroy/{Payment}', 'AttendanceController@destroy')->name('Attendance.destroy');
 
         });
         Route::get('/empty', 'HomeController@empty')->name('empty.index');
