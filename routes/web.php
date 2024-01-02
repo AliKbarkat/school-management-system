@@ -111,14 +111,24 @@ Route::group(
 
         });
         
+        Route::group(['prefix' => 'ReceiptStudent'], function () {
+            Route::get('/', 'ReceiptStudentController@index')->name('ReceiptStudent.index');
+            Route::get('show/{student_id}', 'ReceiptStudentController@show')->name('ReceiptStudent.show');
+              Route::get('create', 'ReceiptStudentController@create')->name('ReceiptStudent.create');
+            Route::post('create', 'ReceiptStudentController@store')->name('ReceiptStudent.store');
+            Route::get('edit/{ReceiptStudent}', 'ReceiptStudentController@edit')->name('ReceiptStudent.edit');
+            Route::post('update/{ReceiptStudent}', 'ReceiptStudentController@update')->name('ReceiptStudent.update');
+            Route::get('destroy/{ReceiptStudent}', 'ReceiptStudentController@destroy')->name('ReceiptStudent.destroy');
+
+        });
         Route::group(['prefix' => 'ProcessingFee'], function () {
             Route::get('/', 'ProcessingFeeController@index')->name('ProcessingFee.index');
             Route::get('show/{student_id}', 'ProcessingFeeController@show')->name('ProcessingFee.show');
             Route::get('create', 'ProcessingFeeController@create')->name('ProcessingFee.create');
             Route::post('create', 'ProcessingFeeController@store')->name('ProcessingFee.store');
-            Route::get('edit/{Fee_Invoice_id}', 'ProcessingFeeController@edit')->name('ProcessingFee.edit');
-            Route::post('update/{Fee_Invoice_id}', 'ProcessingFeeController@update')->name('ProcessingFee.update');
-            Route::get('destroy/{Fee_Invoice_id}', 'ProcessingFeeController@destroy')->name('ProcessingFee.destroy');
+            Route::get('edit/{ProcessingFee_id}', 'ProcessingFeeController@edit')->name('ProcessingFee.edit');
+            Route::post('update/{ProcessingFee_id}', 'ProcessingFeeController@update')->name('ProcessingFee.update');
+            Route::get('destroy/{ProcessingFee_id}', 'ProcessingFeeController@destroy')->name('ProcessingFee.destroy');
 
         });
         Route::get('/empty', 'HomeController@empty')->name('empty.index');
