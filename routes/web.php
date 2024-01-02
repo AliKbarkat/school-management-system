@@ -103,12 +103,22 @@ Route::group(
         Route::group(['prefix' => 'Fee_Invoice'], function () {
             Route::get('/', 'FeeInvoiceController@index')->name('Fee_Invoice.index');
             Route::get('show/{student_id}', 'FeeInvoiceController@show')->name('Fee_Invoice.show');
-
-            Route::get('create', 'FeeInvoiceController@create')->name('Fee_Invoice.create');
+              Route::get('create', 'FeeInvoiceController@create')->name('Fee_Invoice.create');
             Route::post('create', 'FeeInvoiceController@store')->name('Fee_Invoice.store');
             Route::get('edit/{Fee_Invoice_id}', 'FeeInvoiceController@edit')->name('Fee_Invoice.edit');
             Route::post('update/{Fee_Invoice_id}', 'FeeInvoiceController@update')->name('Fee_Invoice.update');
             Route::get('destroy/{Fee_Invoice_id}', 'FeeInvoiceController@destroy')->name('Fee_Invoice.destroy');
+
+        });
+        
+        Route::group(['prefix' => 'ProcessingFee'], function () {
+            Route::get('/', 'ProcessingFeeController@index')->name('ProcessingFee.index');
+            Route::get('show/{student_id}', 'ProcessingFeeController@show')->name('ProcessingFee.show');
+            Route::get('create', 'ProcessingFeeController@create')->name('ProcessingFee.create');
+            Route::post('create', 'ProcessingFeeController@store')->name('ProcessingFee.store');
+            Route::get('edit/{Fee_Invoice_id}', 'ProcessingFeeController@edit')->name('ProcessingFee.edit');
+            Route::post('update/{Fee_Invoice_id}', 'ProcessingFeeController@update')->name('ProcessingFee.update');
+            Route::get('destroy/{Fee_Invoice_id}', 'ProcessingFeeController@destroy')->name('ProcessingFee.destroy');
 
         });
         Route::get('/empty', 'HomeController@empty')->name('empty.index');
