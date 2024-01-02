@@ -18,4 +18,16 @@ class FeeInvoiceRepositry  implements FeeInvoiceInterface
         return view('fee_invoice.add',compact('student','fee'));
 
     }
+   function store($request){
+
+   }
+function edit($id){
+
+}
+function update($request){
+
+}
+function delete($request){
+    
+}
 }
