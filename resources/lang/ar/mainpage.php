@@ -10,7 +10,7 @@ return [
     'sections' => ' الاقسام',
     'students' => 'الطلاب',
     'Teachers' => 'المعلمين',
-    'Absence' => 'الحضور والغياب',
+    'Attendance' => 'الحضور والغياب',
     'Parents' => 'اولياء الامور',
     'Exams' => 'الامتحانات',
     'Online classes' => 'حصص اونلاين',
