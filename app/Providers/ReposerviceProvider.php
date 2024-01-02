@@ -57,6 +57,11 @@ class RepoServiceProvider extends ServiceProvider
         'App\Repositry\PaymentInterface',
         'App\Repositry\PaymentRepositry'
     );
+    $this->app->bind(
+
+        'App\Repositry\AttendanceInterface',
+        'App\Repositry\AttendanceRepositry'
+    );
     }
     public function boot()
     {
