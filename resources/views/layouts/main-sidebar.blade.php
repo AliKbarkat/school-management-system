@@ -59,11 +59,9 @@
                             <li><a href="{{route('students.index')}}"><i class=""></i><span class="left-nav-text"></span>
                                 {{__('mainpage.students')}}</a></li>
 
-                                <li><a href="{{route('Promotion.index')}}"><i class=""></i><span class="left-nav-text"></span>
-                                   ترقيةالطلاب</a></li>
+                                <li><a href="{{route('Promotion.index')}}"><i class=""></i><span class="left-nav-text"></span> ترقيةالطلاب</a></li>
                                    <li> <a href="{{route('Graduated.index')}}"><i class=""><span class="left-nav-text"></span>تخرج الطلاب</a> </li>
-                                   <li> <a  href="{{route('Graduated.create')}}"><span class="left-nav-text"></span>اضافة تخرج </a> </li>
-                                  
+                                    <li> <a  href="{{route('Graduated.create')}}"><span class="left-nav-text"></span>اضافة تخرج </a> </li>                                  
                         </ul>
                       
                         
@@ -92,10 +90,10 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="account" class="collapse" data-parent="#sidebarnav">
-                            <li><a href="{{route('Fees.create')}}"><i class=""></i><span class="left-nav-text"></span>
-                                اضافة رسوم</a></li>
-                                <li><a href="{{route('Fees.index')}}"><i class=""></i><span class="left-nav-text"></span>
-                                     قائمة الرسوم</a></li>
+                            <li><a href="{{route('Fees.create')}}"><i class=""></i><span class="left-nav-text"></span>اضافة رسوم</a></li>
+                            <li><a href="{{route('Fees.index')}}"><i class=""></i><span class="left-nav-text"></span>الرسوم الدراسية</a></li>
+                            <li><a href="{{route('Payment.index')}}"><i class=""></i><span class="left-nav-text"></span>سندات الصرف</a></li>
+
                         </ul>
                         
                     </li>
@@ -132,7 +130,22 @@
                             
                     
                    
-                            <li> <a href=""><i class="fa fa-check"></i> {{__('mainpage.Absence')}}</a> </li>
+                            {{-- <li> <a href=""><i class="fa fa-check"></i> {{__('mainpage.Absence')}}</a> </li> --}}
+
+                            <li>
+                                <a href="javascript:void(1);" data-toggle="collapse" data-target="#Attendance ">
+                                    <div class="pull-left"> <i class="fa fa-check"></i> {{__('mainpage.Attendance')}}<span
+                                        
+                                            class="right-nav-text"></span></div>
+                                    <div class="pull-right"><i class="ti-plus"></i></div>
+                                    <div class="clearfix"></div>
+                                </a>
+        
+                                <ul id="Attendance " class="collapse" data-parent="#sidebarnav">
+                                    <li> <a href="{{route('add.parent')}}">{{__('mainpage.Attendance')}} </a> </li>        
+                                </ul>
+                                
+                            </li>
                        
 
                     
