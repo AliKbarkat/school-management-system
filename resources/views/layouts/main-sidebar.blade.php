@@ -142,7 +142,7 @@
                                 </a>
         
                                 <ul id="Attendance " class="collapse" data-parent="#sidebarnav">
-                                    <li> <a href="{{route('add.parent')}}">{{__('mainpage.Attendance')}} </a> </li>        
+                                    <li> <a href="{{route('Attendance.index')}}">قائمة الطلاب </a> </li>        
                                 </ul>
                                 
                             </li>
