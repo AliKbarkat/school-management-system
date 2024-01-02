@@ -10,6 +10,7 @@ return [
     'sections' => ' The sections',
     'students' => 'The students',
     'Teachers' => 'The Teachers',
+    'Attendance'=>'Attendance',
     'Parents' => 'The Parents ',
     'Exams' => 'Exams',
     'Online classes' => 'Online classes ',
