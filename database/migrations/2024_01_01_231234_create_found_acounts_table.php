@@ -15,6 +15,13 @@ class CreateFoundAcountsTable extends Migration
     {
         Schema::create('found_acounts', function (Blueprint $table) {
             $table->id();
+            $table->date('date');
+            $table->foreignId('receipt_id')->references('id')->on('receipt_students')->onDelete('cascade');
+
+            $table->decimal('debit',8,2)->nullable();
+            $table->decimal('credit',8,2)->nullable();
+            $table->string('description');
+            
             $table->timestamps();
         });
     }
