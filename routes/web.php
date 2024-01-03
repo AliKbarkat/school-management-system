@@ -152,6 +152,17 @@ Route::group(
             Route::get('destroy/{Payment}', 'AttendanceController@destroy')->name('Attendance.destroy');
 
         });
+
+        Route::group(['prefix' => 'subject'], function () {
+            Route::get('/', 'SubjectConttroller@index')->name('subject.index');
+            Route::get('show/{subject}', 'SubjectConttroller@show')->name('subject.show');
+            Route::get('create', 'SubjectConttroller@create')->name('subject.create');
+            Route::post('create', 'SubjectConttroller@store')->name('subject.store');
+            Route::get('edit/{subject}', 'SubjectConttroller@edit')->name('subject.edit');
+            Route::post('update/{subject}', 'SubjectConttroller@update')->name('subject.update');
+            Route::get('destroy/{subject}', 'SubjectConttroller@destroy')->name('subject.destroy');
+
+        });
         Route::get('/empty', 'HomeController@empty')->name('empty.index');
         
     }
