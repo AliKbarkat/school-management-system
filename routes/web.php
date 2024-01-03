@@ -163,6 +163,26 @@ Route::group(
             Route::get('destroy/{subject}', 'SubjectConttroller@destroy')->name('subject.destroy');
 
         });
+        Route::group(['prefix' => 'quizz'], function () {
+            Route::get('/', 'QuizzConttroller@index')->name('quizz.index');
+            Route::get('show/{subject}', 'QuizzConttroller@show')->name('quizz.show');
+            Route::get('create', 'QuizzConttroller@create')->name('quizz.create');
+            Route::post('create', 'QuizzConttroller@store')->name('quizz.store');
+            Route::get('edit/{subject}', 'QuizzConttroller@edit')->name('quizz.edit');
+            Route::post('update/{subject}', 'QuizzConttroller@update')->name('quizz.update');
+            Route::get('destroy/{subject}', 'QuizzConttroller@destroy')->name('quizz.destroy');
+
+        });
+        Route::group(['prefix' => 'question'], function () {
+            Route::get('/', 'QuestionController@index')->name('question.index');
+            Route::get('show/{subject}', 'QuestionController@show')->name('question.show');
+            Route::get('create', 'QuestionController@create')->name('question.create');
+            Route::post('create', 'QuestionController@store')->name('question.store');
+            Route::get('edit/{subject}', 'QuestionController@edit')->name('question.edit');
+            Route::post('update/{subject}', 'QuestionController@update')->name('question.update');
+            Route::get('destroy/{subject}', 'QuestionController@destroy')->name('question.destroy');
+
+        });
         Route::get('/empty', 'HomeController@empty')->name('empty.index');
         
     }
