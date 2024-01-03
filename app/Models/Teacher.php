@@ -8,7 +8,7 @@ class Teacher extends Model
 {
     use HasTranslations;
     public $translatable = ['Name'];
-public $fillable=['Email','Password','Name','Specialization_id','Gender_id','joining_Date','Address'];
+    public $fillable=['Email','Password','Name','Specialization_id','Gender_id','joining_Date','Address'];
 
 public function speciallztions()
 
