@@ -30,6 +30,9 @@ class RepoServiceProvider extends ServiceProvider
 
         $this->app->bind( 'App\Repositry\SubjectInterface','App\Repositry\SubjectRepositry');
 
+        $this->app->bind( 'App\Repositry\QuizzInterface','App\Repositry\QuizzRepositry');
+        $this->app->bind( 'App\Repositry\QuestionInterface','App\Repositry\QuestionRepositry');
+
     }
     public function boot()
     {
