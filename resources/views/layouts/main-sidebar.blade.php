@@ -98,14 +98,28 @@
                         
                     </li>
 
-                    <!-- menu item mailbox-->
-                    <li>
-                        <a href="mail-box.html"><i class="fa fa-edit"></i><span class="right-nav-text"></span>{{__('mainpage.Exams')}}
-                             </a>
-                    </li>
-                    <!-- menu item Charts-->
-                    
+                    <!-- menu item Online classes-->
+                    <li> <a  href="chart-js.html"><i class="ti-comments"></i><span class="right-nav-text"></span>{{__('mainpage.Online classes')}}</a></li>
 
+                    {{-- menu item quizz --}}
+                    <li>
+                     <a href="javascript:void(1);" data-toggle="collapse" data-target="#quizz">
+                         <div class="pull-left"> <i class="fa fa-edit"></i> Quizz<span
+                             
+                                 class="right-nav-text"></span></div>
+                         <div class="pull-right"><i class="ti-plus"></i></div>
+                         <div class="clearfix"></div>
+                     </a>
+
+                     <ul id="quizz" class="collapse" data-parent="#sidebarnav">
+                         <li> <a href="{{route('quizz.index')}}">قائمة الاختبارات </a> </li>
+                         <li> <a href="{{route('question.index')}}">قائمة الاسئلة </a> </li>        
+
+                     </ul>
+                     
+                 </li>
+
+    
                    
                             <li> <a  href="chart-js.html"><i class="ti-comments"></i><span class="right-nav-text"></span>{{__('mainpage.Online classes')}}</a></li>
 
