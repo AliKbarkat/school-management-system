@@ -11,6 +11,9 @@ class SubjectRepositry implements SubjectInterface{
         //return $this->model->findOrFail($id);
         
     }
+    public function create(){
+     /* if(!empty(request()->all())){*/
+    }
     public function store($request){
         /* $subject = new \App\Models\Subject();*/
         
