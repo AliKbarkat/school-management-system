@@ -130,7 +130,20 @@
                             
                     
                    
-                            {{-- <li> <a href=""><i class="fa fa-check"></i> {{__('mainpage.Absence')}}</a> </li> --}}
+                            <li>
+                                <a href="javascript:void(1);" data-toggle="collapse" data-target="#subject ">
+                                    <div class="pull-left"> <i class="fa fa-cog"></i>The Subject<span
+                                        
+                                            class="right-nav-text"></span></div>
+                                    <div class="pull-right"><i class="ti-plus"></i></div>
+                                    <div class="clearfix"></div>
+                                </a>
+        
+                                <ul id="subject " class="collapse" data-parent="#sidebarnav">
+                                    <li> <a href="{{route('subject.index')}}">المواد الدراسية</a> </li>        
+                                </ul>
+                                
+                            </li>
 
                             <li>
                                 <a href="javascript:void(1);" data-toggle="collapse" data-target="#Attendance ">
