@@ -19,12 +19,14 @@ class SectionController extends Controller
      return view('section.section', compact('Grades'));
     }
 
-    function create(){
-        $grades = Grade::all(); 
-        $classes = ClassRoom::all();
-           $teacher=Teacher::all();
-        return view('section.add_section', compact('grades', 'classes','teacher'));
-     }
+    function create()
+    {
+            $grades = Grade::all(); 
+            $classes = ClassRoom::all();
+            $teacher=Teacher::all();
+            return view('section.add_section', compact('grades', 'classes','teacher'));
+    
+        }
 
     function store(SectionRequest $section)
     {
@@ -43,11 +45,11 @@ class SectionController extends Controller
    function edit($id)
    {
 
-    $grades = Grade::all(); 
-    $classes = ClassRoom::all();
-    $section = Section::find($id);
-       return view('section.edit_section',compact('section','grades','classes'));
-
+        $grades = Grade::all(); 
+        $classes = ClassRoom::all();
+        $section = Section::find($id);
+        return view('section.edit_section',compact('section','grades','classes'));
+ 
    }
    
    function update(SectionRequest $request,$id){
