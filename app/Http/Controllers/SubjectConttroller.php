@@ -21,6 +21,9 @@ return $this->subject->index();
     public function create(){
         return $this->subject->create();
     }
+    public function store(Request $request){
+        return $this->subject->store($request);
+    }
     public function update(Request $request){
         return $this->subject->update($request);
     }
