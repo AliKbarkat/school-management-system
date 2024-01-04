@@ -170,10 +170,10 @@
                         <a class="dropdown-item" href="#"><i class="text-info ti-settings"></i>{{__('mainpage.Settings')}}</a>
                        
                    
-                        <a class="dropdown-item"  href="{{ route('logout') }}"
+                        <a class="dropdown-item"  href="#"
                         onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();"><i class="text-danger ti-unlock"></i>{{__('mainpage.Logout')}}</a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    <form id="logout-form" action="#" method="POST" style="display: none;">
                         @csrf
                     </form>
 

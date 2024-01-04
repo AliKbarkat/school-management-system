@@ -97,10 +97,6 @@
                         </ul>
                         
                     </li>
-
-                    <!-- menu item Online classes-->
-                    <li> <a  href="chart-js.html"><i class="ti-comments"></i><span class="right-nav-text"></span>{{__('mainpage.Online classes')}}</a></li>
-
                     {{-- menu item quizz --}}
                     <li>
                      <a href="javascript:void(1);" data-toggle="collapse" data-target="#quizz">
@@ -119,9 +115,24 @@
                      
                  </li>
 
-    
-                   
-                            <li> <a  href="chart-js.html"><i class="ti-comments"></i><span class="right-nav-text"></span>{{__('mainpage.Online classes')}}</a></li>
+                    {{-- menu item online-classes --}}
+
+                            <li>
+                                <a href="javascript:void(1);" data-toggle="collapse" data-target="#online_clasess">
+                                    <div class="pull-left"> <i class="ti-user"></i> {{__('mainpage.Online classes')}}<span
+                                        
+                                            class="right-nav-text"></span></div>
+                                    <div class="pull-right"><i class="ti-plus"></i></div>
+                                    <div class="clearfix"></div>
+                                </a>
+
+                                <ul id="online_clasess" class="collapse" data-parent="#sidebarnav">
+                                    <li> <a href="#"> </a> الاصال المباشر مع زووم</li>    
+                                    <li> <a href="#"> </a> الاتصال غير المباشر مع زووم</li>        
+
+                                </ul>
+                                
+                            </li>
 
                                {{-- menu item parant --}}
                                <li>
@@ -139,8 +150,11 @@
                                 
                             </li>
 
+                             {{-- menu item setting --}}
 
-                            <li> <a  href="chart-js.html"><i class="fa fa-cog"></i><span class="right-nav-text"></span>{{__('mainpage.setings')}}</a></li>
+                            <li> 
+                                <a  href="{{route('setting.index')}}"><i class="fa fa-cog"></i><span class="right-nav-text"></span>{{__('mainpage.setings')}}</a>
+                            </li>
                             
                     
                    
@@ -173,10 +187,23 @@
                                 </ul>
                                 
                             </li>
-                       
+                                    {{-- menu item parant --}}
 
+                            <li>
+                                <a href="javascript:void(1);" data-toggle="collapse" data-target="#library ">
+                                    <div class="pull-left"> <i class="fa fa-check"></i> library<span
+                                        
+                                            class="right-nav-text"></span></div>
+                                    <div class="pull-right"><i class="ti-plus"></i></div>
+                                    <div class="clearfix"></div>
+                                </a>
+        
+                                <ul id="library " class="collapse" data-parent="#sidebarnav">
+                                    <li> <a href="{{route('library.index')}}" >قائمة الكتب </a> </li>        
+                                </ul>
+                                
+                            </li>
                     
-                
                 </ul>
             </div>
         </div>

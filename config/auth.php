@@ -40,6 +40,18 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'student' => [
+            'driver' => 'session',
+            'provider' => 'students',
+        ],
+        'teacher' => [
+            'driver' => 'session',
+            'provider' => 'teachers',
+        ],
+        'parant' => [
+            'driver' => 'session',
+            'provider' => 'my_parants',
+        ],
 
         'api' => [
             'driver' => 'token',
@@ -71,10 +83,18 @@ return [
             'model' => App\User::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'students' => [
+            'driver' => 'eloquent',
+            'model' => App\models\Student::class,
+        ],
+        'teachers' => [
+            'driver' => 'eloquent',
+            'model' => App\models\Teacher::class,
+        ],
+        'my_parants' => [
+            'driver' => 'eloquent',
+            'model' => App\models\MyParant::class,
+        ],
     ],
 
     /*

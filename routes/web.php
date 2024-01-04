@@ -4,13 +4,26 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-Auth::routes();
-Route::group(['middleware' => ['guest']], function () {
-    Route::get('/', function () {
-        return view('auth.login');
-    });
+// Auth::routes();
+// Route::group(['middleware' => ['guest']], function () {
+//     Route::get('/', function () {
+//         return view('auth.login');
+//     });
 
+// });
+Route::get('/', 'HomeController@index')->name('selection');
+Route::group(['namespace'=>'Auth'],function ()  {
+
+    Route::get('/login/{type}','LoginController@loginForm')->middleware('guest')->name('login.show');
+
+    Route::post('/login','LoginController@login')->name('login');
 });
+
+
+Route::get('/logins', function () {
+    return view('auth.login');
+})->name('dashboard.index');
+
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
@@ -183,6 +196,21 @@ Route::group(
             Route::get('destroy/{subject}', 'QuestionController@destroy')->name('question.destroy');
 
         });
+        Route::group(['prefix' => 'library'], function () {
+            Route::get('/', 'LibraryController@index')->name('library.index');
+            Route::get('show/{subject}', 'LibraryController@show')->name('library.show');
+            Route::get('create', 'LibraryController@create')->name('library.create');
+            Route::post('create', 'LibraryController@store')->name('library.store');
+            Route::get('edit/{subject}', 'LibraryController@edit')->name('library.edit');
+            Route::post('update/{subject}', 'LibraryController@update')->name('library.update');
+            Route::get('destroy/{subject}', 'LibraryController@destroy')->name('library.destroy');
+            Route::get('downlowd/{file_name}', 'LibraryController@download')->name('library.download');
+
+        });
+        
+        Route::get('/setting', 'SettingController@index')->name('setting.index');
+        Route::post('setting/update', 'SettingController@update')->name('settings.update');
+
         Route::get('/empty', 'HomeController@empty')->name('empty.index');
         
     }

@@ -19,20 +19,11 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    //  use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+  public function loginFom($type){
+    return view('auth.login',compact('tybe'));
+  }
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
