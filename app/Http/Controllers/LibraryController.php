@@ -23,7 +23,7 @@ class LibraryController extends Controller
         
     }
     public function edit($id){
-        return $this->library->edit($id);
+        // return $this->library->edit($id);
         
     }
     public function store($request){
