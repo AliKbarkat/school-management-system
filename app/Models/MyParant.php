@@ -3,8 +3,8 @@
 namespace App\models;
 
 use Illuminate\Database\Eloquent\Model;
-
-class MyParant extends Model
+use Illuminate\Foundation\Auth\User as Authenticatable;
+class MyParant extends  Authenticatable
 {
     protected $table = 'my_parants';
     public $fillable = [
