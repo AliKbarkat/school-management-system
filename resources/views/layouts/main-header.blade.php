@@ -29,13 +29,7 @@
             <ul class="nav navbar-nav ml-auto">
 
                 {{-- language website --}}
-                <select name="" id="">
-                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                    <option class="dropdown-item" rel="alternate" value="{{ $localeCode }}">
-                        {{ $properties['name'] }}
-                    </option>
-                    @endforeach
-                </select>
+              
                 <div class="btn-group mb-1">
                     <button type="button" class="btn btn-dark btn-md dropdown-toggle" 
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -119,8 +113,8 @@
                         <div class="dropdown-header">
                             <div class="media">
                                 <div class="media-body">
-                                    <h5 class="mt-0 mb-0"> {{ Auth::user()->name }} </h5>
-                                    <span> {{ Auth::user()->email }} </span>
+                                     <h5 class="mt-0 mb-0"> {{ Auth::user()->name }} </h5>
+                                    <span> {{ Auth::user()->email }} </span> 
                                 </div>
                             </div>
                         </div>
@@ -130,38 +124,7 @@
                         <a class="dropdown-item" href="#"><i class="text-success ti-email"></i>{{__('mainpage.Messages')}}</a>
                         <a class="dropdown-item" href="#"><i class="text-warning ti-user"></i>{{__('mainpage.Profile')}}</a>
 
-                         {{-- <li class="dropdown-menu"> 
-                            <button class="btn btn-secondary  dropdown-toggle" type="button" id="dropdownMenuButton"
-                             data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
-                              @if (App::getLocale() == 'ar')
-                              {{ LaravelLocalization::getCurrentLocaleName() }}
-                              <img src="{{asset('assets/images/flags/EG.png')}}">
-                              @else
-                              {{ LaravelLocalization::getCurrentLocaleName() }}
-                              <img src="{{asset('assets/images/flags/Us.png')}}">
-                              @endif
-                              </button>
-                            <div class="dropdown-menu dropdown-content" aria-labelledby="dropdownMenuButton" >
-                                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                                        <a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                            {{ $properties['native'] }}
-                                        </a>
-                                @endforeach 
-                            </div>
-                        </li>   --}}
-                        <li class="nav-item dropdown">
-                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle " href="#"
-                              id="navbarDropdownMenuLink" role="button" aria-expanded="false">
-                              {{-- <img src="https:" class="rounded-circle" height="22" alt="Avatar"
-                                loading="lazy" /> --}}
-                                test
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                              <li><a class="dropdown-item" href="#">My profile</a></li>
-                              <li><a class="dropdown-item" href="#">Settings</a></li>
-                              <li><a class="dropdown-item" href="#">Logout</a></li>
-                            </ul>
-                          </li>
+                        
                         
                         <a class="dropdown-item" href="#"><i class="text-dark ti-layers-alt"></i>{{__('mainpage.Projects')}} <span
                                 class="badge badge-info">6</span> </a>
@@ -170,11 +133,17 @@
                         <a class="dropdown-item" href="#"><i class="text-info ti-settings"></i>{{__('mainpage.Settings')}}</a>
                        
                    
-                        <a class="dropdown-item"  href="#"
-                        onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();"><i class="text-danger ti-unlock"></i>{{__('mainpage.Logout')}}</a>
-                    <form id="logout-form" action="#" method="POST" style="display: none;">
-                        @csrf
+                        @if(auth('student')->check())
+                        <form method="post" action="{{ route('logout','student') }}">
+                            @elseif(auth('teacher')->check())
+                                <form method="post" action="{{ route('logout','teacher') }}">
+                                    @elseif(auth('parant')->check())
+                                        <form method="post" action="{{ route('logout','parant') }}">
+                                            @else
+                                                <form method="post" action="{{ route('logout','web') }}">
+                                                    @endif
+                                                    @csrf
+                        <button class="dropdown-item"href="#"><i class="text-danger ti-unlock" ></i>Logout </button>
                     </form>
 
                      
