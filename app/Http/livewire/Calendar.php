@@ -25,16 +25,11 @@ class Calendar extends Component
         return  json_encode($events);
     }
 
-    /**
-    * Write code on Method
-    *
-    * @return response()
-    */ 
     public function addevent($event)
     {
         $input['title'] = $event['title'];
         $input['start'] = $event['start'];
-        Event::create($input);
+       return Event::create($input);
     }
     public function eventDrop($event, $oldEvent)
     {
