@@ -28,7 +28,7 @@
                                 <a class="btn btn-default col-lg-3" title="طالب" href="{{route('login.show','student')}}">
                                     <img alt="user-img" width="100px;" src="{{URL::asset('assets/images/student.png')}}">
                                 </a>
-                                <a class="btn btn-default col-lg-3" title="ولي امر" href="{{route('login.show','parent')}}">
+                                <a class="btn btn-default col-lg-3" title="ولي امر" href="{{route('login.show','parant')}}">
                                     <img alt="user-img" width="100px;" src="{{URL::asset('assets/images/parent.png')}}">
                                 </a>
                                 <a class="btn btn-default col-lg-3" title="معلم" href="{{route('login.show','teacher')}}">
