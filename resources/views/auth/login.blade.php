@@ -11,7 +11,7 @@
     @section('title')
     @if($type == 'student')
         تسجيل دخول طالب
-    @elseif($type == 'parent')
+    @elseif($type == 'parant')
         تسجيل دخول ولي امر
     @elseif($type == 'teacher')
     تسجيل دخول معلم
@@ -61,15 +61,18 @@ login-->
                 </div>
                 <div class="col-lg-4 col-md-6 bg-white">
                     <div class="login-fancy pb-40 clearfix">
+                        
+                            
+        
                         @if($type == 'student')
                             <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">تسجيل دخول طالب</h3>
-                        @elseif($type == 'parent')
+                        @elseif($type == 'parant')
                             <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">تسجيل دخول ولي امر</h3>
                         @elseif($type == 'teacher')
                             <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">تسجيل دخول معلم</h3>
                         @else
                             <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">تسجيل دخول ادمن</h3>
-                        @endif
+                        @endif 
                         <form method="POST" action="{{route('login')}}">
                             @csrf
 
