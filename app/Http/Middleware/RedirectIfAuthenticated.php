@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class RedirectIfAuthenticated
 {
     
-    public function handle($request, Closure $next, $guard = null)
+    public function handle($request, Closure $next)
     {
         if (auth('web')->check()) {
             return redirect(RouteServiceProvider::HOME);
@@ -24,5 +24,6 @@ class RedirectIfAuthenticated
         if (auth('parant')->check()) {
             return redirect(RouteServiceProvider::PARENT);
         }
+        return $next($request);
     }
 }
