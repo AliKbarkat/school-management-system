@@ -11,8 +11,8 @@ trait AuthTrait
         if($request->type == 'student'){
             $guardName= 'student';
         }
-        elseif ($request->type == 'parent'){
-            $guardName= 'parent';
+        elseif ($request->type == 'parant'){
+            $guardName= 'parant';
         }
         elseif ($request->type == 'teacher'){
             $guardName= 'teacher';
@@ -28,7 +28,7 @@ trait AuthTrait
         if($request->type == 'student'){
             return redirect()->intended(RouteServiceProvider::STUDENT);
         }
-        elseif ($request->type == 'parent'){
+        elseif ($request->type == 'parant'){
             return redirect()->intended(RouteServiceProvider::PARENT);
         }
         elseif ($request->type == 'teacher'){
