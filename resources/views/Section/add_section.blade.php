@@ -31,6 +31,7 @@
                 <div class="container">
                 <form action="{{route('section.store')}}" method="POST">
                     @csrf
+
                     <label for="">{{__('section.name_section_ar')}}</label><br>
                     <input class="form-control form-control-lg" type="text" name="name_ar" 
                     placeholder="{{__('section.name_section_ar')}}" aria-label=".form-control-lg example">
@@ -38,6 +39,7 @@
                     <small class="form-text text-danger" >{{$message}}</small>
                     @enderror
                     <br>
+
                     <label for="">{{__('section.name_section_en')}}</label><br>
                     <input class="form-control form-control-md" type="text" name="name_en" 
                     placeholder="{{__('section.name_section_en')}}" aria-label=".form-control-lg example">
@@ -45,10 +47,13 @@
                     <small class="form-text text-danger" >{{$message}}</small>
                 @enderror
                 <br>
+
                     <label >{{__('grades.name_grade_ar')}}</label>
                     <br>
-              <select class="form-control form-control-lg"  name="grade_id" >
+              <select class="form-control form-control-lg" id="grade_id" name="grade_id" 
+               onchange="console.log($(this).val())">>
                 <option>--Select type--</option>
+               
               @foreach ($grades as $grade)
               <option value="{{$grade->id}}">{{$grade->name_ar}}</option>
               @error('grade_id')
@@ -60,11 +65,9 @@
                 </select>
                 <br>
                 <label for="">{{__('grades.name_class_ar')}}</label>
-                <select class="form-control form-control-lg "  name="classroom_id" >
-                     @foreach ($classes as $class)
-                    <option value="{{$class->id}}">{{$class->name_class_ar}}</option>
-                    @endforeach 
-                    @error('grade_id')
+                <select class="form-control form-control-lg" id="classroom_id"  name="classroom_id" >
+                
+                    @error('classroom_id')
               <small class="form-text text-danger" >{{$message}}</small>
               @enderror
                         <br>
@@ -89,28 +92,29 @@
 <!-- row closed -->
 @endsection
 @section('js')
-<script>
-    $(document).ready(function () {
-        $('select[name="grade_id"]').on('change', function () {
-            var grade_id = $(this).val();
-            if (grade_id) {
-                $.ajax({
-                    url: {{ URL::to('classes') }}/ + grade_id,
-                    type: "GET",
-                    dataType: "json",
-                    success: function (data) {
-                        $('select[name="classroom_id"]').empty();
-                        $.each(data, function (key, value) {
-                            $('select[name="classroom_id"]').append('class_id');
-                        });
-                    },
+
+    <script>
+                $(document).ready(function () {
+                    $('select[name="grade_id"]').on('change', function () {
+                        var grade_id = $(this).val();
+                        if (grade_id) {
+                            $.ajax({
+                                token:arguments,
+                                url: '{{ URL::to('/classes') }}/' + grade_id,
+                                type: "GET",
+                                dataType: "json",
+                                success: function (data) {
+                                    $('select[name="classroom_id"]').empty();
+                                    $.each(data, function (key, value) {
+                                        $('select[name="classroom_id"]').append('<option value="' + key + '">' + value + '</option>');
+                                    });
+                                },
+                            });
+                        } else {
+                            console.log('AJAX load did not work');
+                        }
+                    });
                 });
-            } else {
-                console.log('AJAX load did not work');
-            }
-        });
-    });
+            </script>
 
-
-</script>
 @endsection

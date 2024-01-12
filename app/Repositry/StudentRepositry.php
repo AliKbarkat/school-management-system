@@ -140,8 +140,9 @@ public function showStudent($id)
 {
 
   $student= Student::findOrfail($id);
-   return view('Students.show_student',compact('student'));
-}
+   return view('students.show_student',compact('student'));
+
+  }
 
 
 public function uploadFile($request)

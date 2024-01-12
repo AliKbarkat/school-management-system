@@ -15,31 +15,31 @@ class SpecializationSeeder extends Seeder
     {
         DB::table('specializations')->delete();
 
-        $specializations = [
+        // $specializations = [
 
-            [
-                'en' => 'Arabic',
-                'ar' => 'عربي'
-            ],
-            [
-                'en' => 'English',
-                'ar' => 'انكليزي'
-            ],
-            [
-                'en' => 'vantor',
-                'ar' => 'علوم',
-            ],
-            [
-                'en' => 'computer',
-                'ar' => 'حاسوب',
-            ],
+        //     [
+        //         'en' => 'Arabic',
+        //         'ar' => 'عربي'
+        //     ],
+        //     [
+        //         'en' => 'English',
+        //         'ar' => 'انكليزي'
+        //     ],
+        //     [
+        //         'en' => 'vantor',
+        //         'ar' => 'علوم',
+        //     ],
+        //     [
+        //         'en' => 'computer',
+        //         'ar' => 'حاسوب',
+        //     ],
 
-        ];
+        // ];
 
-        foreach ($specializations as $R) {
-            Specialization::create(['Name' => $R]);
+        // foreach ($specializations as $R) {
+        //     Specialization::create(['name' => $R]);
 
-        }
+        // }
 
     }
 }

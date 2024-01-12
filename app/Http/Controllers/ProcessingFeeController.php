@@ -16,7 +16,7 @@ class ProcessingFeeController extends Controller
  }
 
     public function index(){
-        
+        return $this->prossing->index();
     }
 
     public function show($id){

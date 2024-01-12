@@ -15,34 +15,31 @@ class CreateMyParantsTable extends Migration
     {
         Schema::create('my_parants', function (Blueprint $table) {
             $table->id();
-            $table->string('Email');
-            $table->string('Password');
-            //fatherinfomation
+            $table->string('email');
+            $table->string('password');
 
-            $table->string('Name_Father');
-            $table->string('Name_Father_en');
-            $table->string('Job_Father');
-            $table->string('Job_Father_en');
-            $table->string('National_ID_Father');
-            $table->string('Passport_ID_Father');
-            $table->string('Phone_Father');
-            $table->bigInteger('Nationally_father_id')->unsigned();
-            $table->bigInteger('Blood_Type_Father_id')->unsigned();
-            $table->bigInteger('Religion_Father_id')->unsigned();
-            $table->string('Address_Father');
-            //Mother infomation
+            //fatherinfomation
+            $table->string('name_father');
+            $table->string('job_father');
+            $table->string('national_id_father');
+            $table->string('passport_id_father');
+            $table->string('phone_father');
+            $table->bigInteger('nationally_father_id')->unsigned();
+            $table->bigInteger('blood_type_father_id')->unsigned();
+            $table->bigInteger('religion_father_id')->unsigned();
+            $table->string('address_father');
             
-            $table->string('Name_Mother');
-            $table->string('Name_Mother_en');
-            $table->string('Job_Mother');
-            $table->string('Job_Mother_en');
-            $table->string('National_ID_Mother');
-            $table->string('Passport_ID_Mother');
-            $table->string('Phone_Mother');
-            $table->bigInteger('Nationally_Mother_id')->unsigned();
-            $table->bigInteger('Blood_Type_Mother_id')->unsigned();
-            $table->bigInteger('Religion_Mother_id')->unsigned();
-            $table->string('Address_Mother');
+
+            //Mother infomation
+            $table->string('name_mother');
+            $table->string('job_mother');
+            $table->string('national_id_mother');
+            $table->string('passport_id_mother');
+            $table->string('phone_mother');
+            $table->bigInteger('nationally_mother_id')->unsigned();
+            $table->bigInteger('blood_type_mother_id')->unsigned();
+            $table->bigInteger('religion_mother_id')->unsigned();
+            $table->string('address_mother');
             $table->timestamps();
         });
     }

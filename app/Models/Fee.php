@@ -11,15 +11,18 @@ class Fee extends Model
     public $translatable = ['title'];
     public $guarded=[];
 
-    public function grades(){
+    public function grades()
+    {
         return $this->belongsTo(Grade::class,'grade_id');
     }
-    public function classes(){
+    public function classes()
+    {
         return $this->belongsTo(ClassRoom::class,'classroom_id');
 
     }
-    public function fee_invoices(){
-        return $this->hasMany(Fee_invoice::class);
+    public function fee_invoices()
+    {
+        return $this->hasMany(FeeInvoice::class);
     }
 
 }

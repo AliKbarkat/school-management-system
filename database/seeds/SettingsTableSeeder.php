@@ -22,7 +22,7 @@ class SettingsTableSeeder extends Seeder
             ['key' => 'end_second_term', 'value' => '01-03-2024'],
             ['key' => 'phone', 'value' => '0943691731'],
             ['key' => 'address', 'value' => 'حلب'],
-            ['key' => 'school_email', 'value' => 'ali_781995@gmail.com'],
+            ['key' => 'school_email', 'value' => 'ali_781995@hotmail.com'],
             ['key' => 'logo', 'value' => '1.jpg'],
         ];
         DB::table('settings')->insert($data);

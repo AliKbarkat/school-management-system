@@ -2,7 +2,7 @@
 @section('css')
 
 @section('title')
-    empty
+  {{ trans('mainpage.School_management') }}/{{trans('teachers.add_teacher')}}
 @stop
 @endsection
 @section('page-header')
@@ -10,12 +10,12 @@
 <div class="page-title">
     <div class="row">
         <div class="col-sm-6">
-            <h4 class="mb-0"> ncvlxcnvxcnvxcv</h4>
+            <h4 class="mb-0">{{trans('teachers.add_teacher')}}</h4>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right ">
                 <li class="breadcrumb-item"><a href="#" class="default-color">Home</a></li>
-                <li class="breadcrumb-item active">Page Title</li>
+                <li class="breadcrumb-item active">{{trans('teachers.add_teacher')}}</li>
             </ol>
         </div>
     </div>
@@ -36,15 +36,15 @@
                           <div class="form-row">
                            
                             <div class="col">
-                                <label for="title">{{trans('Teacher.Email')}}</label>
-                                <input type="email" name="Email"  class="form-control">
+                                <label for="title">{{trans('teachers.email')}}</label>
+                                <input type="email" name="email"  class="form-control">
                                 @error('Email')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="col">
-                                <label for="title">{{trans('Teacher.Password')}}</label>
-                                <input type="password" name="Password" class="form-control" >
+                                <label for="title">{{trans('teachers.password')}}</label>
+                                <input type="password" name="password" class="form-control" >
                                 @error('Password')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
@@ -52,48 +52,45 @@
                           </div>
                           <div class="form-row">
                             <div class="col">
-                                <label for="title">{{trans('Teacher.Name')}}</label>
-                                <input type="text" name="Name_ar" class="form-control" >
+                                <label for="title">{{trans('teachers.name_ar')}}</label>
+                                <input type="text" name="name_ar" class="form-control" >
                                 @error('Name_ar')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="col">
-                                <label for="title">{{trans('Teacher.Name_en')}}</label>
-                                <input type="text" name="Name_en" class="form-control" >
+                                <label for="title">{{trans('teachers.name_en')}}</label>
+                                <input type="text" name="name_en" class="form-control" >
                                 @error('Name_en')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                          </div> 
                          <div class="form-row">
-                            <div class="col-md-3">
-                                <label for="title">{{trans('Teacher.joining_Date')}}</label>
-                                <input type="date" name="joining_Date" class="form-control">
-                                @error('joining_Date')
+                            <div class="col">
+                                <label for="title">{{trans('teachers.joining_date')}}</label>
+                                <input type="date" name="joining_date" class="form-control">
+                                @error('joining_date')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-
-        
-        
-                          <div class="form-row">
                             <div class="form-group col">
-                                <label for="inputState">{{trans('Teacher.Gender')}}</label>
-                                <select class="custom-select my-1 mr-sm-2" name="Gender_id">
-                                    <option selected>{{trans('Teacher.Choose')}}...</option>
+                                <label for="inputState">{{trans('teachers.gender')}}</label>
+                                <select class="custom-select my-1 mr-sm-2" name="gender_id">
+                                    <option selected>{{trans('teachers.choose')}}...</option>
                                     @foreach($gender as $g)
                                         <option value="{{$g->id}}">{{$g->Name}}</option>
                                     @endforeach
                                 </select>
-                                @error('Gender_id')
+                                @error('gender_id')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
+        
                             <div class="form-group col">
-                                <label for="inputZip">{{trans('Teacher.specialization')}}</label>
+                                <label for="inputZip">{{trans('teachers.specializations')}}</label>
                                 <select class="custom-select my-1 mr-sm-2" name="specialization_id">
-                                    <option selected>{{trans('my_parant.Choose')}}...</option>
+                                    <option selected>{{trans('teachers.choose')}}...</option>
                                     @foreach($specialization as $s)
                                         <option value="{{$s->id}}">{{$s->Name}}</option>
                                     @endforeach
@@ -102,14 +99,19 @@
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                         </div>  
-                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1">{{trans('Teacher.Address')}}</label>
-                            <input class="form-control" name="Address" id="exampleFormControlTextarea1">
-                            @error('Address')
+                    
+                         </div>
+                            <br> 
+                         <div class="form-row">
+                            <label for="exampleFormControlTextarea1">{{trans('teachers.address')}}</label>
+                         <textarea class="form-control"name="address"  id="exampleFormControlTextarea1" rows="4"></textarea>
+                        
+                            @error('address')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                         </div> 
+                         </div>
+                        </div> 
+                       
                          <br>
                          <input type="submit" class="btn btn-success btn-sm btn-lg pull-right">
                         </form>

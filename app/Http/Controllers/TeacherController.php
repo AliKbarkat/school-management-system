@@ -4,6 +4,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\TeacherRequest;
 use App\Repositry\TeacherRepositry;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Return_;
 
 class TeacherController extends Controller
 {
@@ -14,8 +15,8 @@ class TeacherController extends Controller
     }
     function index()
     {
-        $Teachers = $this->Teacher->getAllTeacher();
-        return view('teachers.teachers',compact('Teachers'));
+        $teachers = $this->Teacher->getAllTeacher();
+        return view('teachers.teachers',compact('teachers'));
     }
     function create()
     {
@@ -26,8 +27,7 @@ class TeacherController extends Controller
     }
     function store(TeacherRequest $request)
     {
-
-    return $this->Teacher->TeacherStore($request);
+    return $this->Teacher->teacherStore($request);
     }
     function edit($id){
     $Teacher=$this->Teacher->editTeacher($id); 
@@ -36,13 +36,13 @@ class TeacherController extends Controller
       return view('teachers.edit_teacher',compact( 'gender','specialization','Teacher'));
     }
 
-    function update(TeacherRequest $request)
+    function update(Request $request)
     {
 
-    return $this->Teacher->TeacherUpdate($request);
+    return $this->Teacher->teacherUpdate($request);
     }
-    function destroy(TeacherRequest $request){
-    return $this->Teacher->DeleteTeacher($request);
+    function destroy($request){
+     return $this->Teacher->deleteTeacher($request);
 
     }
 

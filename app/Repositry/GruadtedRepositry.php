@@ -10,17 +10,23 @@ use Illuminate\Support\Facades\DB;
 
 class GruadtedRepositry implements GraduatedInterface
 {
-  function index(){
+  public function index()
+  {
   
      $student=Student::onlyTrashed()->get();
      return view('promotion.index',compact('$graduted'));
+  
   }
- public function createGraduted(){
-   $grades=Grade::all();
-    return view('Graduated.create',compact('grades'));
+  public function createGraduted()
+  {
+
+    $grades=Grade::all();
+    return view('graduated.create',compact('grades'));
+  
   }
  
-  public function softDelete($request){
+  public function softDelete($request)
+  {
 
     $students=Student::where('grade_id',$request->grade_id)->where('classroom_id',$request->classroom_id)->where('section_id',$request->section_id);
   
@@ -31,16 +37,23 @@ class GruadtedRepositry implements GraduatedInterface
     foreach($students as $student){
       $ides=explode('.',$student->id);
     Student::whereIn('id',$ides)->Delete();
-}
-return redirect()->back();
-  }
-public function returndData($request){
+    }
+      return redirect()->back();
+ 
+ }  
+ public function returndData($request)
+ {
+
   Student::onlyTrashed()->where('id',$request->id)->restore();
   return redirect()->back();
-}
 
-public function destroy($request){
+ }
+
+ public function destroy($request)
+ {
+
   Student::onlyTrashed()->where('id',$request->id)->forceDelete();
   return redirect()->back();
-}
+
+ }
 }

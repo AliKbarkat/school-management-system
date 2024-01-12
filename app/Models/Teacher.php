@@ -7,19 +7,27 @@ use Spatie\Translatable\HasTranslations;
 class Teacher extends Model
 {
     use HasTranslations;
-    public $translatable = ['Name'];
-    public $fillable=['Email','Password','Name','Specialization_id','Gender_id','joining_Date','Address'];
+    public $translatable = ['name'];
+    public $fillable=[
+        'email',
+        'password',
+        'name',
+        'specialization_id',
+        'gender_id',
+        'joining_date',
+        'address'
+    ];
 
 public function speciallztions()
 
  {
-    return $this->belongsTo(Specialization::class,'Specialization_id');
+    return $this->belongsTo(Specialization::class,'specialization_id');
  }
 
 public function genders()
 
 {
-    return $this->belongsTo(Gender::class,'Gender_id');
+    return $this->belongsTo(Gender::class,'gender_id');
 }
 
 }

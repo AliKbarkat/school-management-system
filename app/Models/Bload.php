@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bload extends Model
 {
-    public $fillable = ['Name'];
+    public $fillable = ['name'];
 
 }

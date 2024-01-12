@@ -17,27 +17,27 @@ class TeacherRequest extends FormRequest
     {
         return [
 
-            'Email' =>'required|unique:teachers,Email,'.$this->id,
-            'Password' =>'required',
-            'Name_en' =>'required',
-            'Name_ar' =>'required',
-            'Specialization_id' =>'required',
-            'Gender_id' =>'required',
-            'joining_Date' =>'required',
-            'Address' =>'required', 
+            'email' =>'required|unique:teachers,Email,'.$this->id,
+            'password' =>'required',
+            'name_en' =>'required',
+            'name_ar' =>'required',
+            'specialization_id' =>'required',
+            'gender_id' =>'required',
+            'joining_date' =>'required',
+            'address' =>'required', 
         ];
     }
     public function messages()
     {
         return [
-            'Email.required' => 'this is input required',
-            'Password.required' =>'this is input required'  ,
-            'Name_en.required' => 'this is input required',
-            'Name_ar.required' => 'this is input required',
-            'Specialization_id.required'=> 'this is input required' ,
-            'Gender_id.required'=> 'this is input required' ,
-            'joining_Date.required' => 'this is input required',
-            'Address.required' => 'this is input required',
+            'email.required' => 'this is input required',
+            'password.required' =>'this is input required'  ,
+            'name_en.required' => 'this is input required',
+            'name_ar.required' => 'this is input required',
+            'specialization_id.required'=> 'this is input required' ,
+            'gender_id.required'=> 'this is input required' ,
+            'joining_date.required' => 'this is input required',
+            'address.required' => 'this is input required',
         ];
     }
 }

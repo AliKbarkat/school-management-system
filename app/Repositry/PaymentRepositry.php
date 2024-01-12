@@ -31,6 +31,8 @@ class PaymentRepositry implements PaymentInterface{
         DB::beginTransaction();
  
         try{
+
+            // تعديل البيانات في جدول سندات الصرف
            $payment=new PaymentStudent();
            $payment->date=date('Y-M-D');
            $payment->student_id=$request->student_id;
@@ -38,6 +40,7 @@ class PaymentRepositry implements PaymentInterface{
            $payment->description=$request->description;
            $payment->save();
 
+            // حفظ البيانات في جدول الصندوق
            $faund_account=new FoundAcount();
            $faund_account->date=date('y-m-d');
            $faund_account->payment_id=$payment->id;
@@ -46,6 +49,7 @@ class PaymentRepositry implements PaymentInterface{
            $faund_account->descreption=$request->descreption;
            $faund_account->save();
 
+            // حفظ البيانات في جدول حساب الطلاب
            $student_account=new StudentAccount();
            $student_account->date=date('Y-M-D');
            $student_account->tybe='recepit';
@@ -73,6 +77,8 @@ class PaymentRepositry implements PaymentInterface{
         DB::beginTransaction();
  
         try{
+
+            // تعديل البيانات في جدول سندات الصرف
             $payment=PaymentStudent::findOrfail($request->id);
             $payment->date=date('Y-M-D');
             $payment->student_id=$request->student_id;
@@ -80,6 +86,7 @@ class PaymentRepositry implements PaymentInterface{
             $payment->description=$request->description;
             $payment->save();
  
+            // حفظ البيانات في جدول الصندوق
             $faund_account=FoundAcount::where('paymant_id',$request->id)->first();
             $faund_account->date=date('y-m-d');
             $faund_account->payment_id=$payment->id;
@@ -88,6 +95,8 @@ class PaymentRepositry implements PaymentInterface{
             $faund_account->descreption=$request->descreption;
             $faund_account->save();
  
+
+            // حفظ البيانات في جدول حساب الطلاب
             $student_account=StudentAccount::where('paymant_id',$request->id)->first();
             $student_account->date=date('Y-M-D');
             $student_account->tybe='recepit';
@@ -104,8 +113,17 @@ class PaymentRepositry implements PaymentInterface{
          }
     }
 
-    public function delete($request)
+    public function destroy($request)
     {
 
+        try {
+            PaymentStudent::destroy($request->id);
+            toastr()->error(trans('messages.Delete'));
+            return redirect()->back();
+        }
+
+        catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
     }  
 }

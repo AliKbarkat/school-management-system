@@ -22,4 +22,7 @@ return [
     'Profile' => 'Profile',
     'Projects' => 'Projects',
     'Settings' => 'Settings',
+    'Student_information'=>'Student Information',
+    'list_students'=>'List Students',
+    'Promotion'=>'Promotion',
 ];

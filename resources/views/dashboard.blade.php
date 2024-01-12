@@ -223,10 +223,10 @@
                                                 <thead>
                                                 <tr  class="table-info text-danger">
                                                     <th>#</th>
-                                                    <th>اسم المعلم</th>
-                                                    <th>النوع</th>
-                                                    <th>تاريخ التعين</th>
-                                                    <th>التخصص</th>
+                                                    <th>{{ trans('teachers.name_ar') }}</th>
+                                                    <th>{{ trans('teachers.gender') }}</th>
+                                                    <th> {{ trans('teachers.joining_date') }}</th>
+                                                    <th>{{ trans('teachers.specializations') }}</th>
                                                     <th>تاريخ الاضافة</th>
                                                 </tr>
                                                 </thead>
@@ -235,10 +235,10 @@
                                                     <tbody>
                                                     <tr>
                                                         <td>{{$loop->iteration}}</td>
-                                                        <td>{{$teacher->name}}</td>
-                                                        <td>{{$teacher->genders->name}}</td>
-                                                        <td>{{$teacher->Joining_Date}}</td>
-                                                        <td>{{$teacher->specializations->name}}</td>
+                                                        <td>{{$teacher->Name}}</td>
+                                                        <td>{{$teacher->genders->Name}}</td>
+                                                        <td>{{$teacher->joining_Date}}</td>
+                                                        <td>{{$teacher->speciallztions->Name}}</td>
                                                         <td class="text-success">{{$teacher->created_at}}</td>
                                                         @empty
                                                             <td class="alert-danger" colspan="8">لاتوجد بيانات</td>

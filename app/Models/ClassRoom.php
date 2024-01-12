@@ -10,18 +10,17 @@ class ClassRoom extends Model
 {
     public $fillable = [
         'id',
-        'name_class_ar',
-        'name_class_en',
+        'name',
         'grade_id',
 
     ];
-  //relationship with grad
+  //relationship with grade
     public function grade()
     {
         return $this->BelongsTo(Grade::class,'grade_id','id','classrooms');
     }
   //relation ship with section
-    public function Section()
+    public function section()
     {
 
         return $this->hasMany(Section::class);

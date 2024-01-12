@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
 @section('title')
-    {{trans('Students_trans.Student_details')}}
+    {{trans('students.student_details')}}
 @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
 @section('PageTitle')
-    {{trans('Students_trans.Student_details')}}
+    {{trans('students.student_details')}}
 @stop
 <!-- breadcrumb -->
 @endsection
@@ -25,12 +25,12 @@
                                 <li class="nav-item">
                                     <a class="nav-link active show" id="home-02-tab" data-toggle="tab" href="#home-02"
                                        role="tab" aria-controls="home-02"
-                                       aria-selected="true">{{trans('Students_trans.Student_details')}}</a>
+                                       aria-selected="true">{{trans('students.student_details')}}</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="profile-02-tab" data-toggle="tab" href="#profile-02"
                                        role="tab" aria-controls="profile-02"
-                                       aria-selected="false">{{trans('Students_trans.Attachments')}}</a>
+                                       aria-selected="false">{{trans('students.image_tybe')}}</a>
                                 </li>
                             </ul>
                             <div class="tab-content">
@@ -39,31 +39,31 @@
                                     <table class="table table-striped table-hover" style="text-align:center">
                                         <tbody>
                                         <tr>
-                                            <th scope="row">{{trans('Students_trans.name')}}</th>
+                                            <th scope="row">{{trans('students.Name')}}</th>
                                             <td>{{ $student->name }}</td>
-                                            <th scope="row">{{trans('Students_trans.email')}}</th>
+                                            <th scope="row">{{trans('students.email')}}</th>
                                             <td>{{$student->email}}</td>
-                                            <th scope="row">{{trans('Students_trans.gender')}}</th>
+                                            <th scope="row">{{trans('students.gender')}}</th>
                                             <td>{{$student->gender->Name}}</td>
-                                            <th scope="row">{{trans('Students_trans.Nationality')}}</th>
+                                            <th scope="row">{{trans('students.national')}}</th>
                                             <td>{{$student->nationalite->Name}}</td>
                                         </tr>
 
                                         <tr>
-                                            <th scope="row">{{trans('Students_trans.Grade')}}</th>
+                                            <th scope="row">{{trans('students.grades')}}</th>
                                             <td>{{ $student->grade->name_ar }}</td>
-                                            <th scope="row">{{trans('Students_trans.classrooms')}}</th>
+                                            <th scope="row">{{trans('students.class')}}</th>
                                             <td>{{$student->classroom->name_class_ar}}</td>
-                                            <th scope="row">{{trans('Students_trans.section')}}</th>
+                                            <th scope="row">{{trans('students.section')}}</th>
                                             <td>{{$student->section->name_ar}}</td>
-                                            <th scope="row">{{trans('Students_trans.Date_of_Birth')}}</th>
+                                            <th scope="row">{{trans('students.joining_date')}}</th>
                                             <td>{{ $student->date_Birth}}</td>
                                         </tr>
 
                                         <tr>
-                                            <th scope="row">{{trans('Students_trans.parent')}}</th>
+                                            <th scope="row">{{trans('students.parant')}}</th>
                                             <td>{{ $student->myParent->Name_Father}}</td>
-                                            <th scope="row">{{trans('Students_trans.academic_year')}}</th>
+                                            <th scope="row">{{trans('students.academic_year')}}</th>
                                             <td>{{ $student->academic_year }}</td>
                                             <th scope="row"></th>
                                             <td></td>
@@ -83,17 +83,17 @@
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label
-                                                            for="academic_year">{{trans('Students_trans.Attachments')}}
+                                                            for="academic_year">{{trans('students.image_tybe')}}
                                                             : <span class="text-danger">*</span></label>
 
                                                         <input type="file" accept="image/*" name="photos[]" multiple required>
-                                                        {{-- <input type="hidden" name="name" value="{{$student->name}}"> --}}
-                                                        {{-- <input type="hidden" name="imageable_id" value="{{$student->id}}"> --}}
+                                                        <input type="hidden" name="name" value="{{$student->name}}">
+                                                        <input type="hidden" name="imageable_id" value="{{$student->id}}">
                                                     </div>
                                                 </div>
                                                 <br><br>
                                                 <button type="submit" class="button button-border x-small">
-                                                       {{trans('Students_trans.submit')}}
+                                                       {{trans('students.submit')}}
                                                 </button>
                                             </form>
                                         </div>
@@ -103,13 +103,14 @@
                                             <thead>
                                             <tr class="table-secondary">
                                                 <th scope="col">#</th>
-                                                <th scope="col">{{trans('Students_trans.filename')}}</th>
-                                                <th scope="col">{{trans('Students_trans.created_at')}}</th>
-                                                <th scope="col">{{trans('Students_trans.Processes')}}</th>
+                                                <th scope="col">{{trans('students.file_name')}}</th>
+                                                <th scope="col">{{trans('students.created_at')}}</th>
+                                                <th scope="col">{{trans('students.procsess')}}</th>
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            @foreach($student->images as $attachment)
+
+                                            {{-- @foreach($image as $attachment)
                                                 <tr style='text-align:center;vertical-align:middle'>
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$attachment->file_name}}</td>
@@ -117,7 +118,7 @@
                                                      
                                                     <td colspan="2">
                                                          <a class="btn btn-outline-info btn-sm"
-                                                           {{-- href="{{url('Download_attachment')}}/{{$attachment->student_name}}/{{$attachment->file_name}}" --}}
+                                                           href="{{url('Download_attachment')}}/{{$attachment->student_name}}/{{$attachment->file_name}}"
                                                            role="button"><i class="fa fa-download"></i>&nbsp; </a>
 
                                                         <button type="button" class="btn btn-outline-danger btn-sm fa fa-trash"
@@ -129,7 +130,8 @@
                                                     </td>
                                                 </tr>
                                                 @include('pages.Students.delete_img')
-                                            @endforeach
+                                            @endforeach --}}
+
                                             </tbody>
                                         </table>
                                     </div>

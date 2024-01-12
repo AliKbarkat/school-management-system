@@ -14,7 +14,34 @@ class FeeInvoiceController extends Controller
    
  }
 
-public function show($id){
+
+public function index(){
+    return $this->fee_invoice->index();
+    
+}
+
+public function show($id)
+{
     return $this->fee_invoice->show($id);
+
+}
+public function store($request){
+    return $this->fee_invoice->store($request);
+
+}
+
+public function edit($id){
+    return $this->fee_invoice->edit($id);
+
+}
+
+public function update($request){
+    return $this->fee_invoice->update($request);
+
+}
+
+public function destroy($request){
+    return $this->fee_invoice->destroy($request);
+
 }
 }

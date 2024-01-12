@@ -3,14 +3,17 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
 class Grade extends Model
 {
+    use HasTranslations;
+    public $translatable = ['name'];
+    
     public $fillable = [
         'id',
-        'name_en',
-        'name_ar',
-        'procsess',
+        'name',
+        'descreption',
     ];
     // The relationship of grades with the academic levels for each grade
     public function classes()

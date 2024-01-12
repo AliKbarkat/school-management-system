@@ -24,7 +24,7 @@ class CreateStudentsTable extends Migration
             $table->foreign('nationalite_id')->references('id')->on('nationalities')->onDelete('cascade');
             $table->bigInteger('bload_id')->unsigned();
             $table->foreign('bload_id')->references('id')->on('bloads')->onDelete('cascade');
-            $table->date('date_Birth');
+            $table->date('date_birth');
             $table->bigInteger('grade_id')->unsigned();
             $table->foreign('grade_id')->references('id')->on('grades')->onDelete('cascade');
             $table->bigInteger('classroom_id')->unsigned();

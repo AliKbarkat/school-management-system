@@ -15,6 +15,8 @@ class CreateGradutedsTable extends Migration
     {
         Schema::create('graduteds', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+			$table->string('notes', 50)->nullable();
             $table->timestamps();
         });
     }

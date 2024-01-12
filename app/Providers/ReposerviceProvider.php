@@ -22,7 +22,7 @@ class RepoServiceProvider extends ServiceProvider
 
         $this->app->bind('App\Repositry\ReceiptStudentIntrface','App\Repositry\ReceiptStudentRepositry');
    
-        $this->app->bind('App\Repositry\ProcessingFeeInterface', 'App\Repositry\ProcessingFeeRepositry');
+        $this->app->bind('App\Repositry\ProcessingFeeInterface', 'App\Repositry\ProcessingFeeRepsitry');
     
         $this->app->bind('App\Repositry\PaymentInterface','App\Repositry\PaymentRepositry');
 

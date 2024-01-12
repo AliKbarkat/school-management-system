@@ -22,7 +22,7 @@ class LoginController extends Controller
     |
     */
 
-      // use AuthenticatesUsers;
+    //    use AuthenticatesUsers;
       use AuthTrait;
 
     public function __construct()

@@ -7,7 +7,7 @@ use App\Models\Grade;
 use App\models\Subject;
 use App\models\Teacher;
 
-class SubjectRepositry implements SubjectInterface{
+class SubjectRepositry  implements SubjectInterface{
     public function index()
     {
         $subjects=Subject::all();
@@ -15,10 +15,6 @@ class SubjectRepositry implements SubjectInterface{
     
     }
 
-    public function show($id){
-        //return $this->model->findOrFail($id);
-        
-    }
     public function create()
     {
     $grades =Grade::get();
@@ -66,8 +62,16 @@ class SubjectRepositry implements SubjectInterface{
         
     }
 
-    public function delete($request){
-        /*  $subject=$this->show($request->id);*/
-        
+    public function destroy($request)
+    {
+        try {
+            Subject::destroy($request->id);
+            toastr()->error(trans('messages.Delete'));
+            return redirect()->back();
+        }
+
+        catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
     }
 }

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StudentRequest;
+use App\models\Image;
+use App\Models\Student;
 use App\Repositry\StudentRepositryInterface;
 use Illuminate\Http\Request;
 class StudentController extends Controller
@@ -45,8 +47,12 @@ class StudentController extends Controller
        return $this->student->destroyStudent($request);
     }
 
-    public function show($id){
-      return $this->student->showStudent($id);
+    public function show($id)
+    {
+      
+     
+       return $this->student->showStudent($id);
+    
     }
     public function uploadFile(Request $request){
 

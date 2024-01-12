@@ -58,15 +58,5 @@ class AttendanceRepositry  implements AttendanceInterface{
         }
     }
 
-    public function edit($id){
-        
-    }
 
-    public function update($request){
-        
-    }
-
-    public function delete($request){
-        
-    }
 }

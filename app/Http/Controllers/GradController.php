@@ -13,7 +13,8 @@ class GradController extends Controller
 {
     function index()
     {
-        $grades = Grade::select('id', 'name_' . LaravelLocalization::getCurrentLocale() . ' as name', 'procsess')->get();
+        $grades = Grade::select('id', 'name_' . LaravelLocalization::getCurrentLocale() 
+        . ' as name', 'procsess')->get();
         return view('grade.grades', compact('grades'));
     }
     function create()
@@ -36,7 +37,7 @@ class GradController extends Controller
         Grade::select(['name_en', 'name_ar', 'procsess',]);
         return view('grade.edit_grade ', compact('grade'));
     }
-    function update(GradeRequest $request, $grade_id)
+    function update(Request $request, $grade_id)
     {
         $id = Grade::findOrfail($grade_id);
         if (!$id)
@@ -45,14 +46,17 @@ class GradController extends Controller
         $id->update($request->all());
         return redirect()->route('grad.index');
     }
-    function destroy(GradeRequest $request)
+    function destroy(Request $request)
     {
         $class_id = ClassRoom::where('grade_id', $request->id)->pluck('grade_id');
-        if ($class_id->count() == 0) {
-        Grade::findorfail($request->id)->delete();
+        if ($class_id->count() == 0) 
+        {
+        
+            Grade::findorfail($request->id)->delete();
             return redirect()->route('grad.index');
-        } else {
-            return redirect()->back()->withErrors($request);
+        } else 
+        {
+            toastr()->error('يوجد داخل المرحلة صفوف');
         }
 
     }

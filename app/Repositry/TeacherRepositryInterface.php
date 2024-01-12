@@ -15,5 +15,5 @@ interface TeacherRepositryInterface
 
   public function teacherUpdate($request);
 
-  public function deleteTeacher($id);
+  public function deleteTeacher($request);
 }

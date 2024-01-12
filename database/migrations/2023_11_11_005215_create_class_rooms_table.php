@@ -15,8 +15,7 @@ class CreateClassroomsTable extends Migration
     {
         Schema::create('class_rooms', function (Blueprint $table) {
             $table->id();
-            $table->text('name_class_ar');
-            $table->text('name_class_en');
+            $table->text('name');
             $table->bigInteger('grade_id')->unsigned();
             $table->timestamp('created_at');
             $table->timestamp('updated_at')->nullable();

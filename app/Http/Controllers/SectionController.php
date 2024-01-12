@@ -65,9 +65,11 @@ class SectionController extends Controller
 
      return redirect()->back();  
      }
-    function getclasses($id)
+   public function getClasses($id)
     {
-        $list_class = Classroom::where('grade_id', $id)->pluck('name_class_ar', 'id');
+        // return $id;
+        $list_class = Classroom::whereIn('grade_id', $id)->pluck('name_class_ar','id');
+
         return $list_class;
 
     }

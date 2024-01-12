@@ -13,7 +13,7 @@ class LibraryRepositry implements LibraryInterface{
         $library=Library::all();
         return view('library.index',compact('library'));
     }
-    public function download($id)
+    public function download($file_name)
     {
 
         return response()->download(public_path('attchments/library/'.$file_name));
@@ -50,8 +50,12 @@ class LibraryRepositry implements LibraryInterface{
             return $e;
 }
     }
-    public function delete($id){
+    public function delete($request){
 
+        $this->deleteFile($request->file_name);
+        library::destroy($request->id);
+        toastr()->error(trans('messages.Delete'));
+        return redirect()->route('library.index');
     }
     public function update($request){
 

@@ -20,10 +20,10 @@ class FeesRepositry  implements FeesInterface
     }
     public function createFees()
     {
-        $Grades=Grade::all();
+        $grades=Grade::all();
         $class=ClassRoom::all();
         $section=Section::all();
-        return view('fees.add_fees',compact('Grades','class','section'));
+        return view('fees.add_fees',compact('grades','class','section'));
     }
  
     public function storeFees($request)

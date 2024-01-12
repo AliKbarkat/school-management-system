@@ -33,7 +33,7 @@ class GenderSeeder extends Seeder
         ];
 
         foreach ($genders as $R) {
-            Gender::create(['Name' => $R]);
+            Gender::create(['name' => $R]);
 
         }
 

@@ -3,6 +3,7 @@
 
 namespace App\Repositry;
 
+use App\models\FoundAccount;
 use App\models\FoundAcount;
 use App\models\ReceiptStudent;
 use App\Models\Student;
@@ -30,7 +31,7 @@ class ReceiptStudentRepositry implements ReceiptStudentIntrface{
             $receipt_student->save();
 
 
-            $faund_account=new FoundAcount();
+            $faund_account=new FoundAccount();
             $faund_account->date=date('y-m-d');
             $faund_account->recipet_id=$receipt_student->id;
             $faund_account->debit=$request->debit;
@@ -58,6 +59,62 @@ class ReceiptStudentRepositry implements ReceiptStudentIntrface{
         }
         catch(\Exception $e) {
             return $e;
+        }
+    }
+    public function update($request)
+    {
+        DB::beginTransaction();
+
+        try {
+            // تعديل البيانات في جدول سندات القبض
+            $receipt_students = ReceiptStudent::findorfail($request->id);
+            $receipt_students->date = date('Y-m-d');
+            $receipt_students->student_id = $request->student_id;
+            $receipt_students->debit = $request->Debit;
+            $receipt_students->description = $request->description;
+            $receipt_students->save();
+
+            // تعديل البيانات في جدول الصندوق
+            $fund_accounts = FoundAccount::where('receipt_id',$request->id)->first();
+            $fund_accounts->date = date('Y-m-d');
+            $fund_accounts->receipt_id = $receipt_students->id;
+            $fund_accounts->debit = $request->Debit;
+            $fund_accounts->credit = 0.00;
+            $fund_accounts->description = $request->description;
+            $fund_accounts->save();
+
+            // تعديل البيانات في جدول الصندوق
+
+            $fund_accounts = StudentAccount::where('receipt_id',$request->id)->first();
+            $fund_accounts->date = date('Y-m-d');
+            $fund_accounts->type = 'receipt';
+            $fund_accounts->student_id = $request->student_id;
+            $fund_accounts->receipt_id = $receipt_students->id;
+            $fund_accounts->debit = 0.00;
+            $fund_accounts->credit = $request->Debit;
+            $fund_accounts->description = $request->description;
+            $fund_accounts->save();
+
+
+            DB::commit();
+            toastr()->success(trans('messages.Update'));
+            return redirect()->route('receipt_students.index');
+        } catch (\Exception $e) {
+            DB::rollback();
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
+    }
+
+    public function destroy($request)
+    {
+        try {
+            ReceiptStudent::destroy($request->id);
+            toastr()->error(trans('messages.Delete'));
+            return redirect()->back();
+        }
+
+        catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
     }
 }

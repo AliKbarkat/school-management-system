@@ -4,7 +4,7 @@ namespace App\models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class FoundAcount extends Model
+class FoundAccount extends Model
 {
-    //
+    public $guarded=[];
 }

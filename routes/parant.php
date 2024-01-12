@@ -12,8 +12,8 @@ Route::group(
     ], function () {
 
     //==============================dashboard============================
-    Route::get('/teacher/dashboard',function ()  {
-        return view('teachers.dashboard');
+    Route::get('/parant/dashboard',function ()  {
+        return view('para.dashboard');
     })->name('dashboard.Students');
     Route::group(['namespace'=>'stdashboard'], function () {
         Route::resource('student_exams','ExamController');

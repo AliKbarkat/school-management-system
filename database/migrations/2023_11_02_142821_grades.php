@@ -15,9 +15,8 @@ class Grades extends Migration
     {
         Schema::create('grades', function (Blueprint $table) {
             $table->id();
-            $table->text('name_en');
-            $table->text('name_ar');
-            $table->text('procsess');
+            $table->text('name');
+            $table->text('descreption');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });

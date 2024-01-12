@@ -21,5 +21,8 @@ return [
     'Messages' => 'الرسائل',
     'Profile' => 'الملف الشخصي',
     'Projects' => 'المشاريع',
-    'Settings' => 'الاعدادات'
+    'Settings' => 'الاعدادات',
+    'Student_information'=>'معلومات الطالب',
+    'list_students'=>'قائمة الطلاب',
+    'Promotion'=>'الترقيات',
 ];

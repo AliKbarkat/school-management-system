@@ -10,18 +10,29 @@ class AttendanceController extends Controller
     protected $attendance;
     public function __construct(AttendanceInterface $attendance)
     {
+
       $this->attendance=$attendance;
+    
     }
 
-    public function index(){
+    public function index()
+    {
+     
         return $this->attendance->index();
+    
     }
 
-    public function show($id){
+    public function show($id)
+    {
+     
         return $this->attendance->show($id);
+    
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
+     
         return $this->attendance->store($request);
+    
     }
 }

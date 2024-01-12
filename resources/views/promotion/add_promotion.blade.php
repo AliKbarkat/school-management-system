@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
 @section('title')
-    {{trans('main_trans.Students_Promotions')}}
+    {{ trans('mainpage.School_management') }}/{{trans('students.add_promotion')}}
 @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
 @section('PageTitle')
-    {{trans('main_trans.Students_Promotions')}}
+    {{trans('mainpage.Promotion')}}
 @stop
 <!-- breadcrumb -->
 @endsection
@@ -29,40 +29,42 @@
                         </div>
                     @endif
 
-                        <h6 style="color: red;font-family: Cairo">المرحلة الدراسية القديمة</h6><br>
+                        <h6 style="color: red;font-family: Cairo">{{__('students.form_grade')}}</h6><br>
 
-                    <form method="post" action="{{ route('Promotion.store') }}">
+                    <form method="post" action="{{ route('promotion.store') }}">
                         @csrf
                         <div class="form-row">
                             <div class="form-group col">
-                                <label for="inputState">{{trans('Students_trans.Grade')}}</label>
+                                <label for="inputState">{{trans('students.grades')}}</label>
                                 <select class="custom-select mr-sm-2" name="Grade_id" required>
-                                    <option selected disabled>{{trans('Parent_trans.Choose')}}...</option>
-                                    @foreach($Grades as $Grade)
-                                        <option value="{{$Grade->id}}">{{$Grade->name}}</option>
+                                    <option selected disabled>{{trans('students.choose')}}...</option>
+                                    @foreach($grades as $grade)
+                                        <option value="{{$grade->id}}">{{$grade->name_ar}}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="form-group col">
-                                <label for="Classroom_id">{{trans('Students_trans.classrooms')}} : <span
+                                <label for="Classroom_id">{{trans('students.class')}} : <span
                                         class="text-danger">*</span></label>
                                 <select class="custom-select mr-sm-2" name="Classroom_id" required>
+                                    <option value="الاول">الاول</option>
 
                                 </select>
                             </div>
 
                             <div class="form-group col">
-                                <label for="section_id">{{trans('Students_trans.section')}} : </label>
+                                <label for="section_id">{{trans('students.section')}} : </label>
                                 <select class="custom-select mr-sm-2" name="section_id" required>
+                                    <option value="أ">أ</option>
 
                                 </select>
                             </div>
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="academic_year">{{trans('Students_trans.academic_year')}} : <span class="text-danger">*</span></label>
+                                    <label for="academic_year">{{trans('students.academic_year')}} : <span class="text-danger">*</span></label>
                                     <select class="custom-select mr-sm-2" name="academic_year">
-                                        <option selected disabled>{{trans('Parent_trans.Choose')}}...</option>
+                                        <option selected disabled>{{trans('students.choose')}}...</option>
                                         @php
                                             $current_year = date("Y");
                                         @endphp
@@ -76,37 +78,39 @@
 
 
                         </div>
-                        <br><h6 style="color: red;font-family: Cairo">المرحلة الدراسية الجديدة</h6><br>
+                        <br><h6 style="color: red;font-family: Cairo">{{__('students.to_grade')}}</h6><br>
 
                         <div class="form-row">
                             <div class="form-group col">
-                                <label for="inputState">{{trans('Students_trans.Grade')}}</label>
+                                <label for="inputState">{{trans('students.grades')}}</label>
                                 <select class="custom-select mr-sm-2" name="Grade_id_new" >
-                                    <option selected disabled>{{trans('Parent_trans.Choose')}}...</option>
-                                    @foreach($Grades as $Grade)
-                                        <option value="{{$Grade->id}}">{{$Grade->name}}</option>
+                                    <option selected disabled>{{trans('students.choose')}}...</option>
+                                    @foreach($grades as $grade)
+                                        <option value="{{$grade->id}}">{{$grade->name_ar}}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="form-group col">
-                                <label for="Classroom_id">{{trans('Students_trans.classrooms')}}: <span
+                                <label for="Classroom_id">{{trans('students.class')}}: <span
                                         class="text-danger">*</span></label>
                                 <select class="custom-select mr-sm-2" name="Classroom_id_new" >
+                                    <option value="الاول">الاول</option>
 
                                 </select>
                             </div>
                             <div class="form-group col">
-                                <label for="section_id">:{{trans('Students_trans.section')}} </label>
+                                <label for="section_id">:{{trans('students.section')}} </label>
                                 <select class="custom-select mr-sm-2" name="section_id_new" >
+                                    <option value="أ">أ</option>
 
                                 </select>
                             </div>
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="academic_year">{{trans('Students_trans.academic_year')}} : <span class="text-danger">*</span></label>
+                                    <label for="academic_year">{{trans('students.academic_year')}} : <span class="text-danger">*</span></label>
                                     <select class="custom-select mr-sm-2" name="academic_year_new">
-                                        <option selected disabled>{{trans('Parent_trans.Choose')}}...</option>
+                                        <option selected disabled>{{trans('students.choose')}}...</option>
                                         @php
                                             $current_year = date("Y");
                                         @endphp
@@ -119,7 +123,7 @@
 
 
                         </div>
-                        <button type="submit" class="btn btn-primary">تاكيد</button>
+                        <button type="submit" class="btn btn-primary">{{ trans('students.submit') }}</button>
                     </form>
 
                 </div>

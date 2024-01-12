@@ -12,12 +12,12 @@ class QuestionRepositry implements QuestionInterface
         $ques=Question::all();
         return view('questions.index',compact('ques'));
     }
-    public function show($id){
-
-    }
-    public function create(){
-$quizz=Quizz::get();
-return view('questions.create',compact('quizz'));
+   
+    public function create()
+    {
+    
+        $quizz=Quizz::get();
+        return view('questions.create',compact('quizz'));
 
 
     }
@@ -41,6 +41,7 @@ return $e;
       return view('questions.create',compact('quizz','ques'));
     }
     public function update($request){
+        
         try{
             $ques=Question::findOrfail($request->id);
             $ques->title=$request->title;
@@ -49,13 +50,21 @@ return $e;
             $ques->scoure=$request->scoure;
             $ques->quizz_id=$request->quizz_id;
             $ques->save();
-        }catch(\Exception $e){
-          return $e;
+        }catch(\Exception $e)
+        {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+
         }
     
     }
-    public function destroy($request) {
-        $ques=Question::findOrfail($request->id);
-        $ques->delete();
+    public function destroy($request)
+    {
+        try {
+            Question::destroy($request->id);
+            toastr()->error(trans('messages.Delete'));
+            return redirect()->back();
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
     }
 }

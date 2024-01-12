@@ -72,49 +72,51 @@
             <button class="btn btn-dark" data-toggle="modal" data-target="#flipFlop">{{__('grades.Add_grade')}}</button>
 
 
-                <div class="modal fade" id="flipFlop" tabindex="-1" role="dialog"
-                 aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal fade" id="flipFlop" tabindex="-1" role="dialog"
+            aria-labelledby="modalLabel" aria-hidden="true">
 
-                 <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" 
-                    aria-label="Close"><span aria-hidden="true">
-                      &times;</span></button>
-                      <br>
-                        <h4 class="modal-title" id="modalLabel">{{__('grades.Add_grade')}}</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container">
-                            <form action="{{route('grad.store')}}" method="POST">
-                                @csrf
-                                <label for="">{{__('grades.name_grade_en')}}</label><br>
-                                <input class="form-control form-control-lg" type="text" name="name_en" placeholder="{{__('grades.name_grade_en')}}" aria-label=".form-control-lg example">
-                                @error('name_en')
-                                <small class="form-text text-danger">{{$message}}</small> 
-                                @enderror
-                                <br>
-                                <label for="">{{__('grades.name_grade_ar')}}</label><br>
-                                <input class="form-control form-control-md" type="text" name="name_ar" placeholder="{{__('grades.name_grade_ar')}}" aria-label=".form-control-lg example">
-                                @error('name_ar')
-                                <small class="form-text text-danger" >{{$message}}</small> 
-                                @enderror
-                                <br>
-                                <label for="">{{__('grades.notes')}}</label><br>
-                                <input class="form-control form-control-lg" type="text" name="procsess" placeholder="{{__('grades.notes')}}" aria-label=".form-control-lg example">
-                                @error('procsess')
-                                <small class="form-text text-danger" >{{$message}}</small> 
-                                @enderror
-                                <br>
-                                <input type="submit" class="btn btn-dark" value="{{__('grades.submit')}}">
-                            </form>
-                        </div>
-                    </div>
-                  </div>
-                  </div>
-                 </div>
-                 </div>   
+            <div class="modal-dialog" role="document">
+             <div class="modal-content">
+               <div class="modal-header">
+      
+                   <h4 class="modal-title" id="modalLabel">{{__('grades.Add_grade')}}</h4>
+                   <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+               </div>
+               <div class="modal-body">
+                   <div class="container">
+                       <form action="{{route('grad.store')}}" method="POST">
+                           @csrf
+                           <label for="">{{__('grades.name_grade_en')}}</label><br>
+                           <input class="form-control form-control-lg" type="text" name="name_en"  aria-label=".form-control-lg example">
+                           @error('name_en')
+                           <small class="form-text text-danger">{{$message}}</small> 
+                           @enderror
+                           <br>
+                           <label for="">{{__('grades.name_grade_ar')}}</label><br>
+                           <input class="form-control form-control-md" type="text" name="name_ar"  aria-label=".form-control-lg example">
+                           @error('name_ar')
+                           <small class="form-text text-danger" >{{$message}}</small> 
+                           @enderror
+                           <br>
+                           <label for="">{{__('grades.notes')}}</label><br>
+                           <input class="form-control form-control-lg" type="text" name="procsess" placeholder="{{__('grades.notes')}}" aria-label=".form-control-lg example">
+                           @error('procsess')
+                           <small class="form-text text-danger" >{{$message}}</small> 
+                           @enderror
+                           <br>
+                           <input type="submit" class="btn btn-dark" value="{{__('grades.submit')}}">
+                     
+                       </form>
+                   </div>
+               </div>
              </div>
+             </div>
+            </div>
+            </div>   
+        </div>
     </div>
 </div>
 

@@ -14,8 +14,8 @@ class PromotionRepositry implements PromotionInterface
     return view('promotion.index',compact('promotions'));
   }
   function createPromotion(){
-   $Grades=Grade::all();
-    return view('promotion.add_promotion',compact('Grades'));
+   $grades=Grade::all();
+    return view('promotion.add_promotion',compact('grades'));
   }
   function storePromotion($request)
   {

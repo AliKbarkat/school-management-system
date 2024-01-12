@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-
+Route::auth();
 
      Route::get('/', 'HomeController@index')->name('selection');
 
@@ -30,7 +30,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
         
             Route::resource('/grad', 'GradController');
-            Route::get('delete/{id}', 'GradController@destroy')->name('grade.delete');
+            Route::get('delete/{id}', 'GradController@destroy')->name('grade_delete');
 
         
 
@@ -42,7 +42,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
             Route::post('update/{class_id}', 'ClassRoomController@update')->name('class.update');
             Route::get('destroy/{class_id}', 'ClassRoomController@destroy')->name('class.destroy');
         });
-
+    
     Route::group([ 'prefix' => 'sections'], function () {
             Route::get('/', 'SectionController@index')->name('section.index');
             Route::get('create', 'SectionController@create')->name('section.create');
@@ -51,7 +51,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
             Route::post('update/{list_Section_id}', 'SectionController@update')->name('section.update');
             Route::get('destroy/{list_Section_id}', 'SectionController@destroy')->name('section.destroy');
            
-            Route::get('classes{id}','SectionController@getclasses');
+            Route::get('/classes/{id}','SectionController@getClasses');
         });
 
             Route::view('/add_parent', 'livewire.show_form')->name('add.parent');
@@ -82,7 +82,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
     Route::group(['prefix' => 'promotion'], function () {
             Route::get('/', 'PromotionController@index')->name('Promotion.index');
             Route::get('create', 'PromotionController@create')->name('Promotion.create');
-            Route::post('create', 'PromotionController@store')->name('Promotion.store');
+            Route::post('create', 'PromotionController@store')->name('promotion.store');
             Route::get('edit', 'PromotionController@edit')->name('Promotion.edit');
             Route::post('update', 'PromotionController@update')->name('Promotion.update');
             Route::get('destroy', 'PromotionController@destroy')->name('Promotion.destroy');

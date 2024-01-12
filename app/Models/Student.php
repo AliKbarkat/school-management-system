@@ -50,11 +50,11 @@ class Student extends Authenticatable
     }
     //the relationship student with images
     
-    public function images()
+    public function image()
 
     {
 
-        return $this->morphMany('App\Models\Image','imageable');
+        return $this->morphTo('App\Models\Image','imageable','image_tybe');
 
     }
 

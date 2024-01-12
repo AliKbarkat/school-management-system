@@ -27,15 +27,17 @@ class TeacherRepositry implements TeacherRepositryInterface
       {
        try{
       $Teachers=new Teacher();
-      $Teachers->Email =$request->Email;
-      $Teachers->Password =Hash::make($request->Password);
-      $Teachers->Name =['en'=>$request->Name_en ,'ar'=>$request->Name_ar];
+      $Teachers->Email =$request->email;
+      $Teachers->Password =Hash::make($request->password);
+      $Teachers->Name =['en'=>$request->name_en ,'ar'=>$request->name_ar];
       $Teachers->specialization_id =$request->specialization_id;
-      $Teachers->Gender_id =$request->Gender_id;
-      $Teachers->joining_Date =$request->joining_Date;
-      $Teachers-> Address=$request->Address;
+      $Teachers->Gender_id =$request->gender_id;
+      $Teachers->joining_Date =$request->joining_date;
+      $Teachers->Address=$request->address;
       $Teachers->save();
+      toastr()->success('تم حفظ البيانات');
       return redirect()->route('teacher.index');
+      // return $request;
 
     }
     catch(\Exception $e)
@@ -48,33 +50,36 @@ class TeacherRepositry implements TeacherRepositryInterface
    {
     return Teacher::findOrfail($id);
    }
-  public function TeacherUpdate($request)
+  public function teacherUpdate($request)
   {
+    // return $request;
    try{
-    $Teachers= Teacher::findOrFail($request->id);
-    $Teachers->Email =$request->Email;
-    $Teachers->Password =Hash::make($request->Password);
-    $Teachers->Name =['en'=>$request->Name_en ,'ar'=>$request->Name_ar];
+      $Teachers= Teacher::findOrFail($request->id);
+    $Teachers->Email =$request->email;
+    $Teachers->Password =Hash::make($request->password);
+    $Teachers->Name =['en'=>$request->name_en ,'ar'=>$request->name_ar];
     $Teachers->specialization_id =$request->specialization_id;
     $Teachers->Gender_id =$request->Gender_id;
-    $Teachers->joining_Date =$request->joining_Date;
+    $Teachers->joining_Date =$request->joining_date;
     $Teachers-> Address=$request->Address;
     $Teachers->save();
+    toastr()->success('تم حفظ البيانات');
     return redirect()->route('teacher.index');
+  
   
    }
    catch(\Exception $e)
    {
-    return $e;
+    return redirect()->back()->withErrors($e);
    }
    }
 
   public function deleteTeacher($request)
   {
-   $teacher= Teacher::findOrFail($request->id);
-   toaster()->error('the teacher not delete');
-   $teacher->delete();
-   return redirect()->route('teacher.index');
+    $Teacher=Teacher::findOrFail($request);
+    $Teacher->delete();
+    toastr()->success('the teacher not delete');
+    return redirect()->route('teacher.index');
   }
 
 

@@ -13,28 +13,41 @@ class FeesController extends Controller
     $this->fees=$fees;
   
 }
-public function index(){
-return $this->fees->indexFees();
-}
-  public function create(){
+  public function index()
+  {
+
+  return $this->fees->indexFees();
+ 
+  }
+    public function create()
+  {
+   
     return $this->fees->createFees();
   }
-  public function store(Request $request){
+  public function store(Request $request)
+  {
+
     return $this->fees->storeFees($request);
   }
 
-  public function edit($id){
+  public function edit($id)
+  {
   
    return $this->fees->editFees($id);
  
- 
   }
 
-  public function update(Request $request){
+  public function update(Request $request)
+  {
+
     return $this->fees->updateFees($request);
+  
   }
 
-  public function delete(Request $request){
+  public function delete(Request $request)
+  {
+  
     return $this->fees->deleteFees($request);
+  
   }
 }

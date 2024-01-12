@@ -56,7 +56,19 @@ return $e;
             $quizz->teacher_id=$request->teacher_id;
             $quizz->save();
         }catch(\Exception $e){
-return $e;
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+
+        }
+    }
+
+    public function destroy($request)
+    {
+        try {
+            Quizz::destroy($request->id);
+            toastr()->error(trans('messages.Delete'));
+            return redirect()->back();
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
     }
     
