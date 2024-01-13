@@ -7,7 +7,6 @@
        
    @endif
 
-    {{-- <h3>{{__('my_parant.add_parant')}}</h3> --}}
 @if ($show_table)
 @include('livewire.table_parant')
     
@@ -30,7 +29,6 @@
             <p></p>
         </div>
     </div>
-
 </div>
 
     @include('livewire.father_form')
@@ -40,34 +38,27 @@
 
   
 
-@if ($currentStep != 3)
-<div style="display:none" class="row setup-content" id="step-3">
-@endif
+    @if ($currentStep != 3)
+    <div style="display:none" class="row setup-content" id="step-3">
+    @endif
 
-{{-- <div class="row setup-content {{$currentStep !=3 ? 'displayNone' : ''}}" id="step-3">  --}}
 <div class="col-xs-12">
     <div class="col-md-12">
-
-    <label style="color: red" for="">اختر الملفات لرفعها</label>
+    <label style="color: red">{{ trans('my_parant.chose_file_upload') }}</label>
     <div class="form-group">
-    <input type="file" wire:model='photos' accept="image/*" multiple>
-    <input type="text" wire:model='parent_id' >
-</div>
+        <input type="file" wire:model='photos' accept="image/*" multiple>
+        <input type="text" wire:model='parent_id' >
+   </div>
+
         <button class="btn btn-danger btn-sm nextBtn btn-lg pull-right" type="button" wire:click="back(2)">{{__('my_parant.Back')}} </button>
         @if($updateMode) 
-        <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="submitform_edit"
-                type="button">{{trans('Parent_trans.Next')}}
-        </button> 
-    @else 
-        <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="submitform"
-                type="button">{{trans('my_parant.Next')}}
-        </button>
-   @endif
-        </div>
-
-</div>
-
-</div>
-</div>
-@endif
+        <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="submitform_edit" type="button">{{trans('my_parant.submit')}}</button> 
+            @else 
+        <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="submitform" type="button">{{trans('my_parant.submit')}} </button>
+              @endif
+            </div>
+         </div>
+     </div>
+  </div>
+ @endif
 </div>

@@ -4,45 +4,64 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\TeacherRequest;
 use App\Repositry\TeacherRepositry;
 use Illuminate\Http\Request;
-use PhpParser\Node\Stmt\Return_;
+
 
 class TeacherController extends Controller
 {
-    protected $Teacher;
-    function __construct(TeacherRepositry $Teacher)
+    protected $teacher;
+
+    public function __construct(TeacherRepositry $teacher)
     {
-        $this->Teacher = $Teacher;
+
+        $this -> teacher = $teacher;
+    
     }
-    function index()
+
+    public function index()
     {
-        $teachers = $this->Teacher->getAllTeacher();
-        return view('teachers.teachers',compact('teachers'));
+
+        $teachers = $this -> teacher -> getAllTeacher();
+        return view('teachers.teachers' , compact('teachers'));
+    
     }
-    function create()
+
+    public function create()
     {
-        $gender=$this->Teacher->getGender();
-        $specialization=$this->Teacher->getSpecialization();
-        return view('teachers.add_teacher',compact('gender','specialization'));
+
+        $gender = $this-> teacher -> getGender();
+        $specialization = $this -> teacher -> getSpecialization();
+        return view('teachers.add_teacher' , compact('gender' , 'specialization'));
        
     }
-    function store(TeacherRequest $request)
+
+    public function store(TeacherRequest $request)
     {
-    return $this->Teacher->teacherStore($request);
-    }
-    function edit($id){
-    $Teacher=$this->Teacher->editTeacher($id); 
-     $gender=$this->Teacher->getGender();
-      $specialization=$this->Teacher->getSpecialization();
-      return view('teachers.edit_teacher',compact( 'gender','specialization','Teacher'));
+        
+        return $this -> teacher -> teacherStore($request);
+
     }
 
-    function update(Request $request)
+    public function edit($id)
+    {
+        
+        $teacher = $this -> teacher -> editTeacher($id); 
+        $gender = $this -> teacher -> getGender();
+        $specialization = $this -> teacher -> getSpecialization();
+        return view('teachers.edit_teacher' , compact( 'gender','specialization','teacher'));
+    
+    }
+
+    public function update(Request $request)
     {
 
-    return $this->Teacher->teacherUpdate($request);
+        return $this -> teacher -> teacherUpdate($request);
+    
     }
-    function destroy($request){
-     return $this->Teacher->deleteTeacher($request);
+    
+    public function destroy($request)
+    {
+    
+        return $this -> teacher -> deleteTeacher($request);
 
     }
 

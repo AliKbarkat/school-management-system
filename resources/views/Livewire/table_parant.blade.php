@@ -3,36 +3,37 @@
 wire:click="show_form" type="button">add parant</button>
 <div class="table-responsive">
     <table id="datatable" class="table table-hover table-sm tablebordered p-0" data-page-lenth="50" >
-<thead>
-    <tr class="table-success">
-        <th>#</th>
-        <th>{{__('my_parant.Email')}}</th>
-        <th>{{__('my_parant.Name_Father')}}</th>
-        <th>{{__('my_parant.National_ID_Father')}}</th>
-        <th>{{__('my_parant.Job_Father')}}</th>
-        <th>{{__('grades.procsess')}}</th>        
-    </tr>
-</thead>
-<tbody>
-    @foreach ($my_parants as $myparant)
-    <tr>
-    <td> {{$myparant->id}}</td>
-    <td>{{$myparant->Email}}</td>
-    <td>{{$myparant->Name_Father}}</td>
-    <td>{{$myparant->National_ID_Father}}</td>
-    <td>{{$myparant->Job_Father}}</td>
-    <td>
-        <button class="btn btn-info btn-sm" wire:click="edit({{$myparant->id}})" >
-            <i class="fa fa-edit"></i>
-        </button>
-        <button class="btn btn-danger btn-sm" wire:click="delete({{$myparant->id}})">
-            <i class="fa fa-trash"></i>
-        </button>
-    </td>
-</tr>
-    @endforeach
-</tbody>
+        <thead>
+            <tr class="table-success">
+                <th>#</th>
+                <th>{{__('my_parant.email')}}</th>
+                <th>{{__('my_parant.name_father')}}</th>
+                <th>{{__('my_parant.national_id_father')}}</th>
+                <th>{{__('my_parant.job_father')}}</th>
+                <th>{{__('my_parant.procsess')}}</th>        
+            </tr>
+        </thead>
+        <tbody>
+
+                @foreach ($my_parants as $my_parant)
+            <tr>
+                <td>{{$my_parant->id}}</td>
+                <td>{{$my_parant->email}}</td>
+                <td>{{$my_parant->Name_Father}}</td>
+                <td>{{$my_parant->ntional_id_father}}</td>
+                <td>{{$my_parant->job_father}}</td>
+                <td>
+                    <button class="btn btn-info btn-sm" wire:click="edit({{$my_parant->id}})" >
+                        <i class="fa fa-edit"></i>
+                    </button>
+                    <button class="btn btn-danger btn-sm" wire:click="delete({{$my_parant->id}})">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                 </td>
+            </tr>
+        @endforeach
+        </tbody>
     </table>
-</div>
-</div>
+    </div>
+  </div>
 </div>

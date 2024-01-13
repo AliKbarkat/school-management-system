@@ -16,7 +16,7 @@ class ClassRoomController extends Controller
         $clases = ClassRoom::with(['grade'])->select(
             [
                 'id',
-                'name_' . LaravelLocalization::getCurrentLocale() . ' as name',
+                'name',
                 'grade_id',
             ]
         )->get();
@@ -35,7 +35,7 @@ class ClassRoomController extends Controller
     {
 
         Classroom::create([
-            'name' => ['en'=>$request->name_en ,'ar'=>$request->name_ar],
+            'name' => ['en' => $request ['name_en'] ,'ar' => $request['name_ar']],
             'grade_id' => $request['grade_id'],
         ]);
 

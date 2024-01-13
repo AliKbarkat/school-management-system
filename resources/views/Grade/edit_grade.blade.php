@@ -34,11 +34,11 @@
                     @method('PUT')
                     @csrf
                     <label>{{__('grades.name_grade_en')}}</label><br>
-                    <input class="form-control form-control-lg" type="text" name="name_en"  value="{{$grade->name_en}}" placeholder="{{__('grades.name_grade_en')}}" aria-label=".form-control-lg example">
+                    <input class="form-control form-control-lg" type="text" name="name_en"  value="{{$grade->getTranslation('name','en')}}"  aria-label=".form-control-lg example">
                     <label>{{__('grades.name_grade_ar')}}</label><br>
-                    <input class="form-control form-control-md" type="text" name="name_ar" value="{{$grade->name_ar}}" placeholder="{{__('grades.name_grade_ar')}}" aria-label=".form-control-lg example">
+                    <input class="form-control form-control-md" type="text" name="name_ar" value="{{$grade->getTranslation('name','ar')}}"  aria-label=".form-control-lg example">
                     <label>{{__('grades.notes')}}</label><br>
-                    <input class="form-control form-control-lg" type="text" name="procsess"  value="{{$grade->procsess}}" placeholder="{{__('grades.notes')}}" aria-label=".form-control-lg example">
+                    <input class="form-control form-control-lg" type="text" name="descreption"  value="{{$grade->descreption}}"  aria-label=".form-control-lg example">
                    <br><br>
                     <input type="submit" src="" class="btn btn-dark" value="{{__('grades.submit')}}">
                 </form>

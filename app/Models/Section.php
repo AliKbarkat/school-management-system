@@ -12,7 +12,6 @@ class Section extends Model
     public $fillable = [
         'id',
         'name',
-     
         'status',
         'grade_id',
         'classroom_id',
@@ -21,7 +20,9 @@ class Section extends Model
     //A relationship between the academic stages and departments to display the name of the stage in the departments
     public function grade()
     {
+
         return $this->BelongsTo(Grade::class,'grade_id');
+    
     }
 
     //Relationship between department and rows to display the name of the row in sections

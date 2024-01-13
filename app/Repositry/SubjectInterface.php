@@ -3,10 +3,11 @@
 
 namespace App\Repositry;
 
-interface SubjectInterface{
+interface SubjectInterface
+{
+
     public function index();
 
-   
     public function create();
 
     public function store($request);
@@ -16,4 +17,5 @@ interface SubjectInterface{
     public function update($request);
 
     public function destroy($request);
+
 }

@@ -33,22 +33,7 @@ class StudentRequest extends FormRequest
         ];
     }
     public function messages()
-    {
-        return [
-            'email.required'=> 'this is required',
-            'name_ar.required'=> 'this is required',
-            'name_en.required'=> 'this is required',
-            'password.required'=> 'this is required',
-            'gender_id.required'=> 'this is required',
-            'nationalite_id.required'=> 'this is required',
-            'bload_id.required'=> 'this is required',
-            'date_Birth.required'=> 'this is required',
-            'grade_id.required'=> 'this is required',
-            'classroom_id.required'=> 'this is required',
-            'section_id.required'=> 'this is required',
-            'parant_id.required'=> 'this is required',
-            'academic_year.required'=> 'this is required',      
-
-        ];
-    }
+    {   
+        return [];
+     }
 }

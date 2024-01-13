@@ -36,4 +36,8 @@ return[
     'joining_date'=>'Birth Day',
     'add_promotion'=>'add promotion',
    'form_grade'=>'Old school stage',
+   'receipt' => 'Receipt Student',
+   'the_amount' => 'The amount',
+   'statement' => 'Statement',
+   'catch_receipt' => 'Catch Receipt'
 ];

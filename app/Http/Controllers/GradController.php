@@ -16,8 +16,9 @@ class GradController extends Controller
 
         $grades = Grade::select(
              'id',
-             'name_' . LaravelLocalization::getCurrentLocale() .' as name',
-             'procsess')->get();
+             'name' ,
+             'descreption'
+             )->get();
         return view('grade.grades', compact('grades'));
     
     }
@@ -27,16 +28,19 @@ class GradController extends Controller
         return view('grade.add_grade');
     
     }
-    public function store(GradeRequest $request)
+    public function store(Request $request)
     {
-
+      
         Grade::create([
 
-            'name' => ['ar'=> $request -> name_ar, 'en' => $request -> name_en ] ,
-            'procsess' => $request->procsess,
+            'name' => ['ar' => $request['name_ar'] , 'en' => $request['name_en']] ,
+            'descreption' => $request['descreption'],
      
         ]);
+
+
         toastr()->success('Data has been saved successfully!');
+
         return redirect()->route('grad.index');
     
     }
@@ -44,7 +48,8 @@ class GradController extends Controller
     {
 
         $grade = Grade::findOrfail($grade_id);
-        Grade::select(['name_en', 'name_ar', 'procsess',]);
+
+        Grade::select(['name_en', 'name_ar', 'descreption']);
         return view('grade.edit_grade ', compact('grade'));
     
     }

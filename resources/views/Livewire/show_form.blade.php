@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('css')
 @section('title')
-قائمة أولياء الامور
+{{ trans('my_parant.list_parent') }}
 @stop
 @endsection
 @section('page-header')
@@ -9,7 +9,7 @@
 <div class="page-title">
     <div class="row">
         <div class="col-sm-6">
-            <h4 class="mb-0"> قائمة اولياء الامور</h4>
+            <h4 class="mb-0">{{ trans('my_parant.list_parent') }} </h4>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right ">

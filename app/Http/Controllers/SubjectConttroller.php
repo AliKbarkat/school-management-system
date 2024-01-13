@@ -12,22 +12,35 @@ class SubjectConttroller extends Controller
     {
         $this->subject = $subject;
     }
-    public function index(){
-return $this->subject->index();
+    public function index()
+    {
+    
+        return $this->subject->index();
+    
     }
-    public function show($id){
-        return $this->subject->show($id);
-    }
-    public function create(){
+   
+    public function create()
+    {
+    
         return $this->subject->create();
+    
     }
-    public function store(Request $request){
+    public function store(Request $request)
+    {
+    
         return $this->subject->store($request);
+    
     }
-    public function update(Request $request){
+    public function update(Request $request)
+    {
+    
         return $this->subject->update($request);
+    
     }
-    public function destroy($request){
-        return $this->subject->delete($request);
+    public function destroy($request)
+    {
+    
+        return $this->subject->destroy($request);
+    
     }
 }

@@ -1,5 +1,6 @@
 <?php
 return[
+    
     'list_students' => 'قائمة الطلاب',
     'email' => 'البريد الالكتروني',
     'name_student' => 'الاسم',
@@ -34,5 +35,9 @@ return[
     'created_at' => 'تاريخ الانشاء',
     'add_promotion' => 'اضافة ترقية',
     'form_grade' => 'المرحلة الدراسية القديمة',
-    'to_grade' => 'المرحلة الدراسية الجديدة'
+    'to_grade' => 'المرحلة الدراسية الجديدة',
+    'receipt' => 'سندات القبض',
+    'the_amount'=>'المبلغ',
+    'statement' => 'البيان',
+    'catch_receipt'=>'سند صرف',
 ];
