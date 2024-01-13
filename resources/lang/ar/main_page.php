@@ -1,7 +1,7 @@
 <?php
 return [
     'School_management' => 'ادارة المدارس',
-    'Fadwa Toqan' => 'فدوى طوقان',
+    'fadwa_toqan' => 'فدوى طوقان',
     'language' => 'اختر اللغة',
     'dashboard' => 'لوحة التحكم',
     'grades' => 'المراحل الدراسية',
@@ -13,7 +13,7 @@ return [
     'Attendance' => 'الحضور والغياب',
     'Parents' => 'اولياء الامور',
     'Exams' => 'الامتحانات',
-    'Online classes' => 'حصص اونلاين',
+    'Online_classes' => 'حصص اونلاين',
     'setings' => 'الاعدادات',
     'Users' => 'المستخدمين',
     'Logout' => 'تسجيل الخروج',
@@ -22,7 +22,21 @@ return [
     'Profile' => 'الملف الشخصي',
     'Projects' => 'المشاريع',
     'Settings' => 'الاعدادات',
-    'Student_information'=>'معلومات الطالب',
-    'list_students'=>'قائمة الطلاب',
-    'Promotion'=>'الترقيات',
+    'Student_information' => 'معلومات الطالب',
+    'list_students' => 'قائمة الطلاب',
+    'Promotion' => 'الترقيات',
+    'list_parents' => 'قائمة أولياء الامور',
+    'Students_promotions' => 'ترقيات الطلاب',
+    'list_promotions' => 'قائمة الترقيات',
+    'graduate_students' => 'تخرجات الطلاب',
+    'add_Graduate' => 'اضافة تخرج',
+    'list_Graduate' => 'قائمة التخرجات',
+    'accounts' => 'الحسابات',
+    'attendance' => 'الحضور',
+    'library' => 'المكتبة',
+    'subjects' => 'المواد الدراسية',
+    'list_subjects' => 'قائمة المواد',
+    'exams' => 'الاختبارات',
+
+    
 ];

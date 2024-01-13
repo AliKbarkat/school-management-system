@@ -70,8 +70,8 @@
                                                          @foreach ($Grade->Section as $list_Section)
                                                             <tr>
                                                                 <td>{{ $list_Section->id }}</td>
-                                                                <td>{{ $list_Section->name_ar }}</td>
-                                                                <td>{{ $list_Section->classroom->name_class_ar }}</td> 
+                                                                <td>{{ $list_Section->name}}</td>
+                                                                <td>{{ $list_Section->classroom->name }}</td> 
                                                                 <td>
                                                                 @if ( $list_Section->status =='1')
                                                                 <span class="badge badge-success">{{ $list_Section->status }}</span> 

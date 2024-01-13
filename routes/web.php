@@ -60,9 +60,9 @@ Route::auth();
             Route::get('/', 'TeacherController@index')->name('teacher.index');
             Route::get('create', 'TeacherController@create')->name('teacher.create');
             Route::post('create', 'TeacherController@store')->name('teacher.store');
-            Route::get('edit/{Teacher_id}', 'TeacherController@edit')->name('teacher.edit');
-            Route::post('update/{Teacher_id}', 'TeacherController@update')->name('teacher.update');
-            Route::get('destroy/{Teacher_id}', 'TeacherController@destroy')->name('teacher.destroy');
+            Route::get('edit/{teacher_id}', 'TeacherController@edit')->name('teacher.edit');
+            Route::post('update/{teacher_id}', 'TeacherController@update')->name('teacher.update');
+            Route::get('destroy/{teacher_id}', 'TeacherController@destroy')->name('teacher.destroy');
         });
 
     Route::group(['prefix' => 'students'], function () {
@@ -73,19 +73,19 @@ Route::auth();
             Route::get('edit/{student_id}', 'StudentController@edit')->name('students.edit');
             Route::post('update/{student_id}', 'StudentController@update')->name('students.update');
             Route::get('destroy/{student_id}', 'StudentController@destroy')->name('students.destroy');
-            Route::post('Download_attachment/{student_name}/{file_name}','StudentController@downloadAttachment')->name('students.Download_attachment');
+            Route::post('Download_attachment/{student_name}/{file_name}','StudentController@downloadAttachment')->name('students.download_attachment');
             Route::post('upolad_attchment','StudentController@uploadFile')->name('students.uploadFile');
             Route::post('Delete_attachment','StudentController@deleteAttachment')->name('students.delete_attachment');
  
         });
 
     Route::group(['prefix' => 'promotion'], function () {
-            Route::get('/', 'PromotionController@index')->name('Promotion.index');
-            Route::get('create', 'PromotionController@create')->name('Promotion.create');
+            Route::get('/', 'PromotionController@index')->name('promotion.index');
+            Route::get('create', 'PromotionController@create')->name('promotion.create');
             Route::post('create', 'PromotionController@store')->name('promotion.store');
-            Route::get('edit', 'PromotionController@edit')->name('Promotion.edit');
-            Route::post('update', 'PromotionController@update')->name('Promotion.update');
-            Route::get('destroy', 'PromotionController@destroy')->name('Promotion.destroy');
+            Route::get('edit/{id}', 'PromotionController@edit')->name('promotion.edit');
+            Route::post('update/{id}', 'PromotionController@update')->name('promotion.update');
+            Route::get('destroy/{id}', 'PromotionController@destroy')->name('promotion.destroy');
 
         });
 
@@ -93,9 +93,9 @@ Route::auth();
             Route::get('/', 'GraduatedController@index')->name('graduated.index');
             Route::get('create', 'GraduatedController@create')->name('graduated.create');
             Route::post('create', 'GraduatedController@store')->name('graduated.store');
-            Route::get('edit', 'GraduatedController@edit')->name('graduated.edit');
-            Route::post('update', 'GraduatedController@update')->name('graduated.update');
-            Route::get('destroy', 'GraduatedController@destroy')->name('graduated.destroy');
+            Route::get('edit/{id}', 'GraduatedController@edit')->name('graduated.edit');
+            Route::post('update/{id}', 'GraduatedController@update')->name('graduated.update');
+            Route::get('destroy/{id}', 'GraduatedController@destroy')->name('graduated.destroy');
 
         });
 
@@ -114,9 +114,9 @@ Route::auth();
             Route::get('show/{student_id}', 'FeeInvoiceController@show')->name('fee_invoice.show');
             Route::get('create', 'FeeInvoiceController@create')->name('fee_invoice.create');
             Route::post('create', 'FeeInvoiceController@store')->name('fee_invoice.store');
-            Route::get('edit/{Fee_Invoice_id}', 'FeeInvoiceController@edit')->name('fee_invoice.edit');
-            Route::post('update/{Fee_Invoice_id}', 'FeeInvoiceController@update')->name('fee_invoice.update');
-            Route::get('destroy/{Fee_Invoice_id}', 'FeeInvoiceController@destroy')->name('fee_invoice.destroy');
+            Route::get('edit/{fee_invoice_id}', 'FeeInvoiceController@edit')->name('fee_invoice.edit');
+            Route::post('update/{fee_invoice_id}', 'FeeInvoiceController@update')->name('fee_invoice.update');
+            Route::get('destroy/{fee_invoice_id}', 'FeeInvoiceController@destroy')->name('fee_invoice.destroy');
 
         });
         
@@ -125,9 +125,9 @@ Route::auth();
             Route::get('show/{student_id}', 'ReceiptStudentController@show')->name('receipt_student.show');
             Route::get('create', 'ReceiptStudentController@create')->name('receipt_student.create');
             Route::post('create', 'ReceiptStudentController@store')->name('receipt_student.store');
-            Route::get('edit/{ReceiptStudent}', 'ReceiptStudentController@edit')->name('receipt_student.edit');
-            Route::post('update/{ReceiptStudent}', 'ReceiptStudentController@update')->name('receipt_student.update');
-            Route::get('destroy/{ReceiptStudent}', 'ReceiptStudentController@destroy')->name('receipt_student.destroy');
+            Route::get('edit/{receipt_id}', 'ReceiptStudentController@edit')->name('receipt_student.edit');
+            Route::post('update/{receipt_id}', 'ReceiptStudentController@update')->name('receipt_student.update');
+            Route::get('destroy/{receipt_id}', 'ReceiptStudentController@destroy')->name('receipt_student.destroy');
 
         });
       
@@ -136,29 +136,29 @@ Route::auth();
             Route::get('show/{student_id}', 'ProcessingFeeController@show')->name('processingfee.show');
             Route::get('create', 'ProcessingFeeController@create')->name('processing_fee.create');
             Route::post('create', 'ProcessingFeeController@store')->name('processing_fee.store');
-            Route::get('edit/{ProcessingFee_id}', 'ProcessingFeeController@edit')->name('processing_fee.edit');
-            Route::post('update/{ProcessingFee_id}', 'ProcessingFeeController@update')->name('processing_fee.update');
-            Route::get('destroy/{ProcessingFee_id}', 'ProcessingFeeController@destroy')->name('processing_fee.destroy');
+            Route::get('edit/{processing_id}', 'ProcessingFeeController@edit')->name('processing_fee.edit');
+            Route::post('update/{processing_id}', 'ProcessingFeeController@update')->name('processing_fee.update');
+            Route::get('destroy/{processing_id}', 'ProcessingFeeController@destroy')->name('processing_fee.destroy');
 
         });
     Route::group(['prefix' => 'payment'], function () {
             Route::get('/', 'PaymentController@index')->name('payment.index');
-            Route::get('show/{Payment}', 'PaymentController@show')->name('payment.show');
+            Route::get('show/{student_id}', 'PaymentController@show')->name('payment.show');
             Route::get('create', 'PaymentController@create')->name('payment.create');
             Route::post('create', 'PaymentController@store')->name('payment.store');
-            Route::get('edit/{Payment}', 'PaymentController@edit')->name('payment.edit');
-            Route::post('update/{Payment}', 'PaymentController@update')->name('payment.update');
-            Route::get('destroy/{Payment}', 'PaymentController@destroy')->name('payment.destroy');
+            Route::get('edit/{payment_id}', 'PaymentController@edit')->name('payment.edit');
+            Route::post('update/{payment_id}', 'PaymentController@update')->name('payment.update');
+            Route::get('destroy/{payment_id}', 'PaymentController@destroy')->name('payment.destroy');
 
         });
     Route::group(['prefix' => 'attendance'], function () {
             Route::get('/', 'AttendanceController@index')->name('attendance.index');
-            Route::get('show/{Payment}', 'AttendanceController@show')->name('attendance.show');
+            Route::get('show/{student_id}', 'AttendanceController@show')->name('attendance.show');
             Route::get('create', 'AttendanceController@create')->name('attendance.create');
             Route::post('create', 'AttendanceController@store')->name('attendance.store');
-            Route::get('edit/{Payment}', 'AttendanceController@edit')->name('attendance.edit');
-            Route::post('update/{Payment}', 'AttendanceController@update')->name('attendance.update');
-            Route::get('destroy/{Payment}', 'AttendanceController@destroy')->name('attendance.destroy');
+            Route::get('edit/{attendce_id}', 'AttendanceController@edit')->name('attendance.edit');
+            Route::post('update/{attendce_id}', 'AttendanceController@update')->name('attendance.update');
+            Route::get('destroy/{attendce_id}', 'AttendanceController@destroy')->name('attendance.destroy');
 
         });
 

@@ -19,7 +19,7 @@ Route::group(
         $ids = Teacher::findOrfail($tea_id)->Sections()->pluck('section_id');
         $data['count_section'] = $ids->count();
         $data['count_students'] = Student::where('section_id',$ids)->count();
-        return view('pages.Teachers.dashboard.dashboard',$data);
+        return view('teachers.dashboard',$data);
     });
 
 });

@@ -10,47 +10,57 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class ClassRoomController extends Controller
 {
-    function index()
+    public function index()
     {
 
         $clases = ClassRoom::with(['grade'])->select(
             [
                 'id',
-                'name_class_' . LaravelLocalization::getCurrentLocale() . ' as name',
+                'name_' . LaravelLocalization::getCurrentLocale() . ' as name',
                 'grade_id',
             ]
         )->get();
-      return view('class_room.classroom', compact('clases'));
+
+        return view('class_room.classroom', compact('clases'));
     
     }
-    function create()
+    public function create()
     {
+
         $grades = Grade::all();
         return view('class_room.add_class', compact('grades'));
+   
     }
     function store(ClassRoomRequest $request)
     {
+
         Classroom::create([
-            'name_class_ar' => $request['name_class_ar'],
-            'name_class_en' => $request['name_class_en'],
+            'name' => ['en'=>$request->name_en ,'ar'=>$request->name_ar],
             'grade_id' => $request['grade_id'],
         ]);
+
         toastr()->success('Data has been saved successfully!');
         return redirect()->route('class.index');
+    
     }
-    function edit($class_id)
+    public function edit($class_id)
     {
+
         $grade = Grade::all();
         $class = ClassRoom::find($class_id);
+
         ClassRoom::select([
-            'name_class_ar',
-            'name_class_en',
+           
+            'name_' . LaravelLocalization::getCurrentLocale() . ' as name',
             'grade_id',
         ]);
+
         return view('class_room.edit_class', compact('class', 'grade'));
+   
     }
     public function update(ClassRoomRequest $request, $class_id)
     {
+
         $class = ClassRoom::find($class_id);
         if (!$class)
             return redirect()->back();
@@ -64,7 +74,7 @@ class ClassRoomController extends Controller
     {
         $class = ClassRoom::find($class_id);
         $class->delete();
-        toastr()->success('Data has been delete successfully!');
+        toastr()->success('Data delete successfully!');
         return redirect()->route('class.index');
     }
 
