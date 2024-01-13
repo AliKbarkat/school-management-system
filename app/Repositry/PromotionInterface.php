@@ -4,17 +4,17 @@
 namespace App\Repositry;
 
 interface PromotionInterface
-
 {
+    public function getPromotion();
 
-  public function getPromotion();
-  public function createPromotion();
-  public function storePromotion($request);
+    public function createPromotion();
 
-  public function editPromotion($id);
+    public function storePromotion($request);
 
-  public function promotionUpdate($request);
+    public function editPromotion($id);
 
-  public function deletePromotion($id);
+    public function promotionUpdate($request);
+
+    public function deletePromotion($id);
 
 }

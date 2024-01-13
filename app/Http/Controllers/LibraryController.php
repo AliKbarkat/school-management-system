@@ -10,32 +10,50 @@ class LibraryController extends Controller
     protected $library;
     public function __construct(LibraryInterface $library)
     {
-          $this->library=$library;
+          $this->library = $library;
     }
-    public function index(){
+    public function index()
+    {
+
         return $this->library->index();
+    
     }
-    public function download($id){
-        return $this->library->download($id);
-    }
-    public function create(){
+    public function create()
+    {
+    
         return $this->library->create();
         
     }
-    public function edit($id){
-        // return $this->library->edit($id);
-        
-    }
-    public function store($request){
+  
+    public function store($request)
+    {
         return $this->library->store($request);
         
     }
-    public function delete($id){
-        return $this->library->delete($id);
+   
+    public function edit($id)
+    {
+       return $this->library->edit($id);
         
     }
-    public function update($request){
+    
+    public function update($request)
+    {
         return $this->library->update($request);
         
+    }
+
+    
+    public function delete($request)
+    {
+        return $this->library->delete($request);
+        
+    }
+   
+    public function download($id)
+    {
+    
+        return $this->library->download($id);
+    
     }
 }

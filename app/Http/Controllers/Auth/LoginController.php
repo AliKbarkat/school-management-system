@@ -22,34 +22,36 @@ class LoginController extends Controller
     |
     */
 
-    //    use AuthenticatesUsers;
-      use AuthTrait;
+       use AuthenticatesUsers;
+    //   use AuthTrait;
 
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
     }
 
-  public function loginFrom($type){
-  
-     return view('auth.login',compact('type'));
-
-  }
-  public function login(Request $request){
-
-    if (Auth::guard($this->chekGuard($request))->attempt(['email' => $request->email, 'password' => $request->password])) {
-    return $this->redirect($request);
+    public function loginFrom($type)
+    {
+         return view('auth.login',compact('type'));
     }
-    else{
-        return redirect()->back()->with('message','هناك خطأ في كلمة المرور او اسم المستخدم');
+    public function login(Request $request)
+    {
+
+        if (Auth::guard($this->chekGuard($request))->attempt(['email' => $request->email, 'password' => $request->password])) 
+        {
+            return $this->redirect($request);
+        }
+        else{
+            return redirect()->back()->with('message','هناك خطأ في كلمة المرور او اسم المستخدم');
+        }
+
     }
-// return $request;
-}
-public function logout(Request $request,$type)
+    public function logout(Request $request,$type)
     {
         Auth::guard($type)->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/');
+    
     }
 }

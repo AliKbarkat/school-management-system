@@ -11,7 +11,7 @@ class AttendanceController extends Controller
     public function __construct(AttendanceInterface $attendance)
     {
 
-      $this->attendance=$attendance;
+      $this->attendance = $attendance;
     
     }
 
