@@ -24,7 +24,7 @@ class GradController extends Controller
         return view('grade.add_grade');
     
     }
-    public function store(Request $request)
+    public function store(GradeRequest $request)
     {  
         
         Grade::create([
@@ -49,7 +49,7 @@ class GradController extends Controller
         return view('grade.edit_grade ', compact('grade'));
     
     }
-    public function update(Request $request, $grade_id)
+    public function update(GradeRequest $request, $grade_id)
     {
 
         $id = Grade::findOrfail($grade_id);
@@ -60,7 +60,7 @@ class GradController extends Controller
         return redirect()->route('grad.index');
     
     }
-    public function destroy(Request $request)
+    public function destroy(GradeRequest $request)
     {
 
         $class_id = ClassRoom::where('grade_id', $request->id)->pluck('grade_id');

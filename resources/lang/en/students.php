@@ -39,5 +39,6 @@ return[
    'receipt' => 'Receipt Student',
    'the_amount' => 'The amount',
    'statement' => 'Statement',
-   'catch_receipt' => 'Catch Receipt'
+   'catch_receipt' => 'Catch Receipt',
+   'add_graduated' => 'Add Graduated',
 ];

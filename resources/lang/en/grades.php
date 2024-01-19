@@ -1,8 +1,8 @@
 <?php
 return [
     'title_page' => 'School management/Grades',
-    'List_grade' => 'list Grade',
-    'List_class' => 'List Class Room',
+    'list_grade' => 'list Grade',
+    'list_class' => 'List Class Room',
     'name_grade' => 'Name Grade',
     'edit' => 'Edit Grad',
     'delete' => 'delete',
@@ -10,8 +10,8 @@ return [
     'procsess' => 'procsess',
     'submit' => 'submit',
     'close' => 'close',
-    'Add_grade' => 'Add Grade',
-    'Add_Class' => 'Add Class',
+    'add_grade' => 'Add Grade',
+    'add_Class' => 'Add Class',
     'update_grade' => 'edit grade',
     'name_class_ar' => 'Name class for arabic',
     'name_class_en' => 'Name class for english',

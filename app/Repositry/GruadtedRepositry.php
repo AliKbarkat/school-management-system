@@ -5,6 +5,7 @@ namespace App\Repositry;
 use App\Models\Grade;
 use App\models\Graduted;
 use App\models\Promotion;
+use App\Models\Section;
 use App\Models\Student;
 use Illuminate\Support\Facades\DB;
 
@@ -21,7 +22,8 @@ class GruadtedRepositry implements GraduatedInterface
   {
 
     $grades=Grade::all();
-    return view('graduated.create',compact('grades'));
+    $sections=Section::all();
+    return view('graduated.create',compact('grades','sections'));
   
   }
  

@@ -28,7 +28,6 @@ class ClassRoomRequest extends FormRequest
             'name_ar' => 'required|unique:class_rooms,name,' . $this->id,
             'name_en' => 'required|unique:class_rooms,name,' . $this->id,
             'grade_id' => 'exists:grades,id',
-            'classroom_id' => 'exists:class_rooms,id',
 
         ];
 

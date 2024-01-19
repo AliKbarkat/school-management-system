@@ -24,12 +24,12 @@ class StudentRequest extends FormRequest
              'nationalite_id' => 'exists:nationalities,id',
             'bload_id' => 'exists:bloads,id',
              'date_birth' => 'required',
-            // 'grade_id' => 'exists:grades,id,',
+            'grade_id' => 'exists:grades,id',
              'classroom_id' => 'exists:class_rooms,id',
              'section_id'=> 'exists:sections,id',
              'parant_id' => 'exists:my_parants,id',
              'academic_year' => 'required',
-              'photos' => 'required'
+             'photos' => 'required'
 
         ];
     }
