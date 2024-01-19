@@ -16,17 +16,17 @@
         <div class="stepwizard-step">
             <a href="#step-1" type="button"
             class="btn btn-circle{{$currentStep != 1 ? 'btn-defult' : 'btn btn-success'}}">1</a>
-            <p></p>
+            <p>{{ trans('my_parant.information_father') }}</p>
         </div>
         <div class="stepwizard-step">
             <a href="#step-2" type="button"
             class="btn btn-circle{{$currentStep != 2 ? 'btn-defult' : 'btn btn-success'}}">2</a>
-            <p></p>
+            <p>{{ trans('my_parant.information_mother') }}</p>
         </div>
         <div class="stepwizard-step">
             <a href="#step-3" type="button"
             class="btn btn-circle{{$currentStep != 3 ? 'btn-defult' : 'btn btn-success'}}">3</a>
-            <p></p>
+            <p>{{ trans('my_parant.saved_data') }}</p>
         </div>
     </div>
 </div>
@@ -50,7 +50,7 @@
         <input type="text" wire:model='parent_id' >
    </div>
 
-        <button class="btn btn-danger btn-sm nextBtn btn-lg pull-right" type="button" wire:click="back(2)">{{__('my_parant.Back')}} </button>
+        <button class="btn btn-danger btn-sm nextBtn btn-lg pull-right" type="button" wire:click="back(2)">{{__('my_parant.back')}} </button>
         @if($updateMode) 
         <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="submitform_edit" type="button">{{trans('my_parant.submit')}}</button> 
             @else 

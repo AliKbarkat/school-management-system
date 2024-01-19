@@ -18,18 +18,14 @@ class SectionRequest extends FormRequest
             'name_en' => 'required',
             'name_ar' => 'required',
             'status'  => 'required',
-            'classroom_id' => 'required',
-            'grade_id' => 'required|',
+            'classroom_id' => 'exists:class_rooms,id',
+            'grade_id' => 'exists:grades,id',
         ];
     }
     public function messages()
     {
         return [
-            'name_en.required' => 'this is required',
-            'name_ar.required' => 'this is required',
-            'status.required' => 'this is required',
-            'grade_id.required' => 'this is required',
-            'classroom_id.required' => 'this is required',
+            
         ];
     }
 }

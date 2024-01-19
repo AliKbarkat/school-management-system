@@ -1,6 +1,6 @@
 <?php
 return [
-    'school_management' => 'School_management',
+    'school_management' => 'School management',
     'fadwa_toqan' => 'Fadwa Toqan',
     'dashboard' => 'Dashboard',
     'grades' => 'Grades',
@@ -15,7 +15,7 @@ return [
     'online_classes' => 'Online classes ',
     'setings' => 'setings',
     'users' => 'Users',
-    'Logout' => 'Logout',
+    'logout' => 'Logout',
     'activity' => 'Activity',
     'messages' => 'Messages',
     'profile' => 'Profile',
@@ -28,13 +28,14 @@ return [
     'students_promotions' => 'Students Promotions',
     'list_promotions' => 'List Promotions',
     'graduate_students' => 'Graduate Students',
-    'add_Graduate' => 'Add Graduate',
-    'list_Graduate' => 'List Graduate',
+    'add_graduate' => 'Add Graduate',
+    'list_graduate' => 'List Graduate',
     'accounts' => 'Accounts',
     'library' => 'library',
     'subjects' => 'Subjects',
     'list_subjects' => 'List Subjects',
     'exams' => 'Exams',
+   
    
     
 ];

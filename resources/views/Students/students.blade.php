@@ -2,7 +2,7 @@
 @section('css')
 @toaster_css
 @section('title')
-{{__('mainpage.students')}}
+{{__('main_page.students')}}
 @stop
 @endsection
 @section('page-header')
@@ -10,12 +10,12 @@
 <div class="page-title">
     <div class="row">
         <div class="col-sm-6">
-            <h4 class="mb-0">{{__('mainpage.students')}}</h4>
+            <h4 class="mb-0">{{__('main_page.students')}}</h4>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right ">
                 <li class="breadcrumb-item"><a href="#" class="default-color">Home</a></li>
-                <li class="breadcrumb-item active">{{__('mainpage.students')}}</li>
+                <li class="breadcrumb-item active">{{__('main_page.students')}}</li>
             </ol>
         </div>
     </div>
@@ -28,7 +28,7 @@
     <div class="col-md-12 mb-30">
         <div class="card card-statistics h-100">
             <div class="card-body">
-                <a href="{{route('students.create')}}" class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="button">{{ trans('students.add_students') }}</a>
+                <a href="{{route('students.create')}}" class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="button">{{ trans('students.add_student') }}</a>
                 <div class="table-responsive">
                     <table id="datatable" class="table table-hover table-sm tablebordered p-0" data-page-lenth="50" >
                 <thead>
@@ -50,8 +50,8 @@
                     <td> {{$student->id}}</td>
                     <td>{{$student->email}}</td>
                     <td>{{$student->name}}</td>
-                    <td>{{$student->gender->Name}}</td>
-                    <td>{{$student->date_Birth}}</td>
+                    <td>{{$student->gender->name}}</td>
+                    <td>{{$student->date_birth}}</td>
                     <td>{{$student->grade->name_ar}}</td>
                     <td>{{$student->classroom->name_class_ar}}</td>
                     <td>{{$student->Section->name_ar}}</td>

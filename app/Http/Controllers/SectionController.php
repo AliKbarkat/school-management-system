@@ -14,8 +14,8 @@ class SectionController extends Controller
     public function index()
     {
 
-        $Grades = Grade::with('Section')->get();
-        return view('section.section', compact('Grades'));
+        $grades = Grade::with('section')->get();
+        return view('section.section', compact('grades'));
     
     }
 
@@ -41,7 +41,6 @@ class SectionController extends Controller
         ]);
 
         toastr()->success('Data has been saved successfully!');
-
         return redirect()->route('section.index');
     
     }
@@ -60,7 +59,8 @@ class SectionController extends Controller
     {
     
         Section::findOrFail($id)->update($request->all());
-        toastr()->success('Data has been saved successfully!');
+        flash('saved');
+        // toastr()->success('Data has been saved successfully!');
 
         return redirect()->route('section.index');
     
@@ -78,10 +78,11 @@ class SectionController extends Controller
     public function getClasses($id)
     {
 
-    $list_class = Classroom::whereIn('grade_id', $id)->pluck('name_class_ar','id');
+    $list_class = ClassRoom::where('grade_id', $id)->pluck('id' , 'name');
 
     return $list_class;
 
     }
+   
 
 }

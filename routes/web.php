@@ -51,8 +51,10 @@ Route::auth();
             Route::post('update/{list_Section_id}', 'SectionController@update')->name('section.update');
             Route::get('destroy/{list_Section_id}', 'SectionController@destroy')->name('section.destroy');
            
-            Route::get('/classes/{id}','SectionController@getClasses');
+           
         });
+
+            Route::get('/classes/{id}','SectionController@getClasses')->name('class.ajax');
 
             Route::view('/add_parent', 'livewire.show_form')->name('add.parent');
 
@@ -76,6 +78,8 @@ Route::auth();
             Route::post('Download_attachment/{student_name}/{file_name}','StudentController@downloadAttachment')->name('students.download_attachment');
             Route::post('upolad_attchment','StudentController@uploadFile')->name('students.uploadFile');
             Route::post('Delete_attachment','StudentController@deleteAttachment')->name('students.delete_attachment');
+            Route::get('/sections/{id}','StudentController@getSections')->name('section.ajax');
+
  
         });
 

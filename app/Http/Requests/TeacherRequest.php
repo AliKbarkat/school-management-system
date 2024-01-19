@@ -17,12 +17,12 @@ class TeacherRequest extends FormRequest
     {
         return [
 
-            'email' =>'required|unique:teachers,Email,'.$this->id,
+            'email' =>'required|:teachers,Email,'.$this->id,
             'password' =>'required',
             'name_en' =>'required',
             'name_ar' =>'required',
-            'specialization_id' =>'required',
-            'gender_id' =>'required',
+            'specialization_id' =>'exists:specializations,id',
+            'gender_id' =>'exists:genders,id',
             'joining_date' =>'required',
             'address' =>'required', 
         ];
@@ -30,14 +30,7 @@ class TeacherRequest extends FormRequest
     public function messages()
     {
         return [
-            'email.required' => 'this is input required',
-            'password.required' =>'this is input required'  ,
-            'name_en.required' => 'this is input required',
-            'name_ar.required' => 'this is input required',
-            'specialization_id.required'=> 'this is input required' ,
-            'gender_id.required'=> 'this is input required' ,
-            'joining_date.required' => 'this is input required',
-            'address.required' => 'this is input required',
+        
         ];
     }
 }

@@ -2,7 +2,7 @@
 @section('css')
 
 @section('title')
-{{__('mainpage.School_management')}}/{{__('section.add_section')}}
+{{__('main_page.School_management')}}/{{__('section.add_section')}}
 @stop
 @endsection
 @section('page-header')
@@ -55,7 +55,7 @@
                 <option>--Select type--</option>
                
               @foreach ($grades as $grade)
-              <option value="{{$grade->id}}">{{$grade->name_ar}}</option>
+              <option value="{{$grade->id}}">{{$grade->name}}</option>
               @error('grade_id')
               <small class="form-text text-danger" >{{$message}}</small>
               @enderror
@@ -65,7 +65,9 @@
                 </select>
                 <br>
                 <label for="">{{__('grades.name_class_ar')}}</label>
-                <select class="form-control form-control-lg" id="classroom_id"  name="classroom_id" >
+                <select class="form-control form-control-lg" id="classroom_id"  name="classroom_id"
+              
+               >
                 
                     @error('classroom_id')
               <small class="form-text text-danger" >{{$message}}</small>
@@ -93,28 +95,6 @@
 @endsection
 @section('js')
 
-    <script>
-                $(document).ready(function () {
-                    $('select[name="grade_id"]').on('change', function () {
-                        var grade_id = $(this).val();
-                        if (grade_id) {
-                            $.ajax({
-                                token:arguments,
-                                url: '{{ URL::to('/classes') }}/' + grade_id,
-                                type: "GET",
-                                dataType: "json",
-                                success: function (data) {
-                                    $('select[name="classroom_id"]').empty();
-                                    $.each(data, function (key, value) {
-                                        $('select[name="classroom_id"]').append('<option value="' + key + '">' + value + '</option>');
-                                    });
-                                },
-                            });
-                        } else {
-                            console.log('AJAX load did not work');
-                        }
-                    });
-                });
-            </script>
+  
 
 @endsection

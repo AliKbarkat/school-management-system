@@ -15,10 +15,15 @@ class AddParant extends Component
 {
     use WithFileUploads;
 
-    public $email, $password, $name_father, $name_father_en, $job_father, $job_father_en, $national_id_father,$passport_id_father, 
-    $phone_father, $nationality_father_id, $bload_type_Father_id, $religion_father_id, $address_father, 
-    $name_mother, $name_mother_en,$job_mother, $job_mother_en, $national_id_mother, $passport_id_mother, $phone_mother,
-    $nationality_mother_id,$bload_type_mother_id, $religion_mother_id, $address_mother;
+    public $email, $password, $name_father, $name_father_en, 
+    $job_father, $job_father_en, $national_id_father,$passport_id_father, 
+    $phone_father, $nationality_father_id, $bload_type_father_id, 
+    $religion_father_id, $address_father, 
+    $name_mother, $name_mother_en,$job_mother,
+    $job_mother_en, $national_id_mother, 
+    $passport_id_mother, $phone_mother,
+    $nationality_mother_id,$bload_type_mother_id,
+     $religion_mother_id, $address_mother;
    
     public $currentStep = 1;
    
@@ -31,7 +36,7 @@ class AddParant extends Component
 
          'nationalities' => Nationalitie::all(),
          'religions' => Religion::all(),
-         'bloads' => Bload::all(),
+         'bloods' => Bload::all(),
          'my_parants' => MyParant::all(),
         
         ]);
@@ -58,9 +63,9 @@ class AddParant extends Component
             'national_id_father' => 'required',
             'passport_id_father' => 'required',
             'phone_father' => 'required',
-            'nationally_father_id' => 'required',
-            'bload_type_father_id' => 'required',
-            'religion_father_id' => 'required',
+            'nationality_father_id' => 'exists:nationalities,id',
+            'bload_type_father_id'=> 'exists:bloads,id',
+            'religion_father_id' => 'exists:religions,id',
             'address_father' => 'required'
         ]);
         $this->currentStep = 2;
@@ -78,7 +83,7 @@ class AddParant extends Component
             'national_id_mother' => 'required',
             'passport_id_mother' => 'required',
             'phone_mother' => 'required',
-            'nationally_mother_id' => 'required',
+             'nationality_mother_id' => 'required',
             'bload_type_mother_id' => 'required',
             'religion_mother_id' => 'required',
             'address_mother' => 'required'
@@ -103,18 +108,18 @@ class AddParant extends Component
         $my_parant->email = $this->email;
         $my_parant->password = Hash::make($this->password);
         //father
-        $my_parant->name_father = ['ar'=> $this->name_father,'en'=> $this -> name_father_en];
-        $my_parant->job_father = ['en '=> $this->job_father_en,'ar' => $this  -> job_father] ;
-        $my_parant->national_id_father = $this->national_id_father;
-        $my_parant->passport_id_father = $this->passport_id_father;
-        $my_parant->phone_father = $this->phone_father;
-        $my_parant->nationality_father_id = $this->nationality_father_id;
-        $my_parant->bload_type_Father_id = $this->bload_type_father_id;
-        $my_parant->address_father = $this->address_father;
-        $my_parant->religion_father_id = $this->religion_father_id;
+        $my_parant->name_father = ['ar' => $this -> name_father , 'en'=> $this -> name_father_en];
+        $my_parant->job_father = ['ar' => $this -> job_father , 'en '=> $this -> job_father_en];
+        $my_parant->national_id_father = $this -> national_id_father;
+        $my_parant->passport_id_father = $this -> passport_id_father;
+        $my_parant->phone_father = $this -> phone_father;
+        $my_parant->nationality_father_id = $this -> nationality_father_id;
+        $my_parant->bload_type_father_id = $this -> bload_type_father_id;
+        $my_parant->address_father = $this -> address_father;
+        $my_parant->religion_father_id = $this -> religion_father_id;
         ///mother
         $my_parant->name_mother = ['ar' => $this -> name_mother ,'en' => $this -> name_mother_en];
-        $my_parant->job_mother = ['en ' => $this -> job_mother_en,'ar' => $this -> job_mother_en];
+        $my_parant->job_mother = ['ar' => $this -> job_mother, 'en ' => $this -> job_mother_en];
         $my_parant->national_id_mother = $this -> national_id_mother;
         $my_parant->passport_id_mother = $this -> passport_id_mother;
         $my_parant->phone_mother = $this -> phone_mother;
@@ -151,32 +156,32 @@ class AddParant extends Component
         $this->updateMode = true;
 
         $my_parant = MyParant::where('id', $id)->first();
-        $this->parent_id = $my_parant->id;
+        $this->parent_id = $my_parant -> id;
         $this->email = $my_parant -> email;
         $this->password = $my_parant -> password;
-        $this->name_father = $my_parant -> name_father;
-        $this->name_father_en = $my_parant -> name_father_en;
-        $this->job_father = $my_parant -> job_father;
-        $this->job_father_en = $my_parant -> job_father_en;
-        $this->national_id_father = $my_parant->National_ID_Father;
-        $this->passport_id_father = $my_parant->Passport_ID_Father;
-        $this->phone_father = $my_parant->Phone_Father;
-        $this->nationality_father_id = $my_parant->nationality_father_id;
-        $this->bload_type_Father_id = $my_parant->bload_type_Father_id;
-        $this->religion_father_id = $my_parant->religion_father_id;
-        $this->address_father = $my_parant->address_father;
+        $this->name_father = $my_parant -> getTranslation('name_father','ar');
+        $this->name_father_en = $my_parant -> getTranslation('name_father','en');
+        $this->job_father = $my_parant -> getTranslation('job_father','ar');
+        $this->job_father_en = $my_parant -> getTranslation('job_father','en');
+        $this->national_id_father = $my_parant -> national_id_father;
+        $this->passport_id_father = $my_parant -> passport_id_father;
+        $this->phone_father = $my_parant -> phone_father;
+        $this->nationality_father_id = $my_parant -> nationality_father_id;
+        $this->bload_type_father_id = $my_parant -> bload_type_father_id;
+        $this->religion_father_id = $my_parant -> religion_father_id;
+        $this->address_father = $my_parant -> address_father;
         //mother
-        $this->name_mother = $my_parant->name_mother;
-        $this->name_mother_en = $my_parant->Name_Mother_en;
-        $this->job_mother = $my_parant->job_mother;
-        $this->job_mother_en = $my_parant->job_mother_en;
-        $this->national_id_mother = $my_parant->national_id_mother;
-        $this->passport_id_mother = $my_parant->passport_id_mother;
-        $this->phone_mother = $my_parant->phone_mother;
-        $this->nationality_mother_id = $my_parant->nationality_mother_id;
-        $this->bload_type_mother_id = $my_parant->bload_type_mother_id;
-        $this->religion_mother_id = $my_parant->religion_mother_id;
-        $this->address_mother = $my_parant->address_mother;
+        $this->name_mother = $my_parant -> getTranslation('name_mother','ar');
+        $this->name_mother_en = $my_parant -> getTranslation('name_mother','en');
+        $this->job_mother = $my_parant -> getTranslation('job_mother','ar');
+        $this->job_mother_en = $my_parant -> getTranslation('job_mother','en');
+        $this->national_id_mother = $my_parant -> national_id_mother;
+        $this->passport_id_mother = $my_parant -> passport_id_mother;
+        $this->phone_mother = $my_parant -> phone_mother;
+        $this->nationality_mother_id = $my_parant -> nationality_mother_id;
+        $this->bload_type_mother_id = $my_parant -> bload_type_mother_id;
+        $this->religion_mother_id = $my_parant -> religion_mother_id;
+        $this->address_mother = $my_parant -> address_mother;
 
     }
 
@@ -205,28 +210,24 @@ class AddParant extends Component
             $parent->update([
                 'email' => $this -> email,
                 'password' => $this -> password,
-                'name_father' => $this -> name_father,
-                'name_father_en' => $this -> name_father_en,
-                'job_father' => $this -> job_father,
-                'job_father_en' => $this -> job_father_en,
+                'name_father' =>['en' => $this->name_father_en, 'ar' => $this->name_father],
+                'job_father' =>['en' => $this->job_father_en, 'ar' => $this->job_father],
                 'national_id_father' => $this -> national_id_father,
                 'passport_id_father' => $this -> passport_id_father,
                 'phone_father' => $this -> phone_father,
                 'nationality_father_id' => $this -> nationality_father_id,
-                'bload_type_Father_id' => $this -> bload_type_Father_id,
+                'bload_type_father_id' => $this -> bload_type_father_id,
                 'religion_father_id' => $this -> religion_father_id,
                 'address_father' => $this -> address_father,
-                'name_mother' => $this -> name_mother,
-                'name_mother_en' => $this -> name_mother_en,
-                'job_mother' => $this -> job_mother,
-                'job_mother_en' => $this -> job_mother_en,
+                'name_mother' =>['en' => $this->name_mother_en, 'ar' => $this->name_mother],
+                'job_mother' =>['en' => $this->job_mother_en, 'ar' => $this->job_mother],
                 'national_id_mother' => $this -> national_id_mother,
-                'passport_id_mother' => $this->Passport_ID_Mother,
-                'phone_mother' => $this -> Phone_Mother,
-                'nationality_mother_id' => $this -> Nationally_Mother_id,
-                'bload_type_mother_id' => $this -> Blood_Type_Mother_id,
-                'religion_mother_id' => $this -> Religion_Mother_id,
-                'address_mother' => $this -> Address_Mother,
+                'passport_id_mother' => $this->passport_id_mother,
+                'phone_mother' => $this -> phone_mother,
+                'nationality_mother_id' => $this -> nationally_mother_id,
+                'bload_type_mother_id' => $this -> blood_type_mother_id,
+                'religion_mother_id' => $this -> religion_mother_id,
+                'address_mother' => $this -> address_mother,
             ]);
             return redirect()->to('/Add_parent');
         }
@@ -249,7 +250,7 @@ class AddParant extends Component
     public function destroy($id)
     {
         MyParant::find($id)->destroy();
-        return redirect()->to('/Add_parent');
+        return redirect()->to('/add_parent');
 
     }
 
@@ -266,7 +267,7 @@ class AddParant extends Component
         $this -> passport_id_father = ''; 
         $this -> phone_father = '';
         $this -> nationality_father_id = ''; 
-        $this -> bload_type_Father_id = '';
+        $this -> bload_type_father_id = '';
         $this -> religion_father_id = '';
         $this -> address_father = ''; 
         $this -> name_mother = '';
@@ -276,10 +277,10 @@ class AddParant extends Component
         $this -> national_id_mother = '';
         $this -> passport_id_mother = '';
         $this -> phone_mother = ''; 
-        $this->nationality_mother_id = ''; 
-        $this->bload_type_mother_id = ''; 
+        $this -> nationality_mother_id = ''; 
+        $this -> bload_type_mother_id = ''; 
         $this -> religion_mother_id = ''; 
-        $this->address_mother = '';
+        $this -> address_mother = '';
     
     }
    

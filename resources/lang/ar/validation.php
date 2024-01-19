@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'accepted' => 'The :attribute must be accepted.',
-    'active_url' => 'The :attribute is not a valid URL.',
-    'after' => 'The :attribute must be a date after :date.',
-    'after_or_equal' => 'The :attribute must be a date after or equal to :date.',
-    'alpha' => 'The :attribute may only contain letters.',
-    'alpha_dash' => 'The :attribute may only contain letters, numbers, dashes and underscores.',
+    'accepted' => ':attribute يجب قبوله.',
+    'active_url' => ' :attribute   هذا العنوان ليس صالحًا ' ,
+    'after' => ' :attribute يجب أن يكون تاريخا بعد:date.',
+    'after_or_equal' => ':attribute يجب أن يكون تاريخًا بعد أو يساوي :date.',
+    'alpha' => ':attribute قد تحتوي على أحرف فقط .',
+    'alpha_dash' => ' :attributeيجب أن تحتوي فقط على أحرف وأرقام وشرطات وشرطات سفلية  . ',
     'alpha_num' => 'The :attribute may only contain letters and numbers.',
     'array' => 'The :attribute must be an array.',
     'before' => 'The :attribute must be a date before :date.',
@@ -29,7 +29,7 @@ return [
     'distinct' => 'The :attribute field has a duplicate value.',
     'email' => 'The :attribute must be a valid email address.',
     'ends_with' => 'The :attribute must end with one of the following: :values.',
-    'exists' => 'The selected :attribute is invalid.',
+    'exists' => ' لم يتم تحديد :attribute من العناصر .', 
     'file' => 'The :attribute must be a file.',
     'filled' => 'The :attribute field must have a value.',
     'gt' => [
@@ -84,7 +84,7 @@ return [
     'password' => 'The password is incorrect.',
     'present' => 'The :attribute field must be present.',
     'regex' => 'The :attribute format is invalid.',
-    'required' => 'The :attribute هذا الحقل فارغ.',
+    'required' => '  :attribute مطلوب',
     'required_if' => 'The :attribute field is required when :other is :value.',
     'required_unless' => 'The :attribute field is required unless :other is in :values.',
     'required_with' => 'The :attribute field is required when :values is present.',
@@ -101,7 +101,7 @@ return [
     'starts_with' => 'The :attribute must start with one of the following: :values.',
     'string' => 'The :attribute must be a string.',
     'timezone' => 'The :attribute must be a valid zone.',
-    'unique' => 'The :attribute has already been taken.',
+    'unique' => ':attribute موحود بالفعل',
     'uploaded' => 'The :attribute failed to upload.',
     'url' => 'The :attribute format is invalid.',
     'uuid' => 'The :attribute must be a valid UUID.',
@@ -115,6 +115,43 @@ return [
     ],
 
 
-    'attributes' => [],
+    'attributes' => [
+        //class room
+        'name_class_ar' => 'الصف بالعربي',
+        'name_class_en' => 'الصف بالانكليزي',
+        'name_ar'    => 'الاسم بالعربي',
+        'name_en'    => 'الاسم بالانكليزي',
+        'status'     =>   'الحالة',
+        //students
+        'email'      => 'البريد الالكتروني',
+        'password'   => 'كلمة السر',
+        'gender_id'  => 'الجنس',
+        'nationalite_id' => 'الجنسية',
+        'bload_id'   => 'زمرة الدم',
+        'date_birth' => 'تاريخ الولادة',
+        'grade_id'   => 'المرحلة الدراسية',
+        'classroom_id' =>'الصف الدراسي',
+        'section_id' => 'القسم',
+        'parant_id'  => 'اسم الأب/ الأم ',
+        'academic_year' => 'السنة الدراسية',
+        'photos'     =>   'الصور',
+        'descreption'=>   'ملاحظة',
+         //My Parents
+         'name_father' => '  اسم الأب باللغة العربية',
+         'name_father_en' => 'اسم الاب باللغة الانكليزية',
+         'job_father' => 'وظيفة الاب باللغة العربية',
+         'job_father_en' => 'وظيفة الاب باللغة الانكليزية',
+         'national_id_father' => 'رقم الهوية الوطني',
+         'passport_id_father' => 'رقم جواز السفر',
+         'phone_father' => 'رقم الهاتف',
+         'nationality_father_id'=> 'الجنسية',
+         'bload_type_father_id' => 'زمرة الدم',
+         'religion_father_id' => 'الديانة',
+         'address_father' => 'العنوان',
+         // teachers
+         'joining_date' => 'تاريخ الانضمام',
+         'specialization_id' => 'التخصص',
+         'address' => 'العنوان',
+    ],
 
 ];

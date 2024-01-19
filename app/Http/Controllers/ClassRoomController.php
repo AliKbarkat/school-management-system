@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ClassRoomRequest;
 use App\Models\Classroom;
 use App\Models\Grade;
+use Illuminate\Http\Request;
+
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class ClassRoomController extends Controller
@@ -34,8 +36,10 @@ class ClassRoomController extends Controller
     function store(ClassRoomRequest $request)
     {
 
+        // return $request;
         Classroom::create([
-            'name' => ['en' => $request ['name_en'] ,'ar' => $request['name_ar']],
+            'name' => ['en' =>$request['name_en'] ,'ar' =>$request['name_ar'] ] ,
+           
             'grade_id' => $request['grade_id'],
         ]);
 
@@ -51,7 +55,7 @@ class ClassRoomController extends Controller
 
         ClassRoom::select([
            
-            'name_' . LaravelLocalization::getCurrentLocale() . ' as name',
+            'name',
             'grade_id',
         ]);
 

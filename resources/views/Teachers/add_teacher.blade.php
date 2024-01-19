@@ -2,7 +2,7 @@
 @section('css')
 
 @section('title')
-  {{ trans('mainpage.School_management') }}/{{trans('teachers.add_teacher')}}
+  {{ trans('main_page.School_management') }}/{{trans('teachers.add_teacher')}}
 @stop
 @endsection
 @section('page-header')
@@ -38,15 +38,15 @@
                             <div class="col">
                                 <label for="title">{{trans('teachers.email')}}</label>
                                 <input type="email" name="email"  class="form-control">
-                                @error('Email')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                @error('email')
+                                <small class="text text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
                             <div class="col">
                                 <label for="title">{{trans('teachers.password')}}</label>
                                 <input type="password" name="password" class="form-control" >
-                                @error('Password')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                @error('password')
+                                <small class="text text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
                           </div>
@@ -54,15 +54,15 @@
                             <div class="col">
                                 <label for="title">{{trans('teachers.name_ar')}}</label>
                                 <input type="text" name="name_ar" class="form-control" >
-                                @error('Name_ar')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                @error('name_ar')
+                                <small class="text text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
                             <div class="col">
                                 <label for="title">{{trans('teachers.name_en')}}</label>
                                 <input type="text" name="name_en" class="form-control" >
-                                @error('Name_en')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                @error('name_en')
+                                <small class="text text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
                          </div> 
@@ -71,7 +71,7 @@
                                 <label for="title">{{trans('teachers.joining_date')}}</label>
                                 <input type="date" name="joining_date" class="form-control">
                                 @error('joining_date')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                <small class="text text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
                             <div class="form-group col">
@@ -83,7 +83,7 @@
                                     @endforeach
                                 </select>
                                 @error('gender_id')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                <small class="text text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
         
@@ -96,7 +96,7 @@
                                     @endforeach
                                 </select>
                                 @error('specialization_id')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                <small class="text text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
                     
@@ -107,7 +107,7 @@
                          <textarea class="form-control"name="address"  id="exampleFormControlTextarea1" rows="4"></textarea>
                         
                             @error('address')
-                            <div class="alert alert-danger">{{ $message }}</div>
+                            <small class="text text-danger">{{ $message }}</small>
                             @enderror
                          </div>
                         </div> 

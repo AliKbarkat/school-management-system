@@ -1,6 +1,8 @@
 <?php
 return [
     'add_parant' => 'Add Parant',
+    'information_fother' => 'Information Fother',
+    'information_mother' => 'Information Mother',
     'email' => 'Email',
     'password' => 'Password',
     'name_father' => ' Name Father for arabic',
@@ -14,8 +16,8 @@ return [
     'bload_type' => ' Blood Tybe',
     'religion' => 'Religion',
     'Address_Father' => ' Address',
-    'Next' => 'Next',
-    'Choose' => 'Choose',
+    'next' => 'Next',
+    'choose' => 'Choose',
     'name_mother' => ' Name Mother for arabic',
     'name_mother_en' => 'Name Mother for english',
     'job_mother' => 'Job Mother for arabic',
@@ -29,5 +31,11 @@ return [
     'back' => 'Back',
     'submit' => 'Submit',
     'confirm' => 'Are you sure to save the data?',
-    'succses'=>'j'
+    'succses' => 'saved',
+    'list_parent' => 'List Parent',
+    'chose_file_upload' => 'Chose File Upload',
+    'procsess'  =>  'Procsess',
+     'saved_data' => 'Saved Data',
+     'father_name' => 'Name Father',
+     'father_job' => 'Job father',
 ];

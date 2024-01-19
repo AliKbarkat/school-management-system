@@ -39,7 +39,7 @@ students
             <div class="card-body">
                 <a href="{{route('students.create')}}" class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="button">add student</a>
                 <div class="table-responsive">
-                    <form action="{{route('Attendance.store')}}" method="POST">
+                    <form action="{{route('attendance.store')}}" method="POST">
                         @csrf
                     <table id="datatable" class="table table-hover table-sm tablebordered p-0" data-page-lenth="50" >
                 <thead>

@@ -10,7 +10,7 @@
                         <label for="title">{{trans('my_parant.email')}}</label>
                         <input type="email" wire:model="email"  class="form-control">
                         @error('email')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                        <small class="text text-danger">{{ $message }}</small>
                         @enderror
                     </div>
 
@@ -18,7 +18,7 @@
                         <label for="title">{{trans('my_parant.password')}}</label>
                         <input type="password" wire:model="password" class="form-control" >
                         @error('password')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                        <small class="text text-danger">{{ $message }}</small>
                         @enderror
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                         <label for="title">{{trans('my_parant.name_father')}}</label>
                         <input type="text" wire:model="name_father" class="form-control" >
                         @error('name_father')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                        <small class="text text-danger">{{ $message }}</small>
                         @enderror
                     </div>
 
@@ -37,7 +37,7 @@
                         <label for="title">{{trans('my_parant.name_father_en')}}</label>
                         <input type="text" wire:model="name_father_en" class="form-control" >
                         @error('name_father_en')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                        <small class="text text-danger">{{ $message }}</small>
                         @enderror
                     </div>
                 </div>
@@ -48,15 +48,15 @@
                         <label for="title">{{trans('my_parant.job_father')}}</label>
                         <input type="text" wire:model="job_father" class="form-control">
                         @error('job_father')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                        <small class="text text-danger">{{ $message }}</small>
                         @enderror
                     </div>
 
                     <div class="col-md-3">
                         <label for="title">{{trans('my_parant.job_father_en')}}</label>
-                        <input type="text" wire:model="Job_Father_en" class="form-control">
+                        <input type="text" wire:model="job_father_en" class="form-control">
                         @error('job_father_en')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                        <small class="text text-danger">{{ $message }}</small>
                         @enderror
                     </div>
 
@@ -65,7 +65,7 @@
                         <label for="title">{{trans('my_parant.national_id')}}</label>
                         <input type="text" wire:model="national_id_father" class="form-control">
                         @error('national_id_father')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                        <small class="text text-danger">{{ $message }}</small>
                         @enderror
                     </div>
 
@@ -73,7 +73,7 @@
                         <label for="title">{{trans('my_parant.passport_id')}}</label>
                         <input type="text" wire:model="passport_id_father" class="form-control">
                         @error('passport_id_father')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                        <small class="text text-danger">{{ $message }}</small>
                         @enderror
                     </div>
 
@@ -81,7 +81,7 @@
                         <label for="title">{{trans('my_parant.phone')}}</label>
                         <input type="text" wire:model="phone_father" class="form-control">
                         @error('phone_father')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                        <small class="text text-danger">{{ $message }}</small>
                         @enderror
                     </div>
 
@@ -98,20 +98,20 @@
                             @endforeach
                         </select>
                         @error('nationality_father_id')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                        <small class="text text-danger">{{ $message }}</small>
                         @enderror
                     </div>
 
                     <div class="form-group col">
                         <label for="inputState">{{trans('my_parant.bload_type')}}</label>
-                        <select class="custom-select my-1 mr-sm-2" wire:model="bload_type_father_id">
+                          <select class="custom-select my-1 mr-sm-2" wire:model="bload_type_father_id">
                             <option selected>{{trans('my_parant.choose')}}...</option>
-                            @foreach($bloads as $type_blood)
-                                <option value="{{$type_bload->id}}">{{$type_bload->name}}</option>
+                             @foreach($bloods as $type_bload)
+                            <option value="{{$type_bload->id}}">{{$type_bload->name}}</option>
                             @endforeach
-                        </select>
-                        @error('blood_type_father_id')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                          </select>
+                        @error('bload_type_father_id')
+                        <small class="text text-danger">{{ $message }}</small>
                         @enderror
                     </div>
 
@@ -125,7 +125,7 @@
                         </select>
                         
                         @error('religion_father_id')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                        <small class="text text-danger">{{ $message }}</small>
                         @enderror
                     </div>
                 </div>
@@ -135,13 +135,13 @@
                     <label for="exampleFormControlTextarea1">{{trans('my_parant.address')}}</label>
                     <textarea class="form-control" wire:model="address_father" id="exampleFormControlTextarea1" rows="4"></textarea>
                     @error('address_father')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <small class="text text-danger">{{ $message }}</small>
                     @enderror
                 </div> 
 
                 @if($updateMode) 
                     <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="firstStepSubmit_edit"
-                            type="button">{{trans('Parent_trans.next')}}
+                            type="button">{{trans('my_parant.next')}}
                     </button> 
                 @else 
                     <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="firstStepSubmit"

@@ -1,6 +1,8 @@
 <?php
 return [
     'add_parant' => 'اضافة ولي أمر',
+    'information_father' => 'معلومات الاب',
+    'information_mother' => 'معلومات الام',
     'email' => 'البريد الالكتروني',
     'password' => 'كلمة المرور',
     'name_father' => ' اسم الأب باللغة العربية',
@@ -26,5 +28,9 @@ return [
     'succses' => 'تم الحفظ بنجاح',
     'list_parent' => 'قائمة اولياء الامور',
     'chose_file_upload' => 'اختر الملفات لرفعها',
-   'procsess'=>'العمليات',
+    'procsess'  =>  'العمليات',
+    'saved_data' => 'حفظ البيانات',
+    'father_name' => 'اسم الأب',
+    'father_job' =>  'وظيفة الاب',
+
 ];

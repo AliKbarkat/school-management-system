@@ -11,7 +11,8 @@
                         <label for="title">{{trans('my_parant.name_mother')}}</label>
                         <input type="text" wire:model="name_mother" class="form-control">
                         @error('name_mother')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                        <small class="text text-danger">{{ $message }}</small>
+
                         @enderror
                     </div>
 
@@ -19,7 +20,8 @@
                         <label for="title">{{trans('my_parant.name_mother_en')}}</label>
                         <input type="text" wire:model="name_mother_en" class="form-control">
                         @error('name_mother_en')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                        <small class="text text-danger">{{ $message }}</small>
+
                         @enderror
                     </div>
                 </div>
@@ -29,7 +31,8 @@
                         <label for="title">{{trans('my_parant.job_mother')}}</label>
                         <input type="text" wire:model="job_mother" class="form-control">
                         @error('job_mother')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                        <small class="text text-danger">{{ $message }}</small>
+
                         @enderror
                     </div>
 
@@ -37,7 +40,8 @@
                         <label for="title">{{trans('my_parant.job_mother_en')}}</label>
                         <input type="text" wire:model="job_mother_en" class="form-control">
                         @error('job_mother_en')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                        <small class="text text-danger">{{ $message }}</small>
+
                         @enderror
                     </div>
 
@@ -45,15 +49,17 @@
                         <label for="title">{{trans('my_parant.national_id')}}</label>
                         <input type="text" wire:model="national_id_mother" class="form-control">
                         @error('national_id_mother')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                        <small class="text text-danger">{{ $message }}</small>
+
                         @enderror
                     </div>
 
                     <div class="col">
                         <label for="title">{{trans('my_parant.Passport_id')}}</label>
-                        <input type="text" wire:model="Passport_id_mother" class="form-control">
+                        <input type="text" wire:model="passport_id_mother" class="form-control">
                         @error('Passport_id_mother')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                        <small class="text text-danger">{{ $message }}</small>
+
                         @enderror
                     </div>
 
@@ -61,7 +67,8 @@
                         <label for="title">{{trans('my_parant.phone')}}</label>
                         <input type="text" wire:model="phone_mother" class="form-control">
                         @error('phone_mother')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                        <small class="text text-danger">{{ $message }}</small>
+
                         @enderror
                     </div>
                 </div>
@@ -76,8 +83,9 @@
                             <option value="{{$national->id}}">{{$national->name}}</option>
                             @endforeach
                         </select>
-                        @error('Nationally_Mother_id')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                        @error('nationality_mother_id')
+                        <small class="text text-danger">{{ $message }}</small>
+
                         @enderror
                     </div>
 
@@ -85,12 +93,13 @@
                         <label for="inputState">{{trans('my_parant.bload_type')}}</label>
                           <select class="custom-select my-1 mr-sm-2" wire:model="bload_type_mother_id">
                             <option selected>{{trans('my_parant.choose')}}...</option>
-                             @foreach($bloads as $type_bload)
+                             @foreach($bloods as $type_bload)
                             <option value="{{$type_bload->id}}">{{$type_bload->name}}</option>
                             @endforeach
                           </select>
-                        @error('Blood_Type_Mother_id')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                        @error('bload_type_mother_id')
+                        <small class="text text-danger">{{ $message }}</small>
+
                         @enderror
                     </div>
 
@@ -102,18 +111,20 @@
                                 <option value="{{$religion->id}}">{{$religion->name}}</option>
                             @endforeach
                         </select>
-                        @error('Religion_Mother_id')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                        @error('religion_mother_id')
+                        <small class="text text-danger">{{ $message }}</small>
+
                         @enderror
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">{{trans('my_parant.address')}}</label>
-                    <textarea class="form-control" wire:model="Address_Mother" id="exampleFormControlTextarea1"
+                    <textarea class="form-control" wire:model="address_mother" id="exampleFormControlTextarea1"
                               rows="4"></textarea>
-                    @error('Address_Mother')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    @error('address_mother')
+                    <small class="text text-danger">{{ $message }}</small>
+
                     @enderror
                 </div>
 

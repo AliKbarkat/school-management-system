@@ -10,12 +10,12 @@
 <div class="page-title">
     <div class="row">
         <div class="col-sm-6">
-            <h4 class="mb-0"> {{__('grades.List_grade')}}</h4>
+            <h4 class="mb-0"> {{__('grades.list_grade')}}</h4>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right ">
                 <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}" class="default-color">Home</a></li>
-                <li class="breadcrumb-item active">{{__('grades.List_grade')}}</li>
+                <li class="breadcrumb-item active">{{__('grades.list_grade')}}</li>
             </ol>
         </div>
     </div>
@@ -85,24 +85,26 @@
                <div class="modal-body">
                    <div class="container">
                        <form action="{{route('grad.store')}}" method="POST">
-                           @csrf
-                           <label for="">{{__('grades.name_grade_en')}}</label><br>
-                           <input class="form-control form-control-lg" type="text" name="name_en"  aria-label=".form-control-lg example">
+                           
+                        @csrf
+
+                           <label>{{__('grades.name_grade_en')}}</label><br>
+                           <input class="form-control form-control-lg" type="text" name="name_en" aria-label=".form-control-lg example">
                            @error('name_en')
                            <small class="form-text text-danger">{{$message}}</small> 
                            @enderror
                            <br>
 
-                           <label for="">{{__('grades.name_grade_ar')}}</label><br>
+                           <label>{{__('grades.name_grade_ar')}}</label><br>
                            <input class="form-control form-control-md" type="text" name="name_ar"  aria-label=".form-control-lg example">
                            @error('name_ar')
                            <small class="form-text text-danger" >{{$message}}</small> 
                            @enderror
                            <br>
 
-                           <label for="">{{__('grades.notes')}}</label><br>
+                           <label>{{__('grades.notes')}}</label><br>
                            <input class="form-control form-control-lg" type="text" name="descreption" aria-label=".form-control-lg example">
-                           @error('procsess')
+                           @error('descreption')
                            <small class="form-text text-danger" >{{$message}}</small> 
                            @enderror
                            <br>

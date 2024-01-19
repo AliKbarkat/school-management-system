@@ -12,10 +12,10 @@ class AttendanceRepositry  implements AttendanceInterface{
     public function index()
     {
     
-        $Grades = Grade::with('Section')->get();
+        $grades = Grade::with('Section')->get();
         $list_grade=Grade::all();
         $teacher=Teacher::all();
-        return view('attendance.section',compact('Grades','list_grade','teacher'));
+        return view('attendance.section',compact('grades','list_grade','teacher'));
     
     }
 

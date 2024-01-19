@@ -48,10 +48,10 @@
 
         <div class="card card-statistics h-100">
             <div class="card-body">
-                @foreach ($Grades as $Grade)
+                @foreach ($grades as $grade)
                 <div class="accordion gray plus-icon round">
                        <div class="acd-group">
-                         <a href="#" class="acd-heading">{{$Grade->name_ar }}</a> 
+                         <a href="#" class="acd-heading">{{$grade->name }}</a> 
                             <div class="acd-des">
                                 <div class="row">
                                     <div class="col-xl-12 mb-30">
@@ -75,11 +75,11 @@
                                                         </tr>
                                                         </thead>
                                                         <tbody>
-                                                         @foreach ($Grade->Section as $list_Section)
+                                                         @foreach ($grade->section as $list_Section)
                                                             <tr>
                                                                 <td>{{ $list_Section->id }}</td>
-                                                                <td>{{ $list_Section->name_ar }}</td>
-                                                                <td>{{ $list_Section->classroom->name_class_ar }}</td> 
+                                                                <td>{{ $list_Section->name }}</td>
+                                                                <td>{{ $list_Section->classroom->name }}</td> 
                                                                 <td>
                                                                 @if ( $list_Section->status =='1')
                                                                 <span class="badge badge-success">{{ $list_Section->status }}</span> 

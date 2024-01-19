@@ -14,7 +14,7 @@
         <div class="col-sm-6">
             <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right ">
                 <li class="breadcrumb-item"><a href="#" class="default-color">Home</a></li>
-                <li class="breadcrumb-item active"></li>
+                <li class="breadcrumb-item active">{{ trans('my_parant.list_parent') }}</li>
             </ol>
         </div>
     </div>

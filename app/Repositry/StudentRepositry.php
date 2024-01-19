@@ -29,7 +29,7 @@ class StudentRepositry implements StudentRepositryInterface
         $data['parants']=MyParant::all();
         $data['genders']=Gender::all();
         $data['nationals']=Nationalitie::all();
-        $data['bloods']=Bload::all();
+        $data['bloads']=Bload::all();
         $data['grades']=Grade::all();
         $data['sections']=Section::all();
         $data['class_room']=ClassRoom::all();

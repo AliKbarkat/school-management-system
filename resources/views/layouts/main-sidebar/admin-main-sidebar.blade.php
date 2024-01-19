@@ -58,27 +58,29 @@
             <ul id="students-menu" class="collapse">
                 <li>
                     <a href="javascript:void(0);" data-toggle="collapse" data-target="#Student_information">
-                        {{trans('main_page.Student_information')}}<div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div></a>
+                        {{trans('main_page.student_information')}}
+                        <div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div></a>
                     <ul id="Student_information" class="collapse">
                         <li> <a href="{{route('students.create')}}">{{__('students.add_student')}}</a></li>
                         <li> <a href="{{route('students.index')}}">{{__('main_page.list_students')}}</a></li>
                     </ul>
                 </li>
 
-                <li>
-                    <a href="javascript:void(0);" data-toggle="collapse" data-target="#Students_upgrade">{{trans('main_page.students_promotions')}}
+             {{-- <li>
+                    <a href="javascript:void(0);" data-toggle="collapse" data-target="#Students_upgrade">
+                        {{trans('main_page.students_promotions')}}
                         <div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div></a>
                     <ul id="Students_upgrade" class="collapse">
                         <li> <a href="{{route('promotion.index')}}">{{trans('main_page.list_promotions')}}</li>
                         <li> <a href="{{route('promotion.create')}}">{{trans('students.add_promotion')}}</a> </li>
                     </ul>
-                </li>
+                </li> --}}
 
                 <li>
                     <a href="javascript:void(0);" data-toggle="collapse" data-target="#Graduate students">{{trans('main_page.graduate_students')}}<div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div></a>
                     <ul id="Graduate students" class="collapse">
-                        <li> <a href="{{route('graduated.create')}}">{{trans('main_trans.add_Graduate')}}</a> </li>
-                        <li> <a href="{{route('graduated.index')}}">{{trans('main_trans.list_Graduate')}}</a> </li>
+                        <li> <a href="{{route('graduated.create')}}">{{trans('main_page.add_graduate')}}</a> </li>
+                        <li> <a href="{{route('graduated.index')}}">{{trans('main_page.list_graduate')}}</a> </li>
                     </ul>
                 </li>
             </ul>

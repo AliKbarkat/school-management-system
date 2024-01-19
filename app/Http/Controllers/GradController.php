@@ -7,20 +7,16 @@ use App\Http\Requests\GradeRequest;
 use App\Models\ClassRoom;
 use App\Models\Grade;
 use Illuminate\Http\Request;
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use PhpParser\Node\Stmt\Return_;
 
 class GradController extends Controller
 {
     public function index()
     {
 
-        $grades = Grade::select(
-             'id',
-             'name' ,
-             'descreption'
-             )->get();
+        $grades = Grade::get();
         return view('grade.grades', compact('grades'));
-    
+    // return $grades;
     }
     public function create()
     {
@@ -29,11 +25,11 @@ class GradController extends Controller
     
     }
     public function store(Request $request)
-    {
-      
+    {  
+        
         Grade::create([
 
-            'name' => ['ar' => $request['name_ar'] , 'en' => $request['name_en']] ,
+            'name' => ['en' =>$request['name_en'] ,'ar' =>$request['name_ar'] ] ,
             'descreption' => $request['descreption'],
      
         ]);

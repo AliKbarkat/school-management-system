@@ -115,6 +115,44 @@ return [
     ],
 
 
-    'attributes' => [],
+    'attributes' => [
+   //class room
+   'name_class_ar' => 'Name Class for arabic',
+   'name_class_en' => 'Name Class for english ',
+   'name_ar'    => 'Name Arabic',
+   'name_en'    => ' Name English',
+   'status'     =>   'Status',
+   //students
+   'email'      => 'Email',
+   'password'   => 'Password',
+   'gender_id'  => 'The Gender',
+   'nationalite_id' => 'The Nationaltiy',
+   'bload_id'   => 'Bload',
+   'date_birth' => ' Date Birth',
+   'grade_id'   => 'Grade',
+   'classroom_id' =>' Class Room',
+   'section_id' => 'Section',
+   'parant_id'  => 'Parent',
+   'academic_year' => 'Academic Year ',
+   'photos'     =>   'Photo',
+   'descreption'=>   'Notes',
+    //My Parents
+    'name_father' => 'Name Father for arabic',
+    'name_father_en' => 'Name Father for english',
+    'job_father' => ' Job Father for arabic',
+    'job_father_en' => ' Job Father for english',
+    'national_id_father' => 'National ID',
+    'passport_id_father' => 'Passport ID',
+    'phone_father' => 'Phone',
+    'nationality_father_id'=> 'Nationality',
+    'bload_type_father_id' => 'Bload',
+    'religion_father_id' => 'Religion',
+    'address_father' => 'Address',
+    // teachers
+    'joining_date' => 'Joining Date ',
+    'specialization_id' => 'Specialization',
+    'address' => 'Address',
+        
+    ],
 
 ];

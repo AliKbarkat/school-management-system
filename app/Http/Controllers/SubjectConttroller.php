@@ -10,37 +10,43 @@ class SubjectConttroller extends Controller
     protected $subject;
     function __construct(SubjectInterface $subject)
     {
+
         $this->subject = $subject;
+    
     }
+
     public function index()
     {
     
-        return $this->subject->index();
+        return $this -> subject->index();
     
     }
    
     public function create()
     {
     
-        return $this->subject->create();
+        return $this -> subject->create();
     
     }
+
     public function store(Request $request)
     {
     
-        return $this->subject->store($request);
+        return $this -> subject -> store($request);
     
     }
+
     public function update(Request $request)
     {
     
-        return $this->subject->update($request);
+        return $this -> subject -> update($request);
     
     }
+
     public function destroy($request)
     {
     
-        return $this->subject->destroy($request);
+        return $this -> subject -> destroy($request);
     
     }
 }

@@ -36,24 +36,30 @@
                         <input class="form-control form-control-lg" type="text" name="name_class_ar" placeholder="{{__('grades.name_class_ar')}}"
                          value="{{$class->name_class_ar}}" aria-label=".form-control-lg example">
                         @error('name_class_ar')
-                            {{$message}}
+                        <small class="text text-danger">{{ $message }}</small>
+
                         @enderror
                         <br>
                         <label for="">{{__('grades.name_grade_ar')}}</label><br>
                         <input class="form-control form-control-md" type="text" name="name_class_en"
                         value="{{$class->name_class_en}}" placeholder="{{__('grades.name_class_ar')}}" aria-label=".form-control-lg example">
                         @error('name_ar')
-                        {{$message}}
+                        <small class="text text-danger">{{ $message }}</small>
+
                     @enderror
                     <br>
                        
                         <label >{{__('grades.name_grade_ar')}}</label>
-                        <br>
-                  <select class="form-control form-control-lg"  name="grade_id" >
-                  @foreach ($grade as $grad)
-                  <option value="{{$grad->id}}">{{$grad->name_ar}}<br></option>
-                  @endforeach
-                      <br>
+                            <br>
+                        <select class="form-control form-control-lg"  name="grade_id" >
+                        @foreach ($grade as $grad)
+                            <option value="{{$grad->id}}">{{$grad->name_ar}}<br></option>
+                        @endforeach
+                            <br>
+                         @error('grade_id')
+                      <small class="text text-danger">{{ $message }}</small>
+
+                      @enderror
                     </select>
                         <br><br> <input type="submit" src="" class="btn btn-dark" value="{{__('grades.submit')}}">
                     </form>

@@ -11,4 +11,6 @@ class Religion extends Model
     public $translatable = ['name'];
     public $fillable = ['name'];
 
+ public $timestamp= false;
+
 }

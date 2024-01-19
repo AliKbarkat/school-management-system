@@ -25,9 +25,10 @@ class ClassRoomRequest extends FormRequest
     {
         return [
 
-            'name_class_ar' => 'required|unique:class_rooms,name_class_ar,' . $this->id,
-            'name_class_en' => 'required|unique:class_rooms,name_class_en,' . $this->id,
-            'grade_id' => 'required',
+            'name_ar' => 'required|unique:class_rooms,name,' . $this->id,
+            'name_en' => 'required|unique:class_rooms,name,' . $this->id,
+            'grade_id' => 'exists:grades,id',
+            'classroom_id' => 'exists:class_rooms,id',
 
         ];
 
@@ -35,9 +36,7 @@ class ClassRoomRequest extends FormRequest
     public function messages()
     {
         return [
-            'name_class_ar.rquired' => '{{__(validation.required)}}',
-            'name_class_en.rquired' => '{{__(validation.required)}}',
-            'grade_id.rquired' => '{{__(validation.required)}}',
+  
         ];
     }
 

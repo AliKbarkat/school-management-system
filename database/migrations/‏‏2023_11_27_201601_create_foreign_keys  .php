@@ -28,7 +28,7 @@ class CreateForeignKeys extends Migration
         });
         Schema::table('my_parants', function (Blueprint $table) {
             $table->foreign('nationally_father_id')->references('id')->on('nationalities')->onDelete('cascade');
-            $table->foreign('blood_type_Father_id')->references('id')->on('bloads')->onDelete('cascade');
+            $table->foreign('blood_type_father_id')->references('id')->on('bloads')->onDelete('cascade');
             $table->foreign('religion_father_id')->references('id')->on('religions')->onDelete('cascade');
             $table->foreign('nationally_mother_id')->references('id')->on('nationalities')->onDelete('cascade');
             $table->foreign('blood_type_mother_id')->references('id')->on('bloads')->onDelete('cascade');
