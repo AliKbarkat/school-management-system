@@ -52,9 +52,9 @@
                     <td>{{$student->name}}</td>
                     <td>{{$student->gender->name}}</td>
                     <td>{{$student->date_birth}}</td>
-                    <td>{{$student->grade->name_ar}}</td>
-                    <td>{{$student->classroom->name_class_ar}}</td>
-                    <td>{{$student->Section->name_ar}}</td>
+                    <td>{{$student->grade->name}}</td>
+                    <td>{{$student->classroom->name}}</td>
+                    <td>{{$student->Section->name}}</td>
                     
                     <td>
                         <div class="dropdown show">

@@ -25,10 +25,13 @@
 @section('content')
 <!-- row -->
 <div class="row">
+
     <div class="col-md-12 mb-30">
         <div class="card card-statistics h-100">
             <div class="card-body">
-
+<a href="{{route('fees.create')}}" 
+                class="btn btn-success btn-sm nextBtn btn-lg pull-right" 
+                type="button">{{ trans('fees.add_fees')}}</a>
                 <table class="table">
                     <thead>
                       <tr>
@@ -50,8 +53,8 @@
                         <td>{{$fee->id}}</td>
                         <td>{{$fee->title}}</td>
                         <td>{{$fee->ammount}}</td> 
-                        <td>{{$fee->grades->name_ar}}</td>
-                        <td>{{$fee->classes->name_class_ar}}</td>
+                        <td>{{$fee->grades->name}}</td>
+                        <td>{{$fee->classes->name}}</td>
                         <td>{{$fee->section_id}}</td>
                         <td>{{$fee->year}}</td>
                         <td><a class="btn btn-info btn-sm" href="{{route('Fees.edit',$fee->id)}}">

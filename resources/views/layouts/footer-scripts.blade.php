@@ -33,7 +33,7 @@
 
 
 
-{{-- <script>
+<script>
     $(document).ready(function () {
         $('select[name="grade_id"]').on('change', function () {
             var grade_id = $(this).val();
@@ -56,7 +56,7 @@
             }
         });
     });
-</script> --}}
+</script>
 
 {{-- <script>
     $(document).ready(function () {

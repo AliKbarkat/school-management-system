@@ -2,7 +2,7 @@
 @section('css')
 
 @section('title')
-  {{ trans('main_page.School_management') }}/{{trans('teachers.add_teacher')}}
+  {{ trans('main_page.school_management') }}/{{trans('teachers.add_teacher')}}
 @stop
 @endsection
 @section('page-header')
@@ -79,7 +79,7 @@
                                 <select class="custom-select my-1 mr-sm-2" name="gender_id">
                                     <option selected>{{trans('teachers.choose')}}...</option>
                                     @foreach($gender as $g)
-                                        <option value="{{$g->id}}">{{$g->Name}}</option>
+                                        <option value="{{$g->id}}">{{$g->name}}</option>
                                     @endforeach
                                 </select>
                                 @error('gender_id')
@@ -92,7 +92,7 @@
                                 <select class="custom-select my-1 mr-sm-2" name="specialization_id">
                                     <option selected>{{trans('teachers.choose')}}...</option>
                                     @foreach($specialization as $s)
-                                        <option value="{{$s->id}}">{{$s->Name}}</option>
+                                        <option value="{{$s->id}}">{{$s->name}}</option>
                                     @endforeach
                                 </select>
                                 @error('specialization_id')
@@ -113,7 +113,9 @@
                         </div> 
                        
                          <br>
-                         <input type="submit" class="btn btn-success btn-sm btn-lg pull-right">
+                         <button class="btn btn-success btn-sm  btn-lg pull-right" 
+                    type="submit">{{trans('teachers.submit')}}
+                   </button> 
                         </form>
         
             </div>

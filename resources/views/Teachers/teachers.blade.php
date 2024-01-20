@@ -2,7 +2,7 @@
 @section('css')
 @toaster_css
 @section('title')
- {{__('mainpage.Teachers')}}
+ {{__('main_page.teachers')}}
 @stop
 @endsection
 @section('page-header')
@@ -15,7 +15,7 @@
         <div class="col-sm-6">
             <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right ">
                 <li class="breadcrumb-item"><a href="#" class="default-color">Home</a></li>
-                <li class="breadcrumb-item active">{{__('mainpage.Teachers')}}</li>
+                <li class="breadcrumb-item active">{{__('main_page.teachers')}}</li>
             </ol>
         </div>
     </div>
@@ -50,13 +50,13 @@
                 <tbody>
                     @foreach ($teachers as $teacher)
                     <tr>
-                    <td> {{$teacher->id}}</td>
-                    <td>{{$teacher->Email}}</td>
-                    <td>{{$teacher->Name}}</td>
-                    <td>{{$teacher->genders->Name}}</td>
-                    <td>{{$teacher->joining_Date}}</td>
-                    <td>{{$teacher->Address}}</td>
-                    <td>{{$teacher->speciallztions->Name}}</td>
+                    <td>{{$teacher->id}}</td>
+                    <td>{{$teacher->email}}</td>
+                    <td>{{$teacher->name}}</td>
+                    <td>{{$teacher->genders->name}}</td>
+                    <td>{{$teacher->joining_date}}</td>
+                    <td>{{$teacher->address}}</td>
+                    <td>{{$teacher->speciallztions->name}}</td>
                     
                     <td>
                         <a class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" href="{{route('teacher.edit',$teacher->id)}}" >

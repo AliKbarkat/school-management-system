@@ -16,12 +16,10 @@ class GradController extends Controller
 
         $grades = Grade::get();
         return view('grade.grades', compact('grades'));
-    // return $grades;
+   
     }
     public function create()
     {
-    
-        return view('grade.add_grade');
     
     }
     public function store(GradeRequest $request)
@@ -34,9 +32,7 @@ class GradController extends Controller
      
         ]);
 
-
         toastr()->success('Data has been saved successfully!');
-
         return redirect()->route('grad.index');
     
     }
@@ -60,14 +56,14 @@ class GradController extends Controller
         return redirect()->route('grad.index');
     
     }
-    public function destroy(GradeRequest $request)
+    public function destroy(Request $request)
     {
 
         $class_id = ClassRoom::where('grade_id', $request->id)->pluck('grade_id');
         if ($class_id->count() == 0) 
         {
         
-            Grade::findorfail($request->id)->delete();
+            Grade::findOrFail($request->id)->delete();
             return redirect()->route('grad.index');
         } 
         else{

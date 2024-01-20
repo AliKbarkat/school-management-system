@@ -44,25 +44,25 @@
                                             <th scope="row">{{trans('students.email')}}</th>
                                             <td>{{$student->email}}</td>
                                             <th scope="row">{{trans('students.gender')}}</th>
-                                            <td>{{$student->gender->Name}}</td>
+                                            <td>{{$student->gender->name}}</td>
                                             <th scope="row">{{trans('students.national')}}</th>
-                                            <td>{{$student->nationalite->Name}}</td>
+                                            <td>{{$student->nationalite->name}}</td>
                                         </tr>
 
                                         <tr>
                                             <th scope="row">{{trans('students.grades')}}</th>
-                                            <td>{{ $student->grade->name_ar }}</td>
+                                            <td>{{ $student->grade->name }}</td>
                                             <th scope="row">{{trans('students.class')}}</th>
-                                            <td>{{$student->classroom->name_class_ar}}</td>
+                                            <td>{{$student->classroom->name}}</td>
                                             <th scope="row">{{trans('students.section')}}</th>
-                                            <td>{{$student->section->name_ar}}</td>
+                                            <td>{{$student->section->name}}</td>
                                             <th scope="row">{{trans('students.joining_date')}}</th>
-                                            <td>{{ $student->date_Birth}}</td>
+                                            <td>{{ $student->date_birth}}</td>
                                         </tr>
 
                                         <tr>
                                             <th scope="row">{{trans('students.parant')}}</th>
-                                            <td>{{ $student->myParent->Name_Father}}</td>
+                                            <td>{{ $student->myParent->name_father}}</td>
                                             <th scope="row">{{trans('students.academic_year')}}</th>
                                             <td>{{ $student->academic_year }}</td>
                                             <th scope="row"></th>
@@ -110,7 +110,7 @@
                                             </thead>
                                             <tbody>
 
-                                            {{-- @foreach($image as $attachment)
+                                            @foreach($image as $attachment)
                                                 <tr style='text-align:center;vertical-align:middle'>
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$attachment->file_name}}</td>
@@ -130,7 +130,7 @@
                                                     </td>
                                                 </tr>
                                                 @include('pages.Students.delete_img')
-                                            @endforeach --}}
+                                            @endforeach
 
                                             </tbody>
                                         </table>

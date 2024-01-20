@@ -26,7 +26,7 @@ wire:click="show_form" type="button">{{ trans('my_parant.add_parant') }}</button
                     <button class="btn btn-info btn-sm" wire:click="edit({{$my_parant->id}})" >
                         <i class="fa fa-edit"></i>
                     </button>
-                    <button class="btn btn-danger btn-sm" wire:click="delete({{$my_parant->id}})">
+                    <button class="btn btn-danger btn-sm" wire:click="destroy({{$my_parant->id}})">
                         <i class="fa fa-trash"></i>
                     </button>
                  </td>

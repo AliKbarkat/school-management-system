@@ -29,28 +29,29 @@ class FeesRepositry  implements FeesInterface
     public function storeFees($request)
     {
 
-    try
-    {
-        $fees=new Fee();
-        $fees->title=['ar' => $request->title_ar ,'en' => $request->title_en ];
-        $fees->ammount=$request->ammount;
-        $fees->descreption=$request->descreption;
-        $fees->grade_id=$request->grade_id;        
-        $fees->classroom_id=$request->classroom_id;
-        $fees->section_id=$request->section_id;
-        $fees->year=$request->year;
-        $fees->tybe=$request->tybe;
+        return $request;
+    // try
+    // {
+    //     $fees=new Fee();
+    //     $fees->title=['ar' => $request->title_ar ,'en' => $request->title_en ];
+    //     $fees->ammount=$request->ammount;
+    //      `$fees->tybe=$request->tybe;
+    //     $fees->grade_id=$request->grade_id;        
+    //     $fees->classroom_id=$request->classroom_id;
+    //     $fees->section_id=$request->section_id;
+    //     $fees->year=$request->year;
+    //     
 
-        $fees->save();
+    //     $fees->save();
         
-        toastr()->success('Data has been saved successfully!');
+    //     toastr()->success('Data has been saved successfully!');
 
-        return redirect()->route('Fees.create');
+    //     return redirect()->route('Fees.create');
 
-        }catch(\Exception $e){
-            return redirect()->back()->withErrors(["error" => $e->getMessage()]);
+    //     }catch(\Exception $e){
+    //         return redirect()->back()->withErrors(["error" => $e->getMessage()]);
 
-        }
+    //     }
     }
   
     public function editFees($id)

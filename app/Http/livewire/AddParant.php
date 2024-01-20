@@ -205,7 +205,7 @@ class AddParant extends Component
     {
         if ($this -> parent_id) {
 
-            $parent = MyParant::find($this -> parent_id);
+            $parent = MyParant::findOrFail($this -> parent_id);
 
             $parent->update([
                 'email' => $this -> email,
@@ -249,7 +249,9 @@ class AddParant extends Component
  
     public function destroy($id)
     {
-        MyParant::find($id)->destroy();
+
+        MyParant::findOrFail($id)->delete();
+        toastr()->success(trans('messages.success'));
         return redirect()->to('/add_parent');
 
     }

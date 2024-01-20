@@ -2,7 +2,7 @@
 @section('css')
 
 @section('title')
-{{__('main_page.School_management')}}/{{__('section.add_section')}}
+{{__('main_page.school_management')}}/{{__('section.add_section')}}
 @stop
 @endsection
 @section('page-header')
@@ -65,9 +65,7 @@
                 </select>
                 <br>
                 <label for="">{{__('grades.name_class_ar')}}</label>
-                <select class="form-control form-control-lg" id="classroom_id"  name="classroom_id"
-              
-               >
+                <select class="form-control form-control-lg" id="classroom_id"  name="classroom_id">
                 
                     @error('classroom_id')
               <small class="form-text text-danger" >{{$message}}</small>

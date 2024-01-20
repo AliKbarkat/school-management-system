@@ -11,8 +11,9 @@ return[
     'add_teacher'=>'Add Teacher',
     'password'=>'Password',
     'name_ar'=>'Name for Arabic',
-    'name_en'=>'us',
+    'name_en'=>'Name for English',
      'choose'=>'Choose',
-    'edit_taecher'=>'Edit'
+    'edit_taecher'=>'Edit',
+    'submit' => 'Save',
    
 ];

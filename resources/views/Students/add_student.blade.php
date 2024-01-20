@@ -108,8 +108,8 @@
 
                         <div class="form-group col">
                             <label>{{trans('students.bload')}}</label>
-                            <select class="custom-select my-1 mr-sm-2" name="bload_id">
-                                <option selected>{{trans('students.bload')}}...</option>
+                            <select class="custom-select my-1 mr-sm-2 " name="bload_id">
+                                <option selected>{{trans('students.choose')}}...</option>
                                  @foreach($bloads as $type_blood)
                                     <option value="{{$type_blood->id}}">{{$type_blood->name}}</option>
                                 @endforeach
@@ -123,7 +123,7 @@
                         <div class="form-group col">
                             <label>{{trans('students.joining_date')}}</label>
                             <br>
-                                <input type="date" name="date_birth"  class=" my-1 mr-sm-2">
+                            <input type="date" name="date_birth" class="form-control">
                                 <br>
                             @error('date_birth')
                          

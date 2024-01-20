@@ -40,4 +40,8 @@ return[
     'the_amount'=>'المبلغ',
     'statement' => 'البيان',
     'catch_receipt'=>'سند صرف',
+    'add_graduated' =>'اضافة تخرج',
+    'close' => 'إلغاء' ,
+     'return_student'=> 'ارجاع الطالب',
+     'delete_student' => 'حذف الطالب',
 ];

@@ -42,7 +42,7 @@
                     
                     <div class="form-row">
                         <div class="form-group col">
-                            <label for="inputState">{{trans('Students_trans.Grade')}}</label>
+                            <label for="inputState">{{trans('main_page.grades')}}</label>
                             <select class="custom-select mr-sm-2" name="grade_id" >
                                 <option selected disabled>{{trans('Parent_trans.Choose')}}...</option>
                                 @foreach($grades as $grade)
@@ -51,17 +51,17 @@
                             </select>
                         </div>
                         <div class="form-group col">
-                            <label for="Classroom_id">{{trans('Students_trans.classrooms')}}: <span
+                            <label for="Classroom_id">{{trans('main_page.class_room')}}: <span
                                     class="text-danger">*</span></label>
                             <select class="custom-select mr-sm-2" name="classroom_id" >
 
                             </select>
                         </div>
                         <div class="form-group col">
-                            <label for="section_id">:{{trans('Students_trans.section')}} </label>
+                            <label for="section_id">:{{trans('main_page.sections')}} </label>
                             <select class="custom-select mr-sm-2" name="section_id" >
-                                @foreach($sections as $sections)
-                                <option value="{{$grade->id}}">{{$grade->name}}</option>
+                                @foreach($sections as $section)
+                                <option value="{{$section->id}}">{{$section->name}}</option>
                             @endforeach
                             </select>
                         </div>

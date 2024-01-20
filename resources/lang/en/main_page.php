@@ -35,6 +35,7 @@ return [
     'subjects' => 'Subjects',
     'list_subjects' => 'List Subjects',
     'exams' => 'Exams',
+    'Loading...' => 'Loading...',
    
    
     

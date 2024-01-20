@@ -26,15 +26,16 @@ class TeacherRepositry implements TeacherRepositryInterface
       public function teacherStore($request)
       {
        try{
-      $Teachers=new Teacher();
-      $Teachers->Email =$request->email;
-      $Teachers->Password =Hash::make($request->password);
-      $Teachers->Name =['en'=>$request->name_en ,'ar'=>$request->name_ar];
-      $Teachers->specialization_id =$request->specialization_id;
-      $Teachers->Gender_id =$request->gender_id;
-      $Teachers->joining_Date =$request->joining_date;
-      $Teachers->Address=$request->address;
-      $Teachers->save();
+      $teachers=new Teacher();
+      $teachers->email =$request->email;
+      $teachers->password =Hash::make($request->password);
+      $teachers->name =['en'=> $request->name_en ,'ar'=>$request->name_ar];
+      $teachers->specialization_id =$request->specialization_id;
+      $teachers->gender_id =$request->gender_id;
+      $teachers->joining_Date =$request->joining_date;
+      $teachers->address=$request->address;
+      $teachers->save();
+
       toastr()->success('تم حفظ البيانات');
       return redirect()->route('teacher.index');
       // return $request;
@@ -55,13 +56,13 @@ class TeacherRepositry implements TeacherRepositryInterface
     // return $request;
    try{
       $Teachers= Teacher::findOrFail($request->id);
-    $Teachers->Email =$request->email;
+    $Teachers->email =$request->email;
     $Teachers->Password =Hash::make($request->password);
-    $Teachers->Name =['en'=>$request->name_en ,'ar'=>$request->name_ar];
+    $Teachers->name =['en'=>$request->name_en ,'ar'=>$request->name_ar];
     $Teachers->specialization_id =$request->specialization_id;
-    $Teachers->Gender_id =$request->Gender_id;
+    $Teachers->gender_id =$request->Gender_id;
     $Teachers->joining_Date =$request->joining_date;
-    $Teachers-> Address=$request->Address;
+    $Teachers-> address=$request->Address;
     $Teachers->save();
     toastr()->success('تم حفظ البيانات');
     return redirect()->route('teacher.index');

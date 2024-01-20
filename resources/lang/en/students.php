@@ -41,4 +41,7 @@ return[
    'statement' => 'Statement',
    'catch_receipt' => 'Catch Receipt',
    'add_graduated' => 'Add Graduated',
+   'close' => 'close',
+   'return_student' => 'Return Student',
+   'delete_student' => 'Delete Student',
 ];

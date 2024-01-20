@@ -31,8 +31,9 @@ class StudentController extends Controller
 
    public function store(StudentRequest $request)
    {
+      
 
-      return $this->student->studentStore($request);
+   return $this->student->studentStore($request);
 
    }
 

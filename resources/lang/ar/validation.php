@@ -99,7 +99,7 @@ return [
         'array' => ' :attribute يجب ان يحتوي :size items.',
     ],
     'starts_with' => ' :attribute يجب أن تبدأ بأحد الإجراءات التالية : :values.',
-    'string' => ' :attribute must be a string.',
+    'string' => ' :attribute يجب أن تكون نص .',
     'timezone' => ' :attribute must be a valid zone.',
     'unique' => ':attribute موحود بالفعل',
     'uploaded' => ' :attribute فشل التحميل.',

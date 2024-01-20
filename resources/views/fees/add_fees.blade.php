@@ -28,7 +28,7 @@
     <div class="col-md-12 mb-30">
         <div class="card card-statistics h-100">
             <div class="card-body">
-                <form method="post" action="{{ route('Fees.store') }}">
+                <form method="post" action="{{ route('fees.store') }}">
                     @csrf
 
                <div class="form-row">
@@ -80,8 +80,8 @@
                         <label for="">{{trans('fees.grades')}}</label>
                         <select class="custom-select my-1 mr-sm-2" name="grade_id">
                             <option selected>{{trans('student.Choose')}}...</option>
-                             @foreach($Grades as $grade)
-                                <option value="{{$grade->id}}">{{$grade->name_ar}}</option>
+                             @foreach($grades as $grade)
+                                <option value="{{$grade->id}}">{{$grade->name}}</option>
                             @endforeach 
                         </select>
                         @error('grade_id')
@@ -93,7 +93,7 @@
                         <select class="custom-select my-1 mr-sm-2" name="classroom_id">
                             <option selected>{{trans('my_parant.Choose')}}...</option>
                              @foreach($class as $class)
-                                <option value="{{$class->id}}">{{$class->name_class_ar}}</option>
+                                <option value="{{$class->id}}">{{$class->name}}</option>
                             @endforeach
                         </select>
                         @error('classroom_id')
@@ -108,7 +108,7 @@
                          <select class="custom-select my-1 mr-sm-2" name="section_id">
                              <option selected>{{trans('my_parant.Choose')}}...</option>
                                 @foreach($section as $section)
-                             <option value="{{$section->id}}">{{$section->name_ar}}</option>
+                             <option value="{{$section->id}}">{{$section->name}}</option>
                                 @endforeach 
                          </select>
                            @error('section_id')

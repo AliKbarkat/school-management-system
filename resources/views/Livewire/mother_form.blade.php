@@ -55,7 +55,7 @@
                     </div>
 
                     <div class="col">
-                        <label for="title">{{trans('my_parant.Passport_id')}}</label>
+                        <label for="title">{{trans('my_parant.passport_id')}}</label>
                         <input type="text" wire:model="passport_id_mother" class="form-control">
                         @error('Passport_id_mother')
                         <small class="text text-danger">{{ $message }}</small>

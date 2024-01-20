@@ -25,8 +25,8 @@ class GradeRequest extends FormRequest
     {
         return [
 
-            'name_en' => 'required|unique:grades,name_en,' . $this->id,
-            'name_ar' => 'required|unique:grades,name_ar,' . $this->id,
+            'name_en' => 'required|unique:grades,name,' . $this->id,
+            'name_ar' => 'required|unique:grades,name,' . $this->id,
             'descreption' => 'required',
         ];
     }

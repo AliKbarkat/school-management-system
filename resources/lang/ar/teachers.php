@@ -14,5 +14,6 @@ return[
 'name_ar'=>'الاسم',
 'name_en'=>'الاسم بالانكليزي',
 'choose'=>'اختر',
-'edit_taecher'=>'تعديل'
+'edit_taecher'=>'تعديل',
+'submit' => 'حفظ',
 ];

@@ -10,12 +10,12 @@ class GraduatedController extends Controller
     protected $graduted;
     public function __construct(GraduatedInterface $graduted)
     {
-        $this->graduted = $graduted;
+        $this -> graduted = $graduted;
     }
     public function index()
     {
-        
-        return $this->graduted->index();
+       
+         return $this->graduted->index();
     
     }
     public function create()

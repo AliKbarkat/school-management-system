@@ -47,7 +47,7 @@
     <label style="color: red">{{ trans('my_parant.chose_file_upload') }}</label>
     <div class="form-group">
         <input type="file" wire:model='photos' accept="image/*" multiple>
-        <input type="text" wire:model='parent_id' >
+        <input type="hidden" wire:model='parent_id' >
    </div>
 
         <button class="btn btn-danger btn-sm nextBtn btn-lg pull-right" type="button" wire:click="back(2)">{{__('my_parant.back')}} </button>

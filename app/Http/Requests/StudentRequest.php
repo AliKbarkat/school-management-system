@@ -16,8 +16,8 @@ class StudentRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required|email|unique:students,email,' . $this->id,
-            'name_ar' => 'required',
+            'email' => 'email|unique:students,email,' . $this->id,
+            'name_ar' => 'required|string',
             'name_en' => 'required',
             'password' => 'required',
             'gender_id' => 'exists:genders,id',
@@ -29,7 +29,7 @@ class StudentRequest extends FormRequest
              'section_id'=> 'exists:sections,id',
              'parant_id' => 'exists:my_parants,id',
              'academic_year' => 'required',
-             'photos' => 'required'
+           
 
         ];
     }
