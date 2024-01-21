@@ -60,9 +60,7 @@
                         <div class="form-group col">
                             <label for="section_id">:{{trans('main_page.sections')}} </label>
                             <select class="custom-select mr-sm-2" name="section_id" >
-                                @foreach($sections as $section)
-                                <option value="{{$section->id}}">{{$section->name}}</option>
-                            @endforeach
+                              
                             </select>
                         </div>
 

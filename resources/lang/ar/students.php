@@ -27,7 +27,7 @@ return[
     'showdatestdents' =>  'مشاهدة الطالب',
     'AddInvoices_fees' => 'اضافة رسوم الفواتير',
     'receipt_students' => 'ايصال الطالب',
-    'Payment_students' => 'اقساط',
+    'payment_students' => '  الاقصاط',
     'delete' => 'حذف الطالب',
     'ProcessingFee' => 'معالجة رسوم',
     'student_details' =>  'تفاصيل الطالب',
@@ -44,4 +44,5 @@ return[
     'close' => 'إلغاء' ,
      'return_student'=> 'ارجاع الطالب',
      'delete_student' => 'حذف الطالب',
+     
 ];

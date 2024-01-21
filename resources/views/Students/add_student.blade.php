@@ -28,7 +28,7 @@
     <div class="col-md-12 mb-30">
         <div class="card card-statistics h-100">
             <div class="card-body">
-
+               
                 <form action="{{route('students.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     {{-- one row --}}
@@ -122,11 +122,9 @@
 
                         <div class="form-group col">
                             <label>{{trans('students.joining_date')}}</label>
-                            <br>
+                           
                             <input type="date" name="date_birth" class="form-control">
-                                <br>
                             @error('date_birth')
-                         
                             <small class="text text-danger">{{ $message }}</small>
                            
                             @enderror
@@ -155,9 +153,7 @@
                             <select class="custom-select my-1 mr-sm-2" name="classroom_id" >
                          
                                 <option selected>{{trans('students.choose')}}...</option>
-                                @foreach($class_room as $class)
-                                <option value="{{$class->id}}">{{$class->name}}</option>
-                            @endforeach 
+                             
                             </select>
                             @error('classroom_id')
                             <small class="text text-danger">{{ $message }}</small>
@@ -170,9 +166,7 @@
                             <select class="custom-select my-1 mr-sm-2" name="section_id" >
                                 <option selected>{{trans('students.choose')}}...</option>
 
-                                @foreach($sections as $section)
-                                <option value="{{$section->id}}">{{$section->name}}</option>
-                            @endforeach 
+                             
                             </select>
                             @error('section_id')
                             <small class="text text-danger">{{ $message }}</small>
@@ -193,12 +187,17 @@
 
                             @enderror
                         </div>
-
+                       
                         <div class="form-group col">
                             <label>{{trans('students.academic_year')}}</label>
-                            <select class="custom-select my-1 mr-sm-2" name="academic_year">
-                                <option selected>{{trans('students.choose')}}...</option>
-                                    <option value="2020">2020</option>
+                            <select class="custom-select mr-sm-2" name="academic_year">
+                                <option selected disabled>{{trans('students.choose')}}...</option>
+                                @php
+                                    $current_year = date("Y");
+                                @endphp
+                                @for($year = $current_year; $year <= $current_year +1 ;$year++)
+                                    <option value="{{ $year}}">{{ $year }}</option>
+                                @endfor
                             </select>
                             @error('academic_year')
                             <small class="text text-danger">{{ $message }}</small>

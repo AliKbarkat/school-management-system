@@ -2,7 +2,7 @@
 @section('css')
 
 @section('title')
-    قائمة الرسوم
+   {{ trans('fees.list_fees') }}
 @stop
 @endsection
 @section('page-header')
@@ -10,12 +10,12 @@
 <div class="page-title">
     <div class="row">
         <div class="col-sm-6">
-            <h4 class="mb-0"> قائمة الرسوم </h4>
+            <h4 class="mb-0">  {{ trans('fees.list_fees') }} </h4>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right ">
                 <li class="breadcrumb-item"><a href="#" class="default-color">Home</a></li>
-                <li class="breadcrumb-item active">قائمة الرسوم</li>
+                <li class="breadcrumb-item active"> {{ trans('fees.list_fees') }} </li>
             </ol>
         </div>
     </div>
@@ -29,7 +29,7 @@
     <div class="col-md-12 mb-30">
         <div class="card card-statistics h-100">
             <div class="card-body">
-<a href="{{route('fees.create')}}" 
+                    <a href="{{route('fees.create')}}" 
                 class="btn btn-success btn-sm nextBtn btn-lg pull-right" 
                 type="button">{{ trans('fees.add_fees')}}</a>
                 <table class="table">
@@ -49,7 +49,6 @@
                     <tbody>
                       @foreach ($fees as $fee)
                       <tr>
-                        
                         <td>{{$fee->id}}</td>
                         <td>{{$fee->title}}</td>
                         <td>{{$fee->ammount}}</td> 
@@ -57,26 +56,20 @@
                         <td>{{$fee->classes->name}}</td>
                         <td>{{$fee->section_id}}</td>
                         <td>{{$fee->year}}</td>
-                        <td><a class="btn btn-info btn-sm" href="{{route('Fees.edit',$fee->id)}}">
+                        <td><a class="btn btn-info btn-sm" href="{{route('fees.edit',$fee->id)}}">
                           <i class="fa fa-edit"></i></a>
-                         <a class="btn btn-danger btn-sm" href="{{route('Fees.destroy',$fee->id)}}"  >
+                         <a class="btn btn-danger btn-sm" href="{{route('fees.destroy',$fee->id)}}"  >
                           <i class="fa fa-trash"></i></a></td>
-  
-                       
-   
-                    
                       </tr>
-                      @endforeach
-                     
+                      @endforeach                     
                     </tbody>
-             
                   </table>
                 </div>
-                </div>
-                </div>
-            </div>
+              </div>
+          </div>
         </div>
-    </div>
+     </div>
+  </div>
 </div>
 <!-- row closed -->
 @endsection

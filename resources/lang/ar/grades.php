@@ -13,7 +13,7 @@ return [
     'submit' => 'حفظ البيانات',
     'close' => 'اغلاق',
     'add_grade' => 'اضافة مرحلة',
-    'add_Class' => 'اضافة صف',
+    'add_class' => 'اضافة صف',
     'update_grade' => 'تعديل المرحلة',
     'name_class_ar' => ' اسم الصف بالعربي',
     'name_class_en' => 'اسم الصف بالانكليزي',

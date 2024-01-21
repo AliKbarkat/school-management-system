@@ -8,7 +8,7 @@
 @section('page-header')
     <!-- breadcrumb -->
 @section('PageTitle')
-{{trans('all.AddFees')}} {{$student->name}}
+{{trans('fees.add_fees')}} {{$student->name}}
 @stop
 <!-- breadcrumb -->
 @endsection
@@ -29,7 +29,7 @@
                         </div>
                     @endif
 
-                        <form class=" row mb-30" action="{{ route('Fees_Invoices.store') }}" method="POST">
+                        <form class=" row mb-30" action="{{ route('fee_invoice.store') }}" method="POST">
                             @csrf
                             <div class="card-body">
                                 <div class="repeater">
@@ -38,8 +38,8 @@
                                             <div class="row">
 
                                                 <div class="col">
-{{trans('all.AddFees')}}
-                                                    <label for="Name" class="mr-sm-2">{{trans('Students_trans.name')}} </label>
+                                                        {{trans('fees.add_fees')}}
+                                                    <label for="Name" class="mr-sm-2">{{trans('students.name')}} </label>
                                                     <select class="fancyselect" name="student_id" required>
                                                             <option value="{{ $student->id }}">{{ $student->name }}</option>
                                                     </select>

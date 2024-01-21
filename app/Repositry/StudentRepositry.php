@@ -102,7 +102,7 @@ class StudentRepositry implements StudentRepositryInterface
         $data['myParant'] = MyParant::all();
         $data['genders'] = Gender::all();
         $data['nationals'] = Nationalitie::all();
-        $data['bloods'] = Bload::all();
+        $data['bloads'] = Bload::all();
         $data['grades'] = Grade::all();
         $data['sections'] = Section::all();
         $data['riligaion'] = Religion::all();
@@ -114,6 +114,7 @@ class StudentRepositry implements StudentRepositryInterface
       public function studentUpdate($request)
       {
         try{
+
         $students = Student::findOrfail($request->id);
         $students -> name = ['ar' => $request -> name_ar ,'en' => $request -> name_en ];
         $students -> email = $request -> email;
@@ -121,7 +122,7 @@ class StudentRepositry implements StudentRepositryInterface
         $students -> gender_id = $request -> gender_id;
         $students -> nationalite_id = $request -> nationalite_id;
         $students -> bload_id = $request -> bload_id;
-        $students -> date_Birth = $request -> date_Birth;
+        $students -> date_birth = $request -> date_birth;
         $students -> grade_id = $request -> grade_id;
         $students -> classroom_id = $request -> classroom_id;
         $students -> section_id = $request -> section_id;

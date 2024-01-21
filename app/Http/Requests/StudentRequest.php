@@ -29,6 +29,7 @@ class StudentRequest extends FormRequest
              'section_id'=> 'exists:sections,id',
              'parant_id' => 'exists:my_parants,id',
              'academic_year' => 'required',
+             'photos'=>'required',
            
 
         ];

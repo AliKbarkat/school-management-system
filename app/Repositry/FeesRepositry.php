@@ -14,55 +14,59 @@ class FeesRepositry  implements FeesInterface
 
     public function indexFees()
     {
-    $fees=Fee::all();
-    $grades=Grade::all();
-    return view('fees.index',compact('fees','grades'));
+
+        $fees = Fee::all();
+        $grades = Grade::all();
+        return view('fees.index',compact('fees','grades'));
+    
     }
+
     public function createFees()
     {
-        $grades=Grade::all();
-        $class=ClassRoom::all();
-        $section=Section::all();
+
+        $grades = Grade::all();
+        $class = ClassRoom::all();
+        $section = Section::all();
         return view('fees.add_fees',compact('grades','class','section'));
+    
     }
  
     public function storeFees($request)
     {
 
-        return $request;
-    // try
-    // {
-    //     $fees=new Fee();
-    //     $fees->title=['ar' => $request->title_ar ,'en' => $request->title_en ];
-    //     $fees->ammount=$request->ammount;
-    //      `$fees->tybe=$request->tybe;
-    //     $fees->grade_id=$request->grade_id;        
-    //     $fees->classroom_id=$request->classroom_id;
-    //     $fees->section_id=$request->section_id;
-    //     $fees->year=$request->year;
-    //     
-
-    //     $fees->save();
         
-    //     toastr()->success('Data has been saved successfully!');
+    try
+    {
+        $fees = new Fee();
+        $fees -> title = ['ar' => $request -> title_ar ,'en' => $request -> title_en ];
+        $fees -> ammount = $request -> ammount;
+        $fees -> tybe = $request -> tybe;
+        $fees -> grade_id = $request -> grade_id;        
+        $fees -> classroom_id = $request -> classroom_id;
+        $fees -> section_id = $request -> section_id;
+        $fees -> year = $request -> year;
+        $fees -> descreption = $request -> descreption;
+        $fees -> save();
+        
+        toastr()->success('Data has been saved successfully!');
 
-    //     return redirect()->route('Fees.create');
+        return redirect()->route('fees.index');
 
-    //     }catch(\Exception $e){
-    //         return redirect()->back()->withErrors(["error" => $e->getMessage()]);
+        }catch(\Exception $e){
+            return redirect()->back()->withErrors(["error" => $e->getMessage()]);
 
-    //     }
+        }
     }
   
     public function editFees($id)
 
     {
-        $fee= Fee::findOrfail($id); 
-        $Grades=Grade::all();
-        $class=ClassRoom::all();
-        $section=Section::all();
+        $fee = Fee::findOrfail($id); 
+        $grades = Grade::all();
+        $class = ClassRoom::all();
+        $section = Section::all();
      
-       return view('fees.edit_fees',compact('Grades','fee','class','section'));
+       return view('fees.edit_fees' , compact('grades' , 'fee' , 'class' , 'section'));
         
     }
   
@@ -70,20 +74,20 @@ class FeesRepositry  implements FeesInterface
     {
         try{
 
-            $fees= Fee::findOrfail($request->id);
-            $fees->title=['ar' => $request->title_ar ,'en' => $request->title_en ];
-            $fees->ammount=$request->ammount;
-            $fees->descreption=$request->descreption;
-            $fees->grade_id=$request->grade_id;        
-            $fees->classroom_id=$request->classroom_id;
-            $fees->section_id=$request->section_id;
-            $fees->year=$request->year;
-            $fees->tybe=$request->tybe;
+            $fees = Fee::findOrfail($request -> id);
+            $fees -> title = ['ar' => $request->title_ar ,'en' => $request->title_en ];
+            $fees -> ammount = $request -> ammount;
+            $fees -> descreption = $request -> descreption;
+            $fees -> grade_id = $request -> grade_id;        
+            $fees -> classroom_id = $request -> classroom_id;
+            $fees -> section_id = $request -> section_id;
+            $fees -> year = $request -> year;
+            $fees -> tybe = $request -> tybe;
             
             $fees->save();
             toastr()->success('Data has been saved successfully!');
 
-         return redirect()->route('Fees.index');
+         return redirect()->route('fees.index');
 
         }catch(\Exception $e){
             return redirect()->back()->withErrors(["error" => $e->getMessage()]);
@@ -96,11 +100,11 @@ class FeesRepositry  implements FeesInterface
   
     public function deleteFees($request)
     {
-        $teacher= Fee::findOrFail($request->id);
-        toaster()->error('the teacher not delete');
-        $teacher->delete();
-        return redirect()->route('teacher.index');
+        $delete_fee = Fee::findOrFail($request->id);
+        $delete_fee->delete();
 
+        toastr()->error('the teacher not delete');
+        return redirect()->back();
     }
 
 }

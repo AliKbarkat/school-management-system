@@ -28,7 +28,7 @@
                                         <thead>
                                         <tr class="alert-success">
                                             <th>#</th>
-                                            <th>{{trans('all.Name')}}</th>
+                                            <th>{{trans('fees.name')}}</th>
                                             <th>{{trans('all.TypeFees')}} </th>
                                             <th>{{trans('all.amount')}}</th>
                                             <th>{{trans('all.Educationallevel')}} </th>
@@ -45,14 +45,14 @@
                                             <td>{{$fee_invoice->fees->title}}</td>
                                             <td>{{ number_format($fee_invoice->amount, 2) }}</td>
                                             <td>{{$fee_invoice->grade->name}}</td>
-                                            <td>{{$fee_invoice->classroom->name_class}}</td>
+                                            <td>{{$fee_invoice->classroom->name}}</td>
                                             <td>{{$fee_invoice->description}}</td>
                                                 <td>
                                                     <a href="{{route('Fees_Invoices.edit',$Fee_invoice->id)}}" class="btn btn-info btn-sm" role="button" aria-pressed="true"><i class="fa fa-edit"></i></a>
                                                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#Delete_Fee_invoice{{$Fee_invoice->id}}" ><i class="fa fa-trash"></i></button>
                                                 </td>
                                             </tr>
-                                        @include('pages.Fees_Invoices.Delete')
+                                        @include('fee_invoice.delete')
                                         @endforeach
                                     </table>
                                 </div>

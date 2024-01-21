@@ -2,7 +2,7 @@
 @section('css')
 
 @section('title')
-{{__('mainpage.School_management')}}/{{__('grades.edit')}}
+{{__('main_page.school_management')}}/{{__('grades.edit')}}
 @stop
 @endsection
 @section('page-header')

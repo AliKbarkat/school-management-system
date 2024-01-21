@@ -13,7 +13,7 @@
 
         <!-- Grades-->
         <li>
-            <a href="javascript:void(0);" data-toggle="collapse" data-target="#Grades-menu">
+            <a href="Grades Menu" data-toggle="collapse" data-target="#Grades-menu">
                 <div class="pull-left"><i class="fa fa-home"></i><span
                         class="right-nav-text">{{trans('main_page.grades')}}</span></div>
                 <div class="pull-right"><i class="ti-plus"></i></div>
@@ -26,7 +26,7 @@
         </li>
         <!-- classes-->
         <li>
-            <a href="javascript:void(0);" data-toggle="collapse" data-target="#classes-menu">
+            <a href="Classes Menu" data-toggle="collapse" data-target="#classes-menu">
                 <div class="pull-left"><i class="fa fa-building"></i><span
                         class="right-nav-text">{{trans('main_page.class_room')}}</span></div>
                 <div class="pull-right"><i class="ti-plus"></i></div>
@@ -39,7 +39,7 @@
 
         <!-- sections-->
         <li>
-            <a href="javascript:void(0);" data-toggle="collapse" data-target="#sections-menu">
+            <a href="Sections Menu" data-toggle="collapse" data-target="#sections-menu">
                 <div class="pull-left"><i class="fa fa-window-restore"></i></i><span
                         class="right-nav-text">{{trans('main_page.sections')}}</span></div>
                 <div class="pull-right"><i class="ti-plus"></i></div>
@@ -53,7 +53,7 @@
 
         <!-- students-->
         <li>
-            <a href="javascript:void(0);" data-toggle="collapse" data-target="#students-menu"><i class="fa fa-user"></i>
+            <a href="Students Menu" data-toggle="collapse" data-target="#students-menu"><i class="fa fa-user"></i>
                 {{trans('main_page.students')}}<div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div></a>
             <ul id="students-menu" class="collapse">
                 <li>
@@ -66,15 +66,15 @@
                     </ul>
                 </li>
 
-             {{-- <li>
+            <li>
                     <a href="javascript:void(0);" data-toggle="collapse" data-target="#Students_upgrade">
                         {{trans('main_page.students_promotions')}}
                         <div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div></a>
-                    <ul id="Students_upgrade" class="collapse">
+                    <ul id="students-menu" class="collapse">
                         <li> <a href="{{route('promotion.index')}}">{{trans('main_page.list_promotions')}}</li>
                         <li> <a href="{{route('promotion.create')}}">{{trans('students.add_promotion')}}</a> </li>
                     </ul>
-                </li> --}}
+                </li> 
 
                 <li>
                     <a href="javascript:void(0);" data-toggle="collapse" data-target="#Graduate students">{{trans('main_page.graduate_students')}}<div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div></a>
@@ -105,7 +105,7 @@
         <!-- Parents-->
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Parents-menu">
-                <div class="pull-left"><i class="fa fa-user-tie"></i><span
+                <div class="pull-left"><i class="fa fa-user-circle"></i><span
                         class="right-nav-text">{{trans('main_page.parents')}}</span></div>
                 <div class="pull-right"><i class="ti-plus"></i></div>
                 <div class="clearfix"></div>
@@ -118,7 +118,7 @@
         <!-- Accounts-->
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Accounts-menu">
-                <div class="pull-left"><i class="fa fa-money-bill-wave-alt"></i><span
+                <div class="pull-left"><i class="fa fa-money"></i><span
                         class="right-nav-text">{{trans('main_page.accounts')}}</span></div>
                 <div class="pull-right"><i class="ti-plus"></i></div>
                 <div class="clearfix"></div>
@@ -135,7 +135,7 @@
         <!-- Attendance-->
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Attendance-icon">
-                <div class="pull-left"><i class="fa fa-calendar-alt"></i><span class="right-nav-text">{{trans('main_page.attendance')}}</span></div>
+                <div class="pull-left"><i class="fa fa-mortar-board"></i><span class="right-nav-text">{{trans('main_page.attendance')}}</span></div>
                 <div class="pull-right"><i class="ti-plus"></i></div>
                 <div class="clearfix"></div>
             </a>
@@ -146,7 +146,7 @@
               <!-- Subjects-->
               <li>
                 <a href="javascript:void(0);" data-toggle="collapse" data-target="#Subjects">
-                    <div class="pull-left"><i class="fa fa-book-open"></i><span class="right-nav-text">{{__('main_page.subjects')}}</span></div>
+                    <div class="pull-left"><i class="fa fa-book"></i><span class="right-nav-text">{{__('main_page.subjects')}}</span></div>
                     <div class="pull-right"><i class="ti-plus"></i></div>
                     <div class="clearfix"></div>
                 </a>
@@ -157,7 +157,7 @@
         <!-- Quizzes-->
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Quizz-icon">
-                <div class="pull-left"><i class="fa fa-book-open"></i><span class="right-nav-text">{{__('main_page.exams')}}</span></div>
+                <div class="pull-left"><i class="fa fa-question"></i><span class="right-nav-text">{{__('main_page.exams')}}</span></div>
                 <div class="pull-right"><i class="ti-plus"></i></div>
                 <div class="clearfix"></div>
             </a>
@@ -182,7 +182,7 @@
         <!-- Onlinec lasses-->
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Onlineclasses-icon">
-                <div class="pull-left"><i class="fa fa-video"></i><span class="right-nav-text">{{trans('main_page.online_classes')}}</span></div>
+                <div class="pull-left"><i class="fa fa-video-camera"></i><span class="right-nav-text">{{trans('main_page.online_classes')}}</span></div>
                 <div class="pull-right"><i class="ti-plus"></i></div>
                 <div class="clearfix"></div>
             </a>

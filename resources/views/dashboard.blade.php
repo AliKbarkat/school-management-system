@@ -56,12 +56,13 @@
                                     </span>
                                 </div>
                                 <div class="float-right text-right">
-                                    <p class="card-text text-dark">عدد الطلاب</p>
+                                    <p class="card-text text-dark">{{ trans('main_page.count_student') }}</p>
                                     <h4>{{App\Models\Student::count()}}</h4>
                                 </div>
                             </div>
                             <p class="text-muted pt-3 mb-0 mt-2 border-top">
-                                <i class="fas fa-binoculars mr-1" aria-hidden="true"></i><a href="{{route('students.index')}}" target="_blank"><span class="text-danger">عرض البيانات</span></a>
+                                <i class="fa fa-binoculars mr-1" aria-hidden="true"></i><a href="{{route('students.index')}}" target="_blank">
+                                    <span class="text-danger">{{ trans('main_page.show_data') }}</span></a>
                             </p>
                         </div>
                     </div>
@@ -78,14 +79,14 @@
                                     </span>
                                 </div>
                                 <div class="float-right text-right">
-                                    <p class="card-text text-dark">عدد المعلمين</p>
+                                    <p class="card-text text-dark"> {{ trans('main_page.count_teacher') }}</p>
                                     <h4>{{App\Models\Teacher::count()}}</h4>
                                 </div>
                             </div>
                             <p class="text-muted pt-3 mb-0 mt-2 border-top">
                                 <i class="fa fa-binoculars mr-1" aria-hidden="true">
                                     </i><a href="{{route('teacher.index')}}" target="_blank">
-                                        <span class="text-danger">عرض البيانات</span></a>
+                                        <span class="text-danger">{{ trans('main_page.show_data') }}</span></a>
                             </p>
                         </div>
                     </div>
@@ -100,14 +101,14 @@
                                     </span>
                                 </div>
                                 <div class="float-right text-right">
-                                    <p class="card-text text-dark">عدد الصفوف</p>
+                                    <p class="card-text text-dark">{{ trans('main_page.count_class') }}</p>
                                     <h4>{{App\Models\Section::count()}}</h4>
                                 </div>
                             </div>
                             <p class="text-muted pt-3 mb-0 mt-2 border-top">
                                 <i class="fa fa-binoculars mr-1" aria-hidden="true"></i>
                                 <a href="{{route('section.index')}}" target="_blank">
-                                    <span class="text-danger">عرض البيانات</span></a>
+                                    <span class="text-danger">{{ trans('main_page.show_data') }}</span></a>
                             </p>
                         </div>
                     </div>
@@ -122,14 +123,14 @@
                                     </span>
                                 </div>
                                 <div class="float-right text-right">
-                                    <p class="card-text text-dark">عدد أولياءالامر</p>
+                                    <p class="card-text text-dark">{{ trans('main_page.count_perant') }}</p>
                                     <h4>{{App\Models\MyParant::count()}}</h4>
                                 </div>
                             </div>
                             <p class="text-muted pt-3 mb-0 mt-2 border-top">
                                 <i class="fa fa-binoculars mr-1" aria-hidden="true"></i>
                                 <a href="{{url('/Add_parent')}}" target="_blank">
-                                    <span class="text-danger">عرض البيانات</span></a>
+                                    <span class="text-danger">{{ trans('main_page.show_data') }}</span></a>
                             </p>
                         </div>
                     </div>
@@ -146,7 +147,7 @@
                             <div class="tab nav-border" style="position: relative;">
                                 <div class="d-block d-md-flex justify-content-between">
                                     <div class="d-block w-100">
-                                        <h5 style="font-family: 'Cairo', sans-serif" class="card-title">اخر العمليات علي النظام</h5>
+                                        <h5 style="font-family: 'Cairo', sans-serif" class="card-title">{{ trans('main_page.opertaions') }}</h5>
                                     </div>
                                     <div class="d-block d-md-flex nav-tabs-custom">
                                         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -154,24 +155,24 @@
                                             <li class="nav-item">
                                                 <a class="nav-link active show" id="students-tab" data-toggle="tab"
                                                    href="#students" role="tab" aria-controls="students"
-                                                   aria-selected="true"> الطلاب</a>
+                                                   aria-selected="true"> {{ trans('main_page.students') }}</a>
                                             </li>
 
                                             <li class="nav-item">
                                                 <a class="nav-link" id="teachers-tab" data-toggle="tab" href="#teachers"
-                                                   role="tab" aria-controls="teachers" aria-selected="false">المعلمين
+                                                   role="tab" aria-controls="teachers" aria-selected="false">{{ trans('main_page.teachers') }}
                                                 </a>
                                             </li>
 
                                             <li class="nav-item">
                                                 <a class="nav-link" id="parents-tab" data-toggle="tab" href="#parents"
-                                                   role="tab" aria-controls="parents" aria-selected="false">اولياء الامور
+                                                   role="tab" aria-controls="parents" aria-selected="false">{{ trans('main_page.parents') }}
                                                 </a>
                                             </li>
 
                                             <li class="nav-item">
                                                 <a class="nav-link" id="fee_invoices-tab" data-toggle="tab" href="#fee_invoices"
-                                                   role="tab" aria-controls="fee_invoices" aria-selected="false">الفواتير
+                                                   role="tab" aria-controls="fee_invoices" aria-selected="false">{{ trans('main_page.invoices') }}
                                                 </a>
                                             </li>
 
@@ -187,13 +188,13 @@
                                                 <thead>
                                                 <tr  class="table-info text-danger">
                                                     <th>#</th>
-                                                    <th>اسم الطالب</th>
-                                                    <th>البريد الالكتروني</th>
-                                                    <th>النوع</th>
-                                                    <th>المرحلة الدراسية</th>
-                                                    <th>الصف الدراسي</th>
-                                                    <th>القسم</th>
-                                                    <th>تاريخ الاضافة</th>
+                                                    <th>{{ trans('students.Name') }}</th>
+                                                    <th>{{ trans('students.email') }}</th>
+                                                    <th>{{ trans('students.gender') }}</th>
+                                                    <th>{{ trans('students.grades') }}</th>
+                                                    <th>{{ trans('students.class') }}</th>
+                                                    <th>{{ trans('students.section') }}</th>
+                                                    <th>{{ trans('main_page.date_created') }} </th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -202,13 +203,13 @@
                                                         <td>{{$loop->iteration}}</td>
                                                         <td>{{$student->name}}</td>
                                                         <td>{{$student->email}}</td>
-                                                        <td>{{$student->gender->Name}}</td>
-                                                        <td>{{$student->grade->name_ar}}</td>
-                                                        <td>{{$student->classroom->name_class_ar}}</td>
-                                                        <td>{{$student->section->name_ar}}</td>
+                                                        <td>{{$student->gender->name}}</td>
+                                                        <td>{{$student->grade->name}}</td>
+                                                        <td>{{$student->classroom->name}}</td>
+                                                        <td>{{$student->section->name}}</td>
                                                         <td class="text-success">{{$student->created_at}}</td>
                                                         @empty
-                                                            <td class="alert-danger" colspan="8">لاتوجد بيانات</td>
+                                                            <td class="alert-danger" colspan="8">{{ trans('main_page.no_data_found') }}</td>
                                                     </tr>
                                                 @endforelse
                                                 </tbody>
@@ -225,9 +226,9 @@
                                                     <th>#</th>
                                                     <th>{{ trans('teachers.name_ar') }}</th>
                                                     <th>{{ trans('teachers.gender') }}</th>
-                                                    <th> {{ trans('teachers.joining_date') }}</th>
+                                                    <th>{{ trans('teachers.joining_date') }}</th>
                                                     <th>{{ trans('teachers.specializations') }}</th>
-                                                    <th>تاريخ الاضافة</th>
+                                                    <th>{{ trans('main_page.date_created')}}</th>
                                                 </tr>
                                                 </thead>
 
@@ -235,13 +236,13 @@
                                                     <tbody>
                                                     <tr>
                                                         <td>{{$loop->iteration}}</td>
-                                                        <td>{{$teacher->Name}}</td>
-                                                        <td>{{$teacher->genders->Name}}</td>
-                                                        <td>{{$teacher->joining_Date}}</td>
-                                                        <td>{{$teacher->speciallztions->Name}}</td>
+                                                        <td>{{$teacher->name}}</td>
+                                                        <td>{{$teacher->genders->name}}</td>
+                                                        <td>{{$teacher->joining_date}}</td>
+                                                        <td>{{$teacher->speciallztions->name}}</td>
                                                         <td class="text-success">{{$teacher->created_at}}</td>
                                                         @empty
-                                                            <td class="alert-danger" colspan="8">لاتوجد بيانات</td>
+                                                            <td class="alert-danger" colspan="8"></td>
                                                     </tr>
                                                     </tbody>
                                                 @endforelse
@@ -256,24 +257,24 @@
                                                 <thead>
                                                 <tr  class="table-info text-danger">
                                                     <th>#</th>
-                                                    <th>اسم ولي الامر</th>
-                                                    <th>البريد الالكتروني</th>
-                                                    <th>رقم الهوية</th>
-                                                    <th>رقم الهاتف</th>
-                                                    <th>تاريخ الاضافة</th>
+                                                    <th>{{ trans('my_parant.father_name') }}</th>
+                                                    <th>{{ trans('my_parant.email') }}</th>
+                                                    <th> {{ trans('my_parant.national_id') }}</th>
+                                                    <th> {{ trans('my_parant.phone') }}</th>
+                                                    <th> {{ trans('main_page.date_created') }}</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
                                                 @forelse(\App\Models\MyParant::latest()->take(5)->get() as $parent)
                                                     <tr>
                                                         <td>{{$loop->iteration}}</td>
-                                                        <td>{{$parent->Name_Father}}</td>
-                                                        <td>{{$parent->Email}}</td>
-                                                        <td>{{$parent->National_ID_Father}}</td>
-                                                        <td>{{$parent->Phone_Father}}</td>
+                                                        <td>{{$parent->name_father}}</td>
+                                                        <td>{{$parent->email}}</td>
+                                                        <td>{{$parent->national_id_father}}</td>
+                                                        <td>{{$parent->phone_father}}</td>
                                                         <td class="text-success">{{$parent->created_at}}</td>
                                                         @empty
-                                                            <td class="alert-danger" colspan="8">لاتوجد بيانات</td>
+                                                            <td class="alert-danger" colspan="8">{{ trans('main_page.no_data_found') }}</td>
                                                     </tr>
                                                 @endforelse
                                                 </tbody>
@@ -288,13 +289,13 @@
                                                 <thead>
                                                 <tr  class="table-info text-danger">
                                                     <th>#</th>
-                                                    <th>تاريخ الفاتورة</th>
-                                                    <th>اسم الطالب</th>
-                                                    <th>المرحلة الدراسية</th>
-                                                    <th>الصف الدراسي</th>
-                                                    <th>نوع الرسوم</th>
-                                                    <th>المبلغ</th>
-                                                    <th>تاريخ الاضافة</th>
+                                                    <th>{{ trans('main_page.invoice_date') }} </th>
+                                                    <th>{{ trans('students.Name') }}</th>
+                                                    <th>{{ trans('students.grades') }}</th>
+                                                    <th>{{ trans('students.class') }}</th>
+                                                    <th>{{ trans('main_page.type_fees') }}</th>
+                                                    <th>{{ trans('students.the_amount') }}</th>
+                                                    <th>{{ trans('main_page.date_created') }}</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -304,15 +305,15 @@
                                                         <td>{{$section->invoice_date}}</td>
                                                         <td>{{$section->student->name}}</td>
                                                         <td>{{$section->grade->name}}</td>
-                                                        <td>{{$section->classroom->name_class}}</td>
-                                                        {{-- <td>{{$section->section->name_section}}</td> --}}
+                                                        <td>{{$section->classroom->name}}</td>
+                                                        <td>{{$section->section->name}}</td> 
                                                         <td>{{$section->fees->title}}</td>
                                                         <td>{{$section->amount}}</td>
                                                         <td class="text-success">{{$section->created_at}}</td>
                                                     </tr>
                                                 @empty
                                                     <tr>
-                                                        <td class="alert-danger" colspan="9">لاتوجد بيانات</td>
+                                                        <td class="alert-danger" colspan="9">{{ trans('main_page.no_data_found') }}</td>
                                                     </tr>
                                                 @endforelse
                                                 </tbody>

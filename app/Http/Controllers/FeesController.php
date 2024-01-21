@@ -8,49 +8,54 @@ use Illuminate\Http\Request;
 class FeesController extends Controller
 {
    protected $fees;
+
    public function __construct(FeesInterface $fees)
   {
 
-    $this->fees = $fees;
+    $this -> fees = $fees;
   
   }
+
   public function index()
   {
 
-    return $this->fees->indexFees();
+    return $this -> fees -> indexFees();
  
   }
+
   public function create()
   {
    
-    return $this->fees->createFees();
+    return $this -> fees -> createFees();
   
   }
+
   public function store(Request $request)
   {
 
-    return $this->fees->storeFees($request);
+    return $this -> fees -> storeFees($request);
   
   }
 
   public function edit($id)
   {
   
-    return $this->fees->editFees($id);
+    return $this -> fees -> editFees($id);
  
   }
 
   public function update(Request $request)
   {
 
-    return $this->fees->updateFees($request);
+    return $this -> fees -> updateFees($request);
   
   }
 
-  public function delete(Request $request)
+  public function destroy(Request $request)
   {
-  
-    return $this->fees->deleteFees($request);
+
+    return $this -> fees-> deleteFees($request);
   
   }
+
 }

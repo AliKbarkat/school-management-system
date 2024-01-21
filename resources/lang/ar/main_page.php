@@ -35,7 +35,19 @@ return [
     'library' => 'المكتبة',
     'subjects' => 'المواد الدراسية',
     'list_subjects' => 'قائمة المواد',
+    'count_student' => 'عدد الطلاب',
+    'count_teacher' => 'عدد المعلمين',
+    'count_class' => 'عدد الصفوف',
+    'show_data' => 'عرض البيانات',
+    'count_perant'=>'عددأولياءالامر',
     'Loading...' => 'الرجاء الانتظار',
+    'opertaions'=>'اخر العمليات علي النظام',
+    'no_data_found' => 'لاتوجد بيانات',
+    'invoice_date' => 'تاريخ الفاتورة',
+    'invoices' => 'الفواتير',
+    'type_fees' => 'نوع الرسوم',
+    'date_created'=> 'تاريخ الاضافة',
+
     
 
     

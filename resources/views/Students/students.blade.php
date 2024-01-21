@@ -64,26 +64,26 @@
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" href="{{route('students.show',$student->id)}}"><i style="color: #ffc107" class="fa fa-eye "></i>
                                     &nbsp;{{trans('students.showdatestdents')}}</a>
-                                <a class="dropdown-item" href="{{route('students.edit',$student->id)}}"><i style="color:green" class="fa fa-edit">
-                                </i>&nbsp;{{trans('students.edit_student')}}  </a>
-                                <a class="dropdown-item" href="{{route('fee_invoice.show',$student->id)}}"><i style="color: #0000cc" class="fa fa-edit">
-                                </i>&nbsp;{{trans('students.AddInvoices_fees')}}</a>
-                                <a class="dropdown-item" href="{{route('receipt_student.show',$student->id)}}"><i style="color: #9dc8e2" class="fa fa-edit">
-                                </i>{{trans('students.receipt_students')}}</a>
-                                <a class="dropdown-item" href="{{route('processingfee.show',$student->id)}}"><i style="color: #9dc8e2" class="fa fa-edit">
-                                </i>{{trans('students.ProcessingFee')}}</a>
-                                <a class="dropdown-item" href="{{route('payment.show',$student->id)}}"><i style="color:goldenrod" class="fa fa-cash">
-                                </i>{{trans('students.Payment_students')}}</a>
+                                <a class="dropdown-item" href="{{route('students.edit',$student->id)}}"><i style="color:green" class="fa fa-edit"></i>
+                                &nbsp;{{trans('students.edit_student')}}  </a>
+                                <a class="dropdown-item" href="{{route('fee_invoice.index',$student->id)}}"><i style="color: #0000cc" class="fa fa-edit"></i>
+                                &nbsp;{{trans('students.AddInvoices_fees')}}</a>
+                                <a class="dropdown-item" href="{{route('receipt_student.show',$student->id)}}"><i style="color: #9dc8e2" class="fa fa-edit"></i>
+                                    &nbsp; {{trans('students.receipt_students')}}</a>
+                                <a class="dropdown-item" href="{{route('processingfee.show',$student->id)}}"><i style="color: #9dc8e2" class="fa fa-edit"></i> 
+                                    &nbsp; {{trans('students.ProcessingFee')}}</a>
+                                <a class="dropdown-item" href="{{route('payment.show',$student->id)}}"><i style="color:goldenrod" class="fa fa-calculator"></i>
+                               &nbsp;{{trans('students.payment_students')}}</a>
                                 <a class="dropdown-item" data-target="#Delete_Student{{ $student->id }}" data-toggle="modal" href="##Delete_Student{{ $student->id }}">
-                                    <i style="color: red" class="fa fa-trash"></i> {{trans('students.delete')}} </a>
+                                    <i style="color: red" class="fa fa-trash"></i>  &nbsp;{{trans('students.delete')}} </a>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#Soft_delete{{$student->id}}"><i style="color:green" class="fa fa-edit">
-                                </i>&nbsp; {{trans('Students_trans.StudentGraduation')}}  </a>
+                                </i>&nbsp; {{trans('students.add_graduated')}}  </a>
                             </div>
                         </td>
-                </tr>
+                     </tr>
                  @endforeach 
                 </tbody>
-                    </table>
+             </table>
                 </div>
             </div>
         </div>

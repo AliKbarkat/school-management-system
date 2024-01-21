@@ -16,7 +16,7 @@ class GradController extends Controller
 
         $grades = Grade::get();
         return view('grade.grades', compact('grades'));
-   
+
     }
     public function create()
     {
@@ -45,15 +45,18 @@ class GradController extends Controller
         return view('grade.edit_grade ', compact('grade'));
     
     }
-    public function update(GradeRequest $request, $grade_id)
+    public function update(Request $request, $grade_id)
     {
 
         $id = Grade::findOrfail($grade_id);
         if (!$id)
             return redirect()->back();
-
+            toastr()->error('يوجد داخل المرحلة صفوف');
+        
+            
         $id->update($request->all());
         return redirect()->route('grad.index');
+    
     
     }
     public function destroy(Request $request)

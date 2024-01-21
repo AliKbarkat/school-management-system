@@ -148,10 +148,12 @@ return [
          'bload_type_father_id' => 'زمرة الدم',
          'religion_father_id' => 'الديانة',
          'address_father' => 'العنوان',
+         'national_id_mother' => 'رقم الهوية الوطني',
          // teachers
          'joining_date' => 'تاريخ الانضمام',
          'specialization_id' => 'التخصص',
          'address' => 'العنوان',
+         
     ],
 
 ];

@@ -44,10 +44,8 @@
                     dataType: "json",
                     success: function (data) {
                         $('select[name="classroom_id"]').empty();
-                    //  $('select[name="section_id"]').append('<option selected disabled >{{trans('students.choose')}}...</option>');
-
-                        $.each(data, function (key, value) {
-                            $('select[name="classroom_id"]').append('<option value="' +value  + '">' +  key + '</option>');
+                        $.each(data, function (key ,value) {
+                            $('select[name="classroom_id"]').append('<option value="' + key  + '">' + value  + '</option>');
                         });
                     },
                 });
@@ -58,7 +56,7 @@
     });
 </script>
 
-{{-- <script>
+ <script>
     $(document).ready(function () {
     $('select[name="classroom_id"]').on('change', function () {
         var classroom_id = $(this).val();
@@ -69,9 +67,8 @@
                 dataType: "json",
                 success: function (data) {
                     $('select[name="section_id"]').empty();
-                    //  $('select[name="section_id"]').append('<option selected disabled >{{trans('students.choose')}}...</option>');
                     $.each(data, function (key, value) {
-                        $('select[name="section_id"]').append('<option value="' + value + '">' + key + '</option>');
+                        $('select[name="section_id"]').append('<option value="' + key + '">' +  value + '</option>');
                     });
                 },
             });
@@ -81,5 +78,5 @@
         }
     });
 });
-</script> --}}
+</script> 
 

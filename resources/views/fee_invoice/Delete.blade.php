@@ -11,8 +11,8 @@
             <div class="modal-body">
                 <form action="{{route('Fees_Invoices.destroy','test')}}" method="post">
                     @csrf
-                    @method('DELETE')
-                    <input type="hidden" name="id" value="{{$Fee_invoice->id}}">
+                 
+                    <input type="hidden" name="id" value="{{$fee_invoice->id}}">
                     <h5 style="font-family: 'Cairo', sans-serif;">  ؟ {{trans('all.Warning_class')}} </h5>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans('Students_trans.Close')}}</button>

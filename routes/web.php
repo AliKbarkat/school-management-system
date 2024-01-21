@@ -55,7 +55,7 @@ Route::auth();
         });
 
             Route::get('/classes/{id}','SectionController@getClasses')->name('class.ajax');
-
+            Route::get('/sections/{id}','StudentController@getSections')->name('section.ajax');
             Route::view('/add_parent', 'livewire.show_form')->name('add.parent');
 
     Route::group([ 'prefix' => 'teachers'], function () {
@@ -78,7 +78,7 @@ Route::auth();
             Route::post('Download_attachment/{student_name}/{file_name}','StudentController@downloadAttachment')->name('students.download_attachment');
             Route::post('upolad_attchment','StudentController@uploadFile')->name('students.uploadFile');
             Route::post('Delete_attachment','StudentController@deleteAttachment')->name('students.delete_attachment');
-            Route::get('/sections/{id}','StudentController@getSections')->name('section.ajax');
+            
 
  
         });
@@ -107,9 +107,9 @@ Route::auth();
             Route::get('/', 'FeesController@index')->name('fees.index');
             Route::get('create', 'FeesController@create')->name('fees.create');
             Route::post('create', 'FeesController@store')->name('fees.store');
-            Route::get('edit/{fee_id}', 'FeesController@edit')->name('fees.edit');
-            Route::post('update/{fee_id}', 'FeesController@update')->name('fees.update');
-            Route::get('destroy/{fee_id}', 'FeesController@destroy')->name('fees.destroy');
+            Route::get('edit/{id}', 'FeesController@edit')->name('fees.edit');
+            Route::post('update/{id}', 'FeesController@update')->name('fees.update');
+            Route::get('destroy/{id}', 'FeesController@destroy')->name('fees.destroy');
 
         });
 

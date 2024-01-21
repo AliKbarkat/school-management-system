@@ -31,24 +31,22 @@
                 {{-- language website --}}
               
                 <div class="btn-group mb-1">
-                    <button type="button" class="btn btn-dark btn-md dropdown-toggle" 
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a type="button" class=" nav-link m-1 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       @if (App::getLocale() == 'ar')
-                      {{ LaravelLocalization::getCurrentLocaleName() }}
                       <img src="{{asset('assets/images/flags/EG.png')}}">
                       @else
-                      {{ LaravelLocalization::getCurrentLocaleName() }}
                       <img src="{{asset('assets/images/flags/Us.png')}}">
                       @endif
-                      </button>
+                </a>
                     <div class="dropdown-menu">
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                              <a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                    {{ $properties['native'] }}
+                                    {{ $properties['name'] }}  
                                 </a>
                         @endforeach
                     </div>
                 </div>
+                
                 {{-- end language website --}}
                 <li class="nav-item fullscreen">
                     <a id="btnFullscreen" href="#" class="nav-link"><i class="ti-fullscreen"></i></a>

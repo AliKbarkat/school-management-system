@@ -35,7 +35,18 @@ return [
     'subjects' => 'Subjects',
     'list_subjects' => 'List Subjects',
     'exams' => 'Exams',
+    'count_student' => 'Count Students',
+    'count_teacher' => 'Count Teachers',
+    'count_class' => 'Count ClassRoom',
+    'count_perant' => 'Count Perant' ,
+    'show_data' =>'Show Data',
     'Loading...' => 'Loading...',
+     'opertaions'=> 'Latest operations on the system',
+     'invoices'=> 'Invoices',
+     'no_data_found'=>'No data found',
+     'invoice_date' =>'Invoice Date',
+     'type_fees' => 'Type of fees',
+     'date_created' =>'Date created',
    
    
     

@@ -5,6 +5,7 @@ namespace App\Repositry;
 
 use App\models\Fee;
 use App\models\FeeInvoice;
+use App\Models\Grade;
 use App\Models\Student;
 use App\models\StudentAccount;
 use Illuminate\Support\Facades\DB;
@@ -12,18 +13,20 @@ use Illuminate\Support\Facades\DB;
 class FeeInvoiceRepositry  implements FeeInvoiceInterface
 {
     public function index(){
-
+        $fee_invoices = FeeInvoice::all();
+        $grades = Grade::all();
+        return view('fee_invoice.index',compact('fee_invoices','grades'));
     }
 
     public function show($id)
     {
-        $student=Student::findOrfail($id);
-        $fee=Fee::where('clasroom_id',$student->clasroom_id)->get();
+        $student = Student::findOrfail($id);
+        $fee = Fee::where('clasroom_id',$student->clasroom_id)->get();
         return view('fee_invoice.add',compact('student','fee'));
 
     }
-   function store($request)
-   {
+    public function store($request)
+    {
     $list_fees = $request->List_Fees;
 
     DB::beginTransaction();
