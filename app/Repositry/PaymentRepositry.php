@@ -16,8 +16,8 @@ class PaymentRepositry implements PaymentInterface{
     public function index()
     {
 
-        $student_payment=PaymentStudent::all();
-        return view('pament.index',compact('student_payment'));
+        $payment_students=PaymentStudent::all();
+        return view('payment.index',compact('payment_students'));
     }
 
     public function show($id)

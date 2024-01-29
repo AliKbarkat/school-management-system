@@ -37,7 +37,7 @@ class CreateMyParantsTable extends Migration
             $table->string('passport_id_mother');
             $table->string('phone_mother');
             $table->bigInteger('nationality_mother_id')->unsigned();
-            $table->bigInteger('bload_type_mother_id')->unsigned();
+            $table->bigInteger('blood_type_mother_id')->unsigned();
             $table->bigInteger('religion_mother_id')->unsigned();
             $table->string('address_mother');
             $table->timestamps();

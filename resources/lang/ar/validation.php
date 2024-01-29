@@ -93,7 +93,7 @@ return [
     'required_without_all' => ' :attribute الحقل مطلوب عندما لا شيء :values are present.',
     'same' => 'The :attribute و :other يجب أن تتطابق.',
     'size' => [
-        'numeric' => ' :attribute لا بد وأن :size.',
+        'numeric' => ' :attribute   لا بد وأن يكون:size.',
         'file' => ' :attributeلا بد وأن :size kilobytes.',
         'string' => ' :attribute لا بد وأن :size characters.',
         'array' => ' :attribute يجب ان يحتوي :size items.',

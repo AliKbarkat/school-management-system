@@ -30,7 +30,7 @@
             <div class="card-body">
                 <form method="post" action="{{ route('fees.update',$fee->id) }}">
                     @csrf
-
+                    
                             <div class="form-row">
                                 <div class="form-group col">
                                     <label >{{__('fees.title_fees_ar')}}</label><br>
@@ -79,7 +79,7 @@
                                     <div class="form-group col">
                                         <label for="">{{trans('fees.class_room')}}</label>
                                         <select class="custom-select my-1 mr-sm-2" name="classroom_id">
-                                            <option selected>{{trans('my_parant.Choose')}}...</option>
+                                            <option selected>{{trans('fees.choose')}}...</option>
                                           
                                         </select>
                                         @error('classroom_id')
@@ -92,7 +92,7 @@
                                         <label for="">{{trans('my_parant.section_id')}}</label>
 
                                         <select class="custom-select my-1 mr-sm-2" name="section_id">
-                                            <option selected>{{trans('my_parant.Choose')}}...</option>
+                                            <option selected>{{trans('fees.choose')}}...</option>
                                                
                                         </select> 
                                         @error('section_id')
@@ -125,9 +125,10 @@
                             </div>
            
                         <div>
+
                             <input type="submit" class="btn btn-dark btn-sm btn-lg pull-right">
-                            </div>
-        
+                    </div>
+
                </form>
             </div>
         </div>

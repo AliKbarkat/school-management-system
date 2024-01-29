@@ -11,8 +11,7 @@ class Grade extends Model
     public $translatable = ['name'];
     
     public $fillable = [
-        'id',
-        'name',
+         'name',
         'descreption',
     ];
     // The relationship of grades with the academic levels for each grade

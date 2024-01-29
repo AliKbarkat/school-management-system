@@ -1,5 +1,4 @@
 <?php
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -14,7 +13,9 @@ Route::group(
     //==============================dashboard============================
     Route::get('/student/dashboard',function () {
         return view('students.dashboard');
+
     })->name('dashboard.students');
+    
     Route::group(['namespace'=>'stdashboard'], function () {
         Route::resource('student_exams','ExamController');
         Route::resource('profile-student', 'ProfileController');

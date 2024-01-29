@@ -38,7 +38,7 @@
                                             <div class="row">
 
                                                 <div class="col">
-                                                        {{trans('fees.add_fees')}}
+                                                        {{trans('fees.add_fees')}}<br>
                                                     <label for="Name" class="mr-sm-2">{{trans('students.name')}} </label>
                                                     <select class="fancyselect" name="student_id" required>
                                                             <option value="{{ $student->id }}">{{ $student->name }}</option>

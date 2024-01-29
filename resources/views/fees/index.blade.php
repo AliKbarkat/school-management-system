@@ -29,9 +29,7 @@
     <div class="col-md-12 mb-30">
         <div class="card card-statistics h-100">
             <div class="card-body">
-                    <a href="{{route('fees.create')}}" 
-                class="btn btn-success btn-sm nextBtn btn-lg pull-right" 
-                type="button">{{ trans('fees.add_fees')}}</a>
+                    
                 <table class="table">
                     <thead>
                       <tr>
@@ -54,7 +52,7 @@
                         <td>{{$fee->ammount}}</td> 
                         <td>{{$fee->grades->name}}</td>
                         <td>{{$fee->classes->name}}</td>
-                        <td>{{$fee->section_id}}</td>
+                        <td>{{$fee->sections->name}}</td>
                         <td>{{$fee->year}}</td>
                         <td><a class="btn btn-info btn-sm" href="{{route('fees.edit',$fee->id)}}">
                           <i class="fa fa-edit"></i></a>
@@ -65,6 +63,9 @@
                     </tbody>
                   </table>
                 </div>
+                <a href="{{route('fees.create')}}" 
+                class="btn btn-dark btn-sm nextBtn btn-lg pull-right" 
+                type="button">{{ trans('fees.add_fees')}}</a>
               </div>
           </div>
         </div>

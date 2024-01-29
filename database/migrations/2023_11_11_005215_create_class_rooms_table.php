@@ -17,7 +17,7 @@ class CreateClassroomsTable extends Migration
             $table->id();
             $table->text('name');
             $table->bigInteger('grade_id')->unsigned();
-            $table->timestamp('created_at');
+            $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });
     }

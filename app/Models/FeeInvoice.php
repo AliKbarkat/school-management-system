@@ -17,30 +17,35 @@ class FeeInvoice extends Model
         'amount',
         'descreption'
     ];
-public function grades()
-{
+    
+    public function grades()
+    {
 
-    return $this->belongsTo(Grade::class,'grade_id');
+        return $this->belongsTo(Grade::class,'grade_id');
 
-}
-public function classes()
-{
- 
-    return $this->belongsTo(ClassRoom::class,'clasroon_id');
+    }
 
-}
-public function studens()
-{
+    public function classes()
+    {
+    
+        return $this->belongsTo(ClassRoom::class,'clasroon_id');
 
-    return $this->belongsTo(Student::class,'student_id');
+    }
 
-}
-public function fees()
-{
- 
-    return $this->belongsTo(Fee::class,'fee_id');
+    public function studens()
+    {
 
-}
+        return $this->belongsTo(Student::class,'student_id');
+
+    }
+
+    public function fees()
+    {
+    
+        return $this->belongsTo(Fee::class,'fee_id');
+
+    }
+
 
 
 }

@@ -3,8 +3,8 @@
         <nav class="admin-header navbar navbar-default col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <!-- logo -->
             <div class="text-left navbar-brand-wrapper">
-                <a class="navbar-brand brand-logo" href="{{route('dashboard.index')}}"><img src="{{asset('assets/images/logo-dark.png')}}" alt=""></a>
-                <a class="navbar-brand brand-logo-mini" href="{{route('dashboard.index')}}"><img src="{{asset('assets/images/logo-icon-dark.png')}}"
+                <a class="navbar-brand brand-logo" href="{{route('home')}}"><img src="{{asset('assets/images/logo-dark.png')}}" alt=""></a>
+                <a class="navbar-brand brand-logo-mini" href="{{route('home')}}"><img src="{{asset('assets/images/logo-icon-dark.png')}}"
                     ></a>
             </div>
             <!-- Top bar left -->
@@ -132,13 +132,13 @@
                        
                    
                         @if(auth('student')->check())
-                        <form method="post" action="{{ route('logout','student') }}">
+                        <form method="get" action="{{ route('logout','student') }}">
                             @elseif(auth('teacher')->check())
-                                <form method="post" action="{{ route('logout','teacher') }}">
+                                <form method="get" action="{{ route('logout','teacher') }}">
                                     @elseif(auth('parant')->check())
-                                        <form method="post" action="{{ route('logout','parant') }}">
+                                        <form method="get" action="{{ route('logout','parant') }}">
                                             @else
-                                                <form method="post" action="{{ route('logout','web') }}">
+                                                <form method="get" action="{{ route('logout','web') }}">
                                                     @endif
                                                     @csrf
                         <button class="dropdown-item"href="#"><i class="text-danger ti-unlock" ></i>Logout </button>

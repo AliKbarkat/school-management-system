@@ -20,6 +20,8 @@ return[
     'choose' => 'Choose' ,
     'tybe_fees' => 'Tybe Fees',
     'descreption' =>'descreption',
-
+    'tuition_bills' => 'Tuition Bills' ,
+    'educational_level'=> 'Educational Level',
+    'statement'=> 'Statement',
 
 ];

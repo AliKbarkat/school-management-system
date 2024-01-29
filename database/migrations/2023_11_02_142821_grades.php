@@ -13,13 +13,12 @@ class Grades extends Migration
      */
     public function up()
     {
-        Schema::create('grades', function (Blueprint $table) {
-            $table->id();
-            $table->text('name');
-            $table->text('descreption');
-            $table->timestamp('created_at')->nullable();
-            $table->timestamp('updated_at')->nullable();
-        });
+        Schema::create('grades', function(Blueprint $table) {
+			$table->id();
+			$table->timestamps();
+			$table->string('name');
+			$table->string('notes', 50)->nullable();
+		});
     }
 
     /**

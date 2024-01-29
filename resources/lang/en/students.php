@@ -44,4 +44,7 @@ return[
     'close' => 'close',
     'return_student' => 'Return Student',
     'delete_student' => 'Delete Student',
+    'attendance' => 'Attendance',
+    'attendees' => 'Attendees',
+    'absence' => 'Absence',
 ];

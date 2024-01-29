@@ -15,6 +15,7 @@ Route::group(
 
     //==============================dashboard============================
     Route::get('/teacher/dashboard', function () {
+        
         $tea_id = auth()->user()->id;
         $ids = Teacher::findOrfail($tea_id)->Sections()->pluck('section_id');
         $data['count_section'] = $ids->count();

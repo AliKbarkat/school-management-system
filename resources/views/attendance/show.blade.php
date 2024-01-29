@@ -2,7 +2,7 @@
 @section('css')
 @toaster_css
 @section('title')
-students
+{{ trans('main_page.list_students') }}
 @stop
 @endsection
 @section('page-header')
@@ -15,7 +15,7 @@ students
         <div class="col-sm-6">
             <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right ">
                 <li class="breadcrumb-item"><a href="#" class="default-color">Home</a></li>
-                <li class="breadcrumb-item active">{{__('mainpage.students')}}</li>
+                <li class="breadcrumb-item active">{{__('main_page.students')}}</li>
             </ol>
         </div>
     </div>
@@ -37,7 +37,6 @@ students
     <div class="col-md-12 mb-30">
         <div class="card card-statistics h-100">
             <div class="card-body">
-                <a href="{{route('students.create')}}" class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="button">add student</a>
                 <div class="table-responsive">
                     <form action="{{route('attendance.store')}}" method="POST">
                         @csrf
@@ -45,13 +44,13 @@ students
                 <thead>
                     <tr class="table-success">
                         <th>#</th>
-                        <th>{{__('Students.Email')}}</th>
+                        <th>{{__('students.email')}}</th>
                         <th>{{__('students.Name')}}</th>
-                        <th>{{__('students.Gender')}}</th>
-                        <th>{{__('students.Date_Birth')}}</th>
-                        <th>{{__('students.grade')}}</th>    
-                        <th>{{__('students.classroom')}} </th>
-                        <th>{{__('students.Section')}}</th>  
+                        <th>{{__('students.gender')}}</th>
+                        <th>{{__('students.joining_date')}}</th>
+                        <th>{{__('students.grades')}}</th>    
+                        <th>{{__('students.class')}} </th>
+                        <th>{{__('students.section')}}</th>  
                         <th>{{__('students.attendance')}} </th>  
                     </tr>
                 </thead>
@@ -61,11 +60,11 @@ students
                     <td> {{$student->id}}</td>
                     <td>{{$student->email}}</td>
                     <td>{{$student->name}}</td>
-                    <td>{{$student->gender->Name}}</td>
-                    <td>{{$student->date_Birth}}</td>
-                    <td>{{$student->grade->name_ar}}</td>
-                    <td>{{$student->classroom->name_class_ar}}</td>
-                    <td>{{$student->Section->name_ar}}</td>
+                    <td>{{$student->gender->name}}</td>
+                    <td>{{$student->date_birth}}</td>
+                    <td>{{$student->grade->name}}</td>
+                    <td>{{$student->classroom->name}}</td>
+                    <td>{{$student->section->name}}</td>
                     <td>
                         @if(isset($student->attendance()->where('attendence_date',date('Y-m-d'))->first()->student_id))
 
@@ -73,14 +72,14 @@ students
                             <input name="attendences[{{ $student->id }}]" disabled
                                    {{ $student->attendance()->first()->attendence_status == 1 ? 'checked' : '' }}
                                    class="leading-tight" type="radio" value="presence">
-                            <span class="text-success">{{ trans('all.Attendees') }}</span>
+                            <span class="text-success">{{ trans('students.attendees') }}</span>
                         </label>
 
                         <label class="ml-4 block text-gray-500 font-semibold">
                             <input name="attendences[{{ $student->id }}]" disabled
                                    {{ $student->attendance()->first()->attendence_status == 0 ? 'checked' : '' }}
                                    class="leading-tight" type="radio" value="absent">
-                            <span class="text-danger">{{trans('all.Absence')}}</span>
+                            <span class="text-danger">{{trans('students.absence')}}</span>
                         </label>
 
                     @else
@@ -88,13 +87,13 @@ students
                         <label class="block text-gray-500 font-semibold sm:border-r sm:pr-4">
                             <input name="attendences[{{ $student->id }}]" class="leading-tight" type="radio"
                                    value="presence">
-                            <span class="text-success">{{ trans('all.Attendees') }}</span>
+                            <span class="text-success">{{ trans('students.attendees') }}</span>
                         </label>
 
                         <label class="ml-4 block text-gray-500 font-semibold">
                             <input name="attendences[{{ $student->id }}]" class="leading-tight" type="radio"
                                    value="absent">
-                            <span class="text-danger">{{trans('all.Absence')}}</span>
+                            <span class="text-danger">{{trans('students.absence')}}</span>
                         </label>
 
                     @endif
@@ -108,7 +107,7 @@ students
                  @endforeach 
                 </tbody>
                     </table>
-                    <button class="btn btn-success btn-sm  btn-lg pull-right" type="submit">حفظ </button> 
+                    <button class="btn btn-dark btn-sm  btn-lg pull-right" type="submit">{{ trans('students.submit') }} </button> 
                 </form>
                 </div>
             </div>

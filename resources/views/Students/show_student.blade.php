@@ -110,26 +110,28 @@
                                             </thead>
                                             <tbody>
 
-                                            @foreach($image as $attachment)
+                                                @foreach($student->images as $attachment)
                                                 <tr style='text-align:center;vertical-align:middle'>
                                                     <td>{{$loop->iteration}}</td>
-                                                    <td>{{$attachment->file_name}}</td>
-                                                     <td>{{$attachment->created_at}}</td>
-                                                     
+                                                    <td>{{$attachment->filename}}</td>
+                                                    <td>{{$attachment->created_at->diffForHumans()}}</td>
                                                     <td colspan="2">
-                                                         <a class="btn btn-outline-info btn-sm"
-                                                           href="{{url('Download_attachment')}}/{{$attachment->student_name}}/{{$attachment->file_name}}"
-                                                           role="button"><i class="fa fa-download"></i>&nbsp; </a>
-
-                                                        <button type="button" class="btn btn-outline-danger btn-sm fa fa-trash"
-                                                                data-toggle="modal" 
+                                                        <a class="btn btn-outline-info btn-sm"
+                                                           href="{{url('Download_attachment')}}/{{ $attachment->imageable->name }}/{{$attachment->filename}}"
+                                                           role="button"><i class="fas fa-download"></i>&nbsp; {{trans('Students_trans.Download')}}</a>
+                                                        <a class="btn btn-outline-success btn-sm"
+                                                           href="{{ url('Show_attachment') }}/{{ $attachment->imageable->name }}/{{$attachment->filename}}"
+                                                           role="button"><i class="fas fa-eye"></i>&nbsp;
+                                                            عرض</a>
+                                                        <button type="button" class="btn btn-outline-danger btn-sm"
+                                                                data-toggle="modal"
                                                                 data-target="#Delete_img{{ $attachment->id }}"
-                                                                title="{{ trans('Grades_trans.Delete') }}">
-                                                        </button> 
+                                                                title="{{ trans('Grades_trans.Delete') }}">{{trans('Students_trans.delete')}}
+                                                        </button>
 
                                                     </td>
                                                 </tr>
-                                                @include('pages.Students.delete_img')
+                                                @include('pages.Students.Delete_img')
                                             @endforeach
 
                                             </tbody>

@@ -20,4 +20,7 @@ return[
     'choose' => 'اختر',
     'tybe_fees' => 'نوع الرسوم',
     'descreption' => 'الوصف',
+    'tuition_bills' => 'فواتير التعليم',
+    'educational_level'=> 'المستوى التعليمي',
+    'statement' => 'بيان',
 ];

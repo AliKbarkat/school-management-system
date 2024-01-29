@@ -66,7 +66,7 @@
                                     &nbsp;{{trans('students.showdatestdents')}}</a>
                                 <a class="dropdown-item" href="{{route('students.edit',$student->id)}}"><i style="color:green" class="fa fa-edit"></i>
                                 &nbsp;{{trans('students.edit_student')}}  </a>
-                                <a class="dropdown-item" href="{{route('fee_invoice.index',$student->id)}}"><i style="color: #0000cc" class="fa fa-edit"></i>
+                                <a class="dropdown-item" href="{{route('fee_invoice.show',$student->id)}}"><i style="color: #0000cc" class="fa fa-edit"></i>
                                 &nbsp;{{trans('students.AddInvoices_fees')}}</a>
                                 <a class="dropdown-item" href="{{route('receipt_student.show',$student->id)}}"><i style="color: #9dc8e2" class="fa fa-edit"></i>
                                     &nbsp; {{trans('students.receipt_students')}}</a>

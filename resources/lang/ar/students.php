@@ -44,5 +44,8 @@ return[
     'close' => 'إلغاء' ,
      'return_student'=> 'ارجاع الطالب',
      'delete_student' => 'حذف الطالب',
+     'attendance' => 'الحضور والغياب',
+     'attendees' => 'حضور',
+     'absence' => 'غياب',
      
 ];

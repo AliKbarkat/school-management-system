@@ -20,9 +20,10 @@ class FeeInvoiceRepositry  implements FeeInvoiceInterface
 
     public function show($id)
     {
-        $student = Student::findOrfail($id);
-        $fee = Fee::where('clasroom_id',$student->clasroom_id)->get();
-        return view('fee_invoice.add',compact('student','fee'));
+    
+       $student = Student::findOrfail($id);
+       $fees = Fee::where('classroom_id',$student->clasroom_id)->get();
+       return view('fee_invoice.add',compact('student','fees'));
 
     }
     public function store($request)

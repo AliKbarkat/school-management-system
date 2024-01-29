@@ -4,29 +4,31 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-Route::auth();
-
-     Route::get('/', 'HomeController@index')->name('selection');
-
-     Route::group(['namespace'=>'Auth'],function ()  {
-
-     Route::get('/login/{type}','LoginController@loginFrom')->middleware('guest')->name('login.show');
-
-     Route::post('/login','LoginController@login')->name('login');
-   
-     Route::post('/logout/{type}','LoginController@logout')->middleware('guest')->name('logout');
-
-    });
+// Route::auth();
 
     Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath',
-         'auth'
-         ]
+        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath'],
     ],
     function () {
-        Route::get('/dashboard','HomeController@dashboard')->name('dashboard.index');
+
+
+
+        Route::get('/', 'HomeController@index')->name('selection');
+
+        Route::get('/dashboard', 'HomeController@dashboard')->name('home')->middleware('auth');
+    
+        Route::group(['namespace' => 'Auth'], function () {
+    
+        Route::get('/login/{type}','LoginController@loginForm')->middleware('guest')->name('login.show');
+    
+        Route::post('/login','LoginController@login')->name('login');
+    
+        Route::get('/logout/{type}','LoginController@logout')->name('logout');
+    
+    
+        });
 
         
             Route::resource('/grad', 'GradController');
@@ -115,7 +117,7 @@ Route::auth();
 
     Route::group(['prefix' => 'fee_invoice'], function () {
             Route::get('/', 'FeeInvoiceController@index')->name('fee_invoice.index');
-            Route::get('show/{student_id}', 'FeeInvoiceController@show')->name('fee_invoice.show');
+            Route::get('show/{id}', 'FeeInvoiceController@show')->name('fee_invoice.show');
             Route::get('create', 'FeeInvoiceController@create')->name('fee_invoice.create');
             Route::post('create', 'FeeInvoiceController@store')->name('fee_invoice.store');
             Route::get('edit/{fee_invoice_id}', 'FeeInvoiceController@edit')->name('fee_invoice.edit');
@@ -124,7 +126,7 @@ Route::auth();
 
         });
         
-    Route::group(['prefix' => 'receiptStudent'], function () {
+    Route::group(['prefix' => 'receipt_Student'], function () {
             Route::get('/', 'ReceiptStudentController@index')->name('receipt_student.index');
             Route::get('show/{student_id}', 'ReceiptStudentController@show')->name('receipt_student.show');
             Route::get('create', 'ReceiptStudentController@create')->name('receipt_student.create');

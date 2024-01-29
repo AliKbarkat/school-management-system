@@ -36,7 +36,7 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($receipt_students as $receipt_student)
+                                        @foreach($receipt_student as $receipt_student)
                                             <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{$receipt_student->student->name}}</td>

@@ -162,8 +162,8 @@ class StudentRepositry implements StudentRepositryInterface
       {
 
         $student= Student::findOrfail($id);
-        $image= Image::all();
-        return view('students.show_student',compact('student','image'));
+        // $image= Image::all();
+        return view('students.show_student',compact('student'));
 
       }
 

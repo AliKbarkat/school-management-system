@@ -26,7 +26,7 @@ trait AuthTrait
     public function redirect($request){
 
         if($request->type == 'student'){
-            return redirect()->intended(RouteServiceProvider::STUDENT);
+            return redirect()->intended('/student/dashboard');
         }
         elseif ($request->type == 'parant'){
             return redirect()->intended(RouteServiceProvider::PARENT);

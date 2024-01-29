@@ -13,12 +13,27 @@ class Fee extends Model
 
     public function grades()
     {
+
         return $this->belongsTo(Grade::class,'grade_id');
+    
     }
     public function classes()
     {
+
         return $this->belongsTo(ClassRoom::class,'classroom_id');
 
+    }
+    public function sections()
+    {
+
+        return $this->belongsTo(Section::class,'section_id');
+
+    }
+    public function student() 
+    {
+    
+        return $this->belongsTo(Student::class,'student_id');
+   
     }
     public function fee_invoices()
     {

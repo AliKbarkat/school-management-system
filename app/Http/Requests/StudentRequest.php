@@ -16,22 +16,23 @@ class StudentRequest extends FormRequest
     public function rules()
     {
         return [
+
             'email' => 'email|unique:students,email,' . $this->id,
             'name_ar' => 'required|string',
             'name_en' => 'required',
             'password' => 'required',
             'gender_id' => 'exists:genders,id',
-             'nationalite_id' => 'exists:nationalities,id',
+            'nationalite_id' => 'exists:nationalities,id',
             'bload_id' => 'exists:bloads,id',
-             'date_birth' => 'required',
+            'date_birth' => 'required',
             'grade_id' => 'exists:grades,id',
-             'classroom_id' => 'exists:class_rooms,id',
-             'section_id'=> 'exists:sections,id',
-             'parant_id' => 'exists:my_parants,id',
-             'academic_year' => 'required',
-             'photos'=>'required',
+            'classroom_id' => 'exists:class_rooms,id',
+            'section_id'=> 'exists:sections,id',
+            'parant_id' => 'exists:my_parants,id',
+            'academic_year' => 'required',
+            'photos' => 'mimes:png,jpg|max:2048',
            
-
+        
         ];
     }
     public function messages()
